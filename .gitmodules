@@ -1,0 +1,60 @@
+[submodule "3_adapterRem"]
+	path = 3_adapterRem
+	url = ./3_adapterRem/
+[submodule "4_barcodeTrim"]
+	path = 4_barcodeTrim
+	url = ./4_barcodeTrim/
+[submodule "5_qualityFilt"]
+	path = 5_qualityFilt
+	url = ./5_qualityFilt/
+[submodule "6_deduplicate"]
+	path = 6_deduplicate
+	url = ./6_deduplicate/
+[submodule "7_phixRem"]
+	path = 7_phixRem
+	url = ./7_phixRem/
+[submodule "8_humanHostFilt"]
+	path = 8_humanHostFilt
+	url = ./8_humanHostFilt/
+[submodule "T1_kraken2"]
+	path = T1_kraken2
+	url = ./T1_kraken2/
+[submodule "T2_bracken"]
+	path = T2_bracken
+	url = ./T2_bracken/
+[submodule "RD2_mapping"]
+	path = RD2_mapping
+	url = ./RD2_mapping/
+[submodule "RD3_mapdamage4ambiguoustaxa"]
+	path = RD3_mapdamage4ambiguoustaxa
+	url = ./RD3_mapdamage4ambiguoustaxa/
+[submodule "H1_mtgenomes"]
+	path = H1_mtgenomes
+	url = ./H1_mtgenomes/
+[submodule "H2_haplotype_network"]
+	path = H2_haplotype_network
+	url = ./H2_haplotype_network/
+[submodule "M1_MAGassemblies"]
+	path = M1_MAGassemblies
+	url = ./M1_MAGassemblies/
+[submodule "M2_readmapping"]
+	path = M2_readmapping
+	url = ./M2_readmapping/
+[submodule "M3_binning"]
+	path = M3_binning
+	url = ./M3_binning/
+[submodule "M5_samplestoMAGs"]
+	path = M5_samplestoMAGs
+	url = ./M5_samplestoMAGs/
+[submodule "M7_mapdamage"]
+	path = M7_mapdamage
+	url = ./M7_mapdamage/
+[submodule "M8_dereplicateMAGs"]
+	path = M8_dereplicateMAGs
+	url = ./M8_dereplicateMAGs/
+[submodule "D1_reads4Diet"]
+	path = D1_reads4Diet
+	url = ./D1_reads4Diet/
+[submodule "D2_kraken2_full_db"]
+	path = D2_kraken2_full_db
+	url = ./D2_kraken2_full_db/
