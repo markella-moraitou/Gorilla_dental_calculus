@@ -3,7 +3,7 @@
 #SBATCH -A snic2020-5-528
 #SBATCH -p node
 #SBATCH -n 1
-#SBATCH -C mem256GB
+#SBATCH -C mem512GB
 #SBATCH -t 40:00:00
 #SBATCH -J kraken2
 #SBATCH --mail-type=ALL
