@@ -38,7 +38,7 @@ do
     then
         continue
     #process only if the file name matches with the list of retained samples or if it is a control or blank
-    elif ( grep -Fq $( echo ${i%_m_decontam1.fastq.gz} | cut -c3- ) $OUTDIR/../retained_samples.txt || [[ $(basename $i) == [BE][ERL]* ]] ) ; then
+    else
         echo ${i%_m_decontam1.fastq.gz}
         bwa mem -t $SLURM_CPUS_ON_NODE $REFDIR/gorilla_dencalc_reference $i > $OUTDIR/${i%decontam1.fastq.gz}temp.sam   
         cd $OUTDIR
