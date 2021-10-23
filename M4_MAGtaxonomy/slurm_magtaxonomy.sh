@@ -11,16 +11,17 @@
 
 #Infer taxonomy of top quality bins with GTDB-TK
 #Adapted from: /proj/sllstore2017021/nobackup/ADRIAN/scripts/mag/mag_bin_taxonomy_gtdbtk_210111.sh
+#Concatenates HQ and MQ lists to get a single tree
+
 module load bioinfo-tools prodigal hmmer pplacer FastTree gsl GTDB-Tk
 
 echo $(module list)
 
 OUTDIR=/proj/sllstore2017021/nobackup/MARKELLA/M4_MAGtaxonomy
-bin_list=/proj/sllstore2017021/nobackup/MARKELLA/M3_binning/medium_quality_MAGs.txt
+DATADIR=/proj/sllstore2017021/nobackup/MARKELLA/M3_binning/
+hq_list=/proj/sllstore2017021/nobackup/MARKELLA/M3_binning/high_quality_MAGs.txt
+mq_list=/proj/sllstore2017021/nobackup/MARKELLA/M3_binning/medium_quality_MAGs.txt
 
-gtdbtk classify_wf --cpus $SLURM_CPUS_ON_NODE --batchfile $bin_list --out_dir $OUTDIR --prefix mq
+cat $hq_list $mq_list > $DATADIR/high_and_medium_quality_MAGs.txt
 
-
-bin_list=/proj/sllstore2017021/nobackup/MARKELLA/M3_binning/high_quality_MAGs.txt
-
-gtdbtk classify_wf --cpus $SLURM_CPUS_ON_NODE --batchfile $bin_list --out_dir $OUTDIR --prefix hq
+gtdbtk classify_wf --cpus $SLURM_CPUS_ON_NODE --batchfile $DATADIR/high_and_medium_quality_MAGs.txt --out_dir $OUTDIR --prefix hq_mq
