@@ -18,6 +18,10 @@ coveragefile=$DATADIR/mt_coverage.csv
 
 module load bioinfo-tools samtools python R_packages FastANI
 
+#Remove directories from previous runs
+rm -r $OUTDIR/genomes_for_popart
+rm -r $OUTDIR/genomes_for_fastani
+
 ### References + DC genomes above the threshold will be used to construct a network with Popart ###
 threshold=80
 
@@ -152,6 +156,3 @@ sed -i 's/genomes_for_popart//g' fastani_output.txt
 
 #Get the refernces with the highest ANI per query
 Rscript find_closest_haplotype.R
-
-rm -r $OUTDIR/genomes_for_popart
-rm -r $OUTDIR/genomes_for_fastani
