@@ -9,7 +9,7 @@
 #SBATCH --mail-user=Markella.Moraitou.0437@student.uu.se
 
 #Script for doing some additional manipulations to HUMANn2 output
-module conda activate /home/markmora/.conda/envs/humann2
+conda activate /home/markmora/.conda/envs/humann2
 
 #error loading humann2 straight, had to load metaphlan2 first
 module load bioinfo-tools metaphlan2 biopython humann2

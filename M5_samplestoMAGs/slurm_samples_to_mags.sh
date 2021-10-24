@@ -13,8 +13,7 @@
 #Using bbmap instead of bwa since need to build a ref for bwa
 #Adapted from /proj/sllstore2017021/nobackup/ADRIAN/scripts/mag/mag_assembly_readmap_210111.sh
 
-
-module load bioinfo-tools samtools bbmap
+module load bioinfo-tools samtools bbmap QualiMap
 echo $SLURM_JOB_NAME
 echo $(module list)
 
@@ -55,16 +54,17 @@ do
     bbwrap.sh ref=$OUTDIR/MAG_noncontam_ref.fa.gz in=$i mapper=bbmap out=$OUTDIR/${i%_m_decontam.fastq.gz}_mappedMAGs.sam  maxindel=80 pigz=t unpigz=t nodisk
     #view all mapped reads | sort ready for binning
     samtools view -Sb -F 4 -@ $SLURM_CPUS_ON_NODE $OUTDIR/${i%_m_decontam.fastq.gz}_mappedMAGs.sam | samtools sort -@ $SLURM_CPUS_ON_NODE -o $OUTDIR/${i%_m_decontam.fastq.gz}_mappedMAGs.sorted.bam
+    cd $OUTDIR
 done
 
 #Start file where info will be logged
 echo "sample, MAG, read_count, coverage_breadth" > $OUTDIR/log_map_readct_${ymd}.txt
 
-#Get 12 groups of samples to be run in parallel
-samples_per_thread=$( echo $(find . -name "*fastq.gz" | wc -l) / 12 | bc)
+#Get 20 groups of samples to be run in parallel
+samples_per_thread=$( echo $(find . -name "*fastq.gz" | wc -l) / 20 | bc)
 
 #For each group
-for j in {1..12}
+for j in {1..20}
 do
   #Get the list of samples in that group(e.g 1-6, 7-12 etc)
   ls *fastq.gz | awk -v samples=$samples_per_thread -v multiply=$j 'NR > samples*(multiply-1) && NR <= samples*multiply {print $0}' | while read i;
