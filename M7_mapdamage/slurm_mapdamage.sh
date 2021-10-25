@@ -35,7 +35,7 @@ done
 awk '{print $2}' $MAGdir/medium_quality_MAGs.txt | while read i
 do
     #Map using bbmap
-    bbwrap.sh ref=$MAGdir/${i}.fa in=$readdir/${i%.*}_m_decontam.fastq.gz mapper=bbmap out=$outdir/${i}.sam  ma$
+    bbwrap.sh ref=$MAGdir/${i}.fa in=$readdir/${i%.*}_m_decontam.fastq.gz mapper=bbmap out=$outdir/${i}.sam  maxindel=80 pigz=t unpigz=t nodisk
     #Save mapped reads into BAM file
     samtools view -Sb -F 4 -@ $SLURM_CPUS_ON_NODE $outdir/${i}.sam -o $outdir/${i}.bam
     cd $outdir
@@ -43,3 +43,4 @@ do
     mapDamage -i ${i}.bam -r $MAGdir/${i}.fa
 done
 
+rm *sam *bam
