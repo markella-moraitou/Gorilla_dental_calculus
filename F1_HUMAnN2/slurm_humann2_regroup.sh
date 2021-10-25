@@ -12,12 +12,13 @@
 conda activate /home/markmora/.conda/envs/humann2
 
 #error loading humann2 straight, had to load metaphlan2 first
-module load bioinfo-tools metaphlan2 biopython humann2
+module load bioinfo-tools metaphlan2 biopython humann2/0.11.2
 
 echo $SLURM_JOB_NAME
 echo $(module list)
 
 OUTDIR=/proj/sllstore2017021/nobackup/MARKELLA/F1_HUMAnN2
+MAPPING_DIR=/proj/sllstore2017021/nobackup/MARKELLA/software/utility_mapping/ #tables downloaded with humann2_databases --download utility_mapping full $DIR
 
 #postprocessing:
 #regroup gene families into different functional categories (KEGG orthogroups and GO terms)
@@ -28,12 +29,12 @@ cd $OUTDIR
 for i in *genefamilies.tsv;
 do
     #Get KO groups
-    humann2_regroup_table --input $i --groups uniref90_ko --output ${i%genefamilies.tsv}KOgroups.tsv
+    humann2_regroup_table --input $i --custom  $MAPPING_DIR/map_ko_uniref90.txt.gz --output ${i%genefamilies.tsv}KOgroups.tsv
     humann2_renorm_table --input ${i%genefamilies.tsv}KOgroups.tsv --output ${i%genefamilies.tsv}KOgroups_cpm.tsv --units cpm
     #Normalize path abundances
     humann2_renorm_table --input ${i%genefamilies.tsv}pathabundance.tsv --output ${i%genefamilies.tsv}pathabundance_cpm.tsv --units cpm;
     #Get GO terms
-    humann2_regroup_table --input $i --groups uniref90_go --output ${i%genefamilies.tsv}go.tsv
+    humann2_regroup_table --input $i --custom $MAPPING_DIR/map_go_uniref90.txt.gz --output ${i%genefamilies.tsv}go.tsv
     humann2_renorm_table --input ${i%genefamilies.tsv}go.tsv --output ${i%genefamilies.tsv}go_cpm.tsv --units cpm
 done
 
@@ -42,8 +43,6 @@ humann2_join_tables --input $OUTDIR --output all_KOgroups_cpm.tsv --file_name KO
 humann2_join_tables --input $OUTDIR --output all_GOterms_cpm.tsv --file_name go_cpm
 humann2_join_tables --input $OUTDIR --output all_pathabund_cpm.tsv --file_name pathabundance_cpm
 humann2_join_tables --input $OUTDIR --output all_pathcov.tsv --file_name pathcoverage
-
-
 
 # get unstratified info
 grep "|" -v $OUTDIR/all_KOgroups_cpm.tsv > $OUTDIR/all_KOgroups_cpm_unstratified.tsv
