@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 #SBATCH -A snic2020-5-528
-#SBATCH -p core
+#SBATCH -p devcore
 #SBATCH -n 1
 #SBATCH -t 1:00:00
 #SBATCH -J read_count
