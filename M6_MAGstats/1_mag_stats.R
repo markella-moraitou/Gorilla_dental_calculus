@@ -11,6 +11,7 @@ library(phangorn)
 library(phylotools)
 library(RColorBrewer)
 library(cowplot)
+library(dplyr)
 
 #MAG taxonomy and trees
 
@@ -18,62 +19,38 @@ load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
 
 #### Load GTDB-Tk summaries ####
 
-hq_mags <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/M4_MAGtaxonomy/hq.bac120.summary.tsv", sep="\t", comment.char="", header=T)
-mq_mags <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/M4_MAGtaxonomy/mq.bac120.summary.tsv", sep="\t", comment.char="", header=T)
+hq_mq_mags <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/M4_MAGtaxonomy/hq_mq.bac120.summary.tsv", sep="\t", comment.char="", header=T)
 
+#Add quality info
+hq_mq_mags$draft_quality <- ifelse(hq_mq_mags$user_genome %in% 
+                                      read.table(file="/crex/proj/sllstore2017021/nobackup/MARKELLA/M3_binning/high_quality_MAGs.txt")$V2, "HQ",
+                                        ifelse(hq_mq_mags$user_genome %in% 
+                                      read.table(file="/crex/proj/sllstore2017021/nobackup/MARKELLA/M3_binning/medium_quality_MAGs.txt")$V2, "MQ", NA))
 
 #Species
 print("Species-level HQ MAGs")
-str_remove(hq_mags$classification, "d__.*;s__") 
+hq_mq_mags %>% filter(draft_quality=="HQ") %>% pull(classification) %>% str_remove("d__.*;s__") 
 
 print("Species-level MQ MAGs")
-str_remove(mq_mags$classification, "d__.*;s__")
+hq_mq_mags %>% filter(draft_quality=="MQ") %>% pull(classification) %>% str_remove("d__.*;s__") 
 
 #Break down classification to phylum, family, genus and species
-hq_mags$phylum <- str_remove(str_remove(hq_mags$classification, "d__.*;p__"), ";c_.*")
-hq_mags$family <- str_remove(str_remove(hq_mags$classification, "d__.*;f__"), ";g_.*")
-hq_mags$genus <- str_remove(str_remove(hq_mags$classification, "d__.*;g__"), ";s_.*")
-hq_mags$species <- str_remove(hq_mags$classification, "d__.*;s__")
-
-mq_mags$phylum <- str_remove(str_remove(mq_mags$classification, "d__.*;p__"), ";c_.*")
-mq_mags$family <- str_remove(str_remove(mq_mags$classification, "d__.*;f__"), ";g_.*")
-mq_mags$genus <- str_remove(str_remove(mq_mags$classification, "d__.*;g__"), ";s_.*")
-mq_mags$species <- str_remove(mq_mags$classification, "d__.*;s__")
+hq_mq_mags$phylum <- str_remove(str_remove(hq_mq_mags$classification, "d__.*;p__"), ";c_.*")
+hq_mq_mags$family <- str_remove(str_remove(hq_mq_mags$classification, "d__.*;f__"), ";g_.*")
+hq_mq_mags$genus <- str_remove(str_remove(hq_mq_mags$classification, "d__.*;g__"), ";s_.*")
+hq_mq_mags$species <- str_remove(hq_mq_mags$classification, "d__.*;s__")
 
 #Add info of the host subspecies each genome was isolated from
 #Get metadata table
 metadata <- readRDS("../T3_community-level/metadata.RDS")
 
-hq_mags$host_subspecies <- metadata$Spec.subspecies[match(str_remove(hq_mags$user_genome, ".[1-9]$"), rownames(metadata))]
-mq_mags$host_subspecies <- metadata$Spec.subspecies[match(str_remove(mq_mags$user_genome, ".[1-9]$"), rownames(metadata))]
-
-#Add info about quality
-hq_mags$draft_quality <- "HQ"
-mq_mags$draft_quality <- "MQ"
-
-#Species-level MAGs
-species_mags <- rbind(hq_mags[,
-                              c("user_genome", "classification", "fastani_reference", "note", "warnings",
-                                "phylum", "family", "genus", "species", "host_subspecies", "draft_quality")],
-                      mq_mags[,
-                              c("user_genome", "classification", "fastani_reference", "note", "warnings",
-                                "phylum", "family", "genus", "species", "host_subspecies", "draft_quality")])
+hq_mq_mags$host_subspecies <- metadata$Spec.subspecies[match(str_remove(hq_mq_mags$user_genome, ".[0-9]+$"), rownames(metadata))]
 
 #Write out table
-write.table(species_mags, sep = "\t", col.names = TRUE, row.names = FALSE, quote = FALSE,
+write.table(species_mags[,c("user_genome", "classification", "fastani_reference", "note", "warnings",
+                                "phylum", "family", "genus", "species", "host_subspecies", "draft_quality")],
+                                sep = "\t", col.names = TRUE, row.names = FALSE, quote = FALSE,
             file = "/proj/sllstore2017021/nobackup/MARKELLA/M6_MAGstats/species_mags.txt")
-
-#Small table that gives classification by user genomes
-hq_mags[, c("user_genome","host_subspecies", "family", "genus", "species")] %>%
-  write.table(sep = "\t", col.names = TRUE, row.names = FALSE, quote = FALSE,
-              file = "/proj/sllstore2017021/nobackup/MARKELLA/M6_MAGstats/hq_MAG_classification.txt")
-
-mq_mags[, c("user_genome","host_subspecies", "family", "genus", "species")] %>%
-  write.table(sep = "\t", col.names = TRUE, row.names = FALSE, quote = FALSE,
-              file = "/proj/sllstore2017021/nobackup/MARKELLA/M6_MAGstats/mq_MAG_classification.txt")
-              
-#Merge tables 
-hq_mq_mags <- rbind(hq_mags, mq_mags)
 
 #Change names to use in the tree
 make.unique.2 = function(x, sep='.'){
@@ -92,8 +69,8 @@ mag_tree_accnum <- hq_mq_tree$tip.label
 mag_tree_accnum <- mag_tree_accnum[which(grepl("[A-Z][A-Z]_", mag_tree_accnum))]
 mag_tree_accnum <- str_sub(mag_tree_accnum, 4)
 
-#write.table(mag_tree_accnum, file = "/crex/proj/sllstore2017021/nobackup/MARKELLA/M6_MAGstats/mag_tree_accnum.txt",
-#            col.names = FALSE, row.names = FALSE, quote = FALSE)
+write.table(mag_tree_accnum, file = "/crex/proj/sllstore2017021/nobackup/MARKELLA/M6_MAGstats/mag_tree_accnum.txt",
+            col.names = FALSE, row.names = FALSE, quote = FALSE)
 
 #system("sbatch slurm_accnum_to_species.sh -M snowy")
 
@@ -307,3 +284,7 @@ mag_tree_grid <-
           nrow=2, rel_widths = 9/11)
           
 ggsave(mag_tree_grid, file="mag_tree_grid.png", device="png", width=8, height=18)
+
+sessionInfo()
+
+sink(file=NULL)
