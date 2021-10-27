@@ -77,5 +77,7 @@ GO_BP_model
 vegdist(t(otu_table(GO_BP_phyloseq)), method="euclidean") %>%
   adonis.pair(Factor=sample_data(GO_BP_phyloseq)$Spec.subspecies)
 
+sessionInfo()
+
 sink(file=NULL)
 save.image()
