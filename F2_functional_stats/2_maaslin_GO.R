@@ -24,21 +24,16 @@ significant_BP <- read_tsv("/proj/sllstore2017021/nobackup/MARKELLA/F2_functiona
 
 print("How many associated biological processes?")
 length(unique(significant_BP$feature))
+
 #Only keep associations with a corrected p-value (qval) above  0.05
-significant_BP <- significant_BP[significant_BP$qval<0.05,]
+most_signif_BP <- significant_BP[significant_BP$qval<0.05,]
 
 #How many unique biological processes is this?
 print("How many associated biological processes with qval < 0.05?")
-length(sort(unique(significant_BP$feature)))
-
-#Get the BPs with a coefficient higher than 1 or lower than -1
-most_signif_BP <- significant_BP[which(abs(significant_BP$coef)>1),]
+length(unique(most_signif_BP$feature))
 
 #Get the IDs of the most significant GO terms
 most_signif_BP_ids <- unique(sort(substr(most_signif_BP$feature, 0, 10)))
-
-print("How many significantly associated biological processes with coeffecient higher than 1 or lower than -1?")
-length(most_signif_BP_ids)
 
 #Use these IDs to subset the original table
 #Create empty matrix
@@ -96,7 +91,7 @@ facet.labeller <- function(variable,value){
 
 #Plot heatmap
 go_heatmap <- 
-  heat(GO_unstr_signif_m, "Sample", "GO term","Copies/million", order.cols = FALSE, order.rows=FALSE) +
+  heat(GO_unstr_signif_m, "Sample", "GO term","Copies/million", order.cols = FALSE, order.rows=TRUE) +
   scale_fill_gradient2(low="blue", mid="white", high="red",
   guide = guide_colorbar(barheight = 10, title = "CLR-normalized\nabundance"),
     limits=c(min(clr.pseudozeros.f), NA), na.value="grey") +
@@ -106,7 +101,7 @@ go_heatmap <-
 go_heatmap
 
 ggsave(go_heatmap, file="/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/go_heatmap.png",
-       height=length(most_signif_BP_ids)/8, width=10)
+       height=6, width=9)
 
 write.table(rev(unique(sort(go_heatmap$data$YYYY))), row.names = FALSE, quote = FALSE, file = "/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/GO_signif_BP.txt")
 
@@ -147,6 +142,8 @@ significant_BP %>% filter(value=="beringei") %>% pull(coef) %>% summary
 
 print("Grauer's gorillas: Which are these associated BPs?")
 significant_BP %>% filter(value=="graueri") %>% as.data.frame
+
+sessionInfo()
 
 sink(file=NULL)
 save.image()
