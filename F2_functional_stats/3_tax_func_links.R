@@ -40,7 +40,7 @@ GO_str_diffabund <- matrix(nrow=0, ncol=ncol(GO_str))
 colnames(GO_str_diffabund) <- colnames(GO_str)
 
 #Subset to keep only differentially abundant BP
-list <- substring(significant_BP$feature, 0, 10)
+list <- substring(most_signif_BP$feature, 0, 10)
 list <- sub(".", ":", list, fixed=TRUE)
 for (i in 1:nrow(significant_BP)) {
   subset <- GO_str[which(grepl(list[i], rownames(GO_str))),]
@@ -85,7 +85,10 @@ BP_genera <- BP_genera %>% group_by(BP) %>%
   mutate(proportion=abundance_mean/sum(abundance_mean)) %>% ungroup
 
 #Get phylum info
+
 #Create a separate table, to search each genus only once
+#Read from files
+small_taxonomy <- read_rds(file="small_taxonomy")
 #small_taxonomy <- data.frame(genus = unique(BP_genera$genus))
 
 #small_taxonomy$order <- NA
@@ -106,18 +109,24 @@ BP_genera$order <- small_taxonomy$order[match(BP_genera$genus, small_taxonomy$ge
 #Order data by order
 BP_genera <- BP_genera[order(BP_genera$order),]
 
+write_rds(small_taxonomy, "small_taxonomy")
+
 ####Plot contribution of each order to BP ####
 
 #Keep only BP which the biggest effect
-signif_BP_genera <- BP_genera[which(BP_genera$BP %in% rownames(GO_unstr_signif)),]
+signif_BP_genera <- BP_genera[which(BP_genera$BP %in% str_remove(rownames(GO_unstr_signif), ".*] ")),]
 
-#Keep only orders presented in the taxonomic ancom plot and change everything else to 'Other'
+#Keep only orders presented in the taxonomic ancom plot + the 2 orders contributing the most abundance and change everything else to 'Other'
+highlighted_genera <- levels %>%
+  append(signif_BP_genera %>% group_by(order) %>% summarise(abundance=mean(abundance_mean)) %>% filter(abundance>0.5 & order!="unclassified") %>% pull(order))
+
 signif_BP_genera <- 
-  signif_BP_genera %>% mutate(order=ifelse(order %in% append("unclassified", levels), order, "Other"))
+  signif_BP_genera %>% mutate(order=ifelse(order %in% append("unclassified", highlighted_genera), order, "Other"))
 
-#Turn phylum into factor to change legend order
+#Turn order into factor to change legend order
 signif_BP_genera$order <- factor(signif_BP_genera$order, 
-                                  levels = rev(append("unclassified", levels)))
+                                  levels = rev(append("unclassified", highlighted_genera)))
+                                  
 #Order to match heatmap y-axis
 signif_BP_genera$BP <- factor(signif_BP_genera$BP, levels(go_heatmap$data$YYYY))
 signif_BP_genera <- signif_BP_genera[order(signif_BP_genera$BP),]
@@ -127,6 +136,8 @@ tax_fun_comp <- ggbarplot(signif_BP_genera, x="BP", y="proportion", fill="order"
 
 #Manually fix palette
 tax_func_palette <- ancom_spe_palette
+#Add order names not included in diff abundant taxa heatmap
+names(tax_func_palette)[is.na(names(tax_func_palette))] <- setdiff(highlighted_genera, names(tax_func_palette))
 tax_func_palette["unclassified"] <- "grey34"
 
 tax_fun_comp <- 
@@ -148,6 +159,9 @@ tax_func_grid <- plot_grid(go_heatmap +
           ncol = 2, rel_widths = c(25, 10))
 
 ggsave(tax_func_grid, file="/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/tax_func_grid.png",
-       height=10, width=15)
+       height=8, width=15)
+       
+sessionInfo()
 
+sink(file=NULL)
 save.image()
