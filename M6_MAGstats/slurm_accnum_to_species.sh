@@ -3,7 +3,7 @@
 #SBATCH -A snic2020-5-528
 #SBATCH -p core
 #SBATCH -n 1
-#SBATCH -t 30:00:00
+#SBATCH -t 60:00:00
 #SBATCH -J get_accession_nums
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=Markella.Moraitou.0437@student.uu.se
