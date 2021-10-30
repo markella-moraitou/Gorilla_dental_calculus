@@ -14,16 +14,18 @@ library(cowplot)
 
 load(".RData")
 
-dim(diet_ref_fams) #Dietary taxa belong to 85 families
-colSums(diet_ref_fams) #Western 42, Grauer's 61 and Mountain 46
+print("Number of families in the reference db")
+nrow(diet_ref_fams) 
+print("How many families are found in each gorilla subspecies?")
+colSums(diet_ref_fams)
 
+print("Which families ae found in all gorilla subspecies?")
 rownames(diet_ref_fams)[which(rowSums(diet_ref_fams)==3)]
-#13 of those are found in all three gorilla subspecies
-#"Acanthaceae" "Apocynaceae" "Clusiaceae"  "Cyperaceae"  "Fabaceae"    "Malvaceae"   "Moraceae"    "Myrtaceae"  
-#"Rhamnaceae"  "Rubiaceae"   "Sapindaceae" "Sapotaceae"  "Urticaceae" 
 
-rownames(diet_ref_fams)[which(rowSums(diet_ref_fams)==1)] #34 of these are found in only one subspecies
-colSums(diet_ref_fams[which(rowSums(diet_ref_fams)==1),]) #relatively evenly distributed, given how many more taxa we have for Grauer's
+print("Which are found in only one subspecies?")
+rownames(diet_ref_fams)[which(rowSums(diet_ref_fams)==1)]
+print("How many families are unique to each subspecies?")
+colSums(diet_ref_fams[which(rowSums(diet_ref_fams)==1),])
 
 #### Extract genera based on a priori knowledge of diet ####
 
@@ -32,7 +34,6 @@ euk_genus_diet <- subset_taxa(euk_genus_decontam2, tax_table(euk_genus_decontam2
 
 #Also, retain only samples that were retained in the taxonomic analysis
 euk_genus_diet <- subset_samples(euk_genus_diet, sample_names(euk_genus_diet) %in% sample_names(spe_data_final))
-#This retains 371 taxa from 67 families
 
 #Normalize
 euk_genus_diet_norm <- euk_genus_diet

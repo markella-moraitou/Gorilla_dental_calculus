@@ -1,5 +1,5 @@
 #Start logging
-sink(file = "log3_reference_db.txt")
+sink(file = "log2_reference_db.txt")
 
 
 #load packages
@@ -64,15 +64,15 @@ diet_db_1 <- function(taxon_list) {
 diet_ref_list <- c("rogers_western", "remis_western", "yamagiwa_grauers", "michel_grauers", "rothman_mountain")
 
 #Run the first processing step for each reference and write out file
-for (i in diet_ref_list){
-  assign(i, diet_db_1(get(i)))
-  write.table(get(i)$taxon_name[which(is.na(get(i)$TaxID))],
-              file=paste("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/",
-                         str_to_title(str_remove(i, "_.*")), "-ood_names.txt", sep = ""), 
-              sep="\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
-  #Print table of missing tax IDs
-  print(table(is.na(get(i)$TaxID)))
-}
+#for (i in diet_ref_list){
+#  assign(i, diet_db_1(get(i)))
+#  write.table(get(i)$taxon_name[which(is.na(get(i)$TaxID))],
+#              file=paste("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/",
+#                         str_to_title(str_remove(i, "_.*")), "-ood_names.txt", sep = ""), 
+#              sep="\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
+#  #Print table of missing tax IDs
+#  print(table(is.na(get(i)$TaxID)))
+#}
 #This script prompts interaction when a genus name appears in multiple clades. The option "eudicots" or "monocots" was always selected
 
 #Edits to be done: 
@@ -135,34 +135,35 @@ diet_db_2 <- function(taxon_list, taxon_list_name){
 
 #Update all references with correct names, NCBI taxIDs or GBIF taxIDs (where the NCBI one are not available)
 #Finally, get taxonomic information for all taxa having at list one type of ID
-for (i in diet_ref_list){
-  taxon_list <- get(i)
-  taxon_list_name <- i
-  assign(i, diet_db_2(taxon_list, taxon_list_name))
-}
+#for (i in diet_ref_list){
+#  taxon_list <- get(i)
+#  taxon_list_name <- i
+#  assign(i, diet_db_2(taxon_list, taxon_list_name))
+#}
 
 #### Look at the database and do some formatting ####
 #How many taxa for each subspecies
-length(unique(append(remis_western$genus_id, rogers_western$genus_name))) #104 unique genera in western gorillas
-length(unique(append(remis_western$family_id, rogers_western$family_name))) #62 unique families in western gorillas
+length(unique(append(remis_western$genus_id, rogers_western$genus_name))) 
+length(unique(append(remis_western$family_id, rogers_western$family_name))) 
 
-length(unique(append(michel_grauers$family_id, yamagiwa_grauers$family_name))) #84 unique families in Grauer's gorillas
+length(unique(append(michel_grauers$family_id, yamagiwa_grauers$family_name)))
 
-length(unique(rothman_mountain$genus_name)) #76 unique genera in mountain gorillas
-length(unique(rothman_mountain$family_name)) #47 unique families in mountain gorillas
+length(unique(rothman_mountain$genus_name)) 
+length(unique(rothman_mountain$family_name))
 
 diet_database <- data.frame()
 #### Combine and save database ####
-for (i in diet_ref_list) {
- pub=str_remove(i, "_.*")
- subspecies=str_remove(i, ".*_")
- table <- get(i)
- table$publication <- pub
- table$subspecies <- subspecies
- diet_database <- rbind(diet_database, table)
-}
+#for (i in diet_ref_list) {
+# pub=str_remove(i, "_.*")
+# subspecies=str_remove(i, ".*_")
+# table <- get(i)
+# table$publication <- pub
+# table$subspecies <- subspecies
+# diet_database <- rbind(diet_database, table)
+#}
 
-write.table(diet_database, "diet_database.txt", quote=FALSE, sep=",", row.names=FALSE)
+#write.table(diet_database, "diet_database.txt", quote=FALSE, sep=",", row.names=FALSE)
+diet_database <- read.table("diet_database.txt", quote=FALSE, sep=",")
 
 ## Create joint table with all taxa mentioned in the reference
 #first, collect the family name column from each table is a list
