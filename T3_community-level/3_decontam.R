@@ -22,8 +22,6 @@ sample_data(spe_data)[which(sample_data(spe_data)$plot.label == "blank/control")
 uppsala <- subset_samples(spe_data, spe_data@sam_data$Seq.centre=="Uppsala" & spe_data@sam_data$Sample.type!="control") #only Uppsala samples, except for environmental controls
 jena <- subset_samples(spe_data, spe_data@sam_data$Seq.centre=="Jena") #only Jena samples
 
-#Add information about negative controls in Uppsala metadata
-
 #### Test Decontam with different threshold ####
 
 #Load contaminant lists
