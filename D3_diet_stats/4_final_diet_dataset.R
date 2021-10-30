@@ -87,7 +87,7 @@ heat_diet_full_ylabs$phylum <- factor(heat_diet_full_ylabs$phylum)
 #Also add family infomation (will be needed later)
 heat_diet_full_ylabs$family <- tax_table(euk_genus_diet)[match(heat_diet_full_ylabs$genus, taxa_names(euk_genus_diet)),6]
 
-diet_palette_full <- c("steelblue1", "sienna3", "olivedrab3")
+diet_palette_full <- c("steelblue1", "sienna3", "khaki3", "olivedrab3")
 names(diet_palette_full) <- levels(heat_diet_full_ylabs$phylum) # Give every color an appropriate name
 
 diet_palette_full.g <- heat_diet_full_ylabs
@@ -152,8 +152,6 @@ heat_sidebar_full <- heat(ref_sidebar_full, Yvar="diet_genus", fill="presence/ab
 heat_diet_full_complete <- plot_grid(heat_diet_full, heat_sidebar_full, align = "hv", ncol = 2, rel_widths = c(45, 5),
                                      axis="tb")
 
-heat_diet_full_complete
-
 #Save plot
 ggsave(heat_diet_full_complete, device="png", width=10, height=7,
        filename = "/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/heat_diet_full_complete.png")
@@ -171,7 +169,6 @@ taxa_names(euk_fam_diet) <- make.names(tax_table(euk_fam_diet)[,6], unique=TRUE)
 
 #Just keep non-NA classifications
 euk_fam_diet <- subset_taxa(euk_fam_diet, !(is.na(tax_table(euk_fam_diet)[,6])))
-#67 families
 
 #get some metadata
 sample_data(euk_fam_diet)$family_richness <- sapply(row.names(sample_data(euk_fam_diet)), function(x) { #Families per sample
@@ -263,7 +260,6 @@ heat_sidebar_full.f <- heat(ref_sidebar_full.f, Yvar="diet_family", fill="presen
 heat_diet_fam_full_complete <- plot_grid(heat_diet_fam_full, heat_sidebar_full.f, align = "hv", ncol = 2, rel_widths = c(45, 5),
                                      axis="tb")
 
-heat_diet_fam_full_complete
 
 #Save plot
 ggsave(heat_diet_fam_full_complete, device="png", height=9, width=9,
@@ -292,3 +288,9 @@ comp_euk_abund$taxon_sum <- log(as.numeric(comp_euk_abund$taxon_sum))
 gghistogram(comp_euk_abund, x="taxon_sum", fill="taxon_type")
 ggboxplot(comp_euk_abund, x="taxon_type", y = "taxon_sum")
                
+sessionInfo()
+
+#Start logging
+sink(file = NULL)
+
+save.image()

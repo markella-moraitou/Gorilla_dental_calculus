@@ -17,6 +17,7 @@ library(scales)
 library(cowplot)
 source("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/ancom-functions.R")
 
+load(".RData")
 #Diet analysis - Script 5
 #Look for differentially abundant taxa
 
@@ -77,11 +78,9 @@ source("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/ancom-functio
 # If you do not want to filter out any sample based on library sizes, you can simply set lib_cut = 0 to disable this function.
 
 #Remove environmental controls from dataset
-euk_genus_diet <- subset_samples(euk_genus_diet, !is.na(Spec.subspecies))
 euk_genus_diet_norm <- euk_genus_diet
 otu_table(euk_genus_diet_norm) <- otu_table(microbiome::transform(otu_table(euk_genus_diet_norm), transform = "clr"),
                                             taxa_are_rows = TRUE)
-
 
 feature_table <- data.frame(otu_table(euk_genus_diet))
 meta_data <- data.frame(sample_data(euk_genus_diet))
@@ -309,4 +308,6 @@ for (i in 1:nrow(lookup_diet_genera)) {
   lookup_diet_genera$grauers_diet[i] <- ifelse(is_empty(gr), NA, gr)
   lookup_diet_genera$mountain_diet[i] <- ifelse(is_empty(mo), NA, mo)
 }
+
+sessionInfo()
 
