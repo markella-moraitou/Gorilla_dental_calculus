@@ -139,9 +139,9 @@ simpler_tree <- function(tree, tips_to_keep) {
   tipcateg$colour <- my_palette$colour[match(tipcateg$host_subspecies, my_palette$category)]  
 
   tree_plot <- tree_plot %<+% tipcateg + geom_tiplab(aes(color=host_subspecies)) +
-  scale_colour_manual(values=colour, name="Host subspecies", labels=c("Western gorilla", "Grauer's gorilla", "Mountain gorilla", "Reference"))
+  scale_colour_manual(values=c(reference="#999999", gorilla="#66C2A5", graueri="#FC8D62", beringei="#8DA0CB"), name="Host subspecies", labels=c("Western gorilla", "Grauer's gorilla", "Mountain gorilla", "Reference"))
   
-    #get numbers of tips to keep
+  #get numbers of tips to keep
   tiplist <- which(tree$tip.label %in% tips_to_keep) 
   for (i in nodmin:((nodmin+nodmax)/2)) {
     #For every node, if no tips are on the list and if it's not a final node, collapse
@@ -210,8 +210,7 @@ ggsave(hq_ggfirm, filename = "/proj/sllstore2017021/nobackup/MARKELLA/M6_MAGstat
 # Proteobacteria #
 table(hq_mq_mags$family[hq_mq_mags$phylum=="Proteobacteria"])
 
-hq_prot <- extract.clade(hq_mq_tree, getMRCA(hq_mq_tree, hq_mq_mags$tree_names
-                                          [hq_mq_mags$phylum=="Proteobacteria"]))
+hq_prot <- extract.clade(hq_mq_tree, getMRCA(hq_mq_tree, hq_mq_mags$tree_names[hq_mq_mags$phylum=="Proteobacteria"]))
 hq_ggprot <- simpler_tree(hq_prot, hq_mq_mags$tree_names[hq_mq_mags$phylum=="Proteobacteria"])
 
 hq_ggprot
@@ -260,7 +259,7 @@ format_tree <- function(tree) {
 rothia_tree <- extract.clade(hq_mq_tree, 
                              Ancestors(hq_mq_tree, getMRCA(hq_mq_tree, c("undescribed Rothia.1", "undescribed Rothia.15")), type="parent"))
 rothia_ggtree <- format_tree(rothia_tree) + theme(legend.position = "bottom", legend.text=element_text(size=12))
-#rothia_ggtree
+rothia_ggtree
 
 ggsave(rothia_ggtree, filename="rothia_ggtree.png", device="png", width=8, height=11)
 
