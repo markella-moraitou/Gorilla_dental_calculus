@@ -116,9 +116,9 @@ oral_proportion <- feast_output_env %>% as.data.frame %>% select(human_calculus,
  
 ggsave(gghistogram(oral_proportion, "oral_proportion_log", fill="Sample.type", position="stack") +
         #Include vertical line with the cutoff of 0.03 (3%)
-        geom_vline(xintercept=log(0.03)),
+        geom_vline(xintercept=log(0.03), size=1, colour="red"),
  file="/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/oral_proporton_hist.png")
-
+ 
 #### Remove bad samples ####
 
 #bad samples = samples below the 0.03 oral source threshold plus a dead in captivity sample
