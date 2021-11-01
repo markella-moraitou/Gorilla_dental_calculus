@@ -63,6 +63,8 @@ plot_ordination(GO_BP_phyloseq, GO_eucl, color="Spec.subspecies", shape = "Seq.c
   scale_color_manual(values=c("darkgoldenrod2", "dark grey", "steelblue1"))
 dev.off()
 
+saveRDS(GO_eucl, "GO_eucl")
+
 ### PERMANOVA ###
 
 GO_BP_model <- adonis(t(otu_table(GO_BP_phyloseq)) ~ 
