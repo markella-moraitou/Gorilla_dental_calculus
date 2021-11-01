@@ -38,6 +38,11 @@ cd $DATADIR
 
 find . -name "*__bact_arch_vir_removed.fastq.gz" | while read i
 do
-    echo "Sample: ${i%__bact_arch_vir_removed.fastq.gz}"
-    kraken2 --db $MY_DB $i --threads 20 --report $OUTDIR/${i%_bact_arch_vir_removed.fastq.gz}bact_arch_vir_removed_kraken2_report.txt --report-zero-counts --output $OUTDIR/${i%_bact_arch_vir_removed.fastq.gz}bact_arch_vir_removed_kraken2_output.txt;
+    if [[ -f $OUTDIR/${i%_bact_arch_vir_removed.fastq.gz}bact_arch_vir_removed_kraken2_report.txt ]]
+    then
+      continue
+    else
+      echo "Sample: ${i%__bact_arch_vir_removed.fastq.gz}"
+      kraken2 --db $MY_DB $i --threads 20 --report $OUTDIR/${i%_bact_arch_vir_removed.fastq.gz}bact_arch_vir_removed_kraken2_report.txt --report-zero-counts --output $OUTDIR/${i%_bact_arch_vir_removed.fastq.gz}bact_arch_vir_removed_kraken2_output.txt;
+    fi
 done
