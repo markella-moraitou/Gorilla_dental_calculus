@@ -1,6 +1,6 @@
 # Gorilla_dental_calculus
 Studying the oral microbiome of three gorilla subspecies using a shotgun metagenomic approach on dental calculus.
-The workflow is adapted from Jaelle Brealey's work, unless otherwise stated/
+The workflow is adapted from Jaelle Brealey's work, unless otherwise stated.
 
 ## Pre-processing of reads
 * 2_polyGrem: Removal of PolyG tails
