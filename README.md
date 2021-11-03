@@ -29,7 +29,8 @@ The workflow is adapted from Brealey et al. 2020.
 * F1_HUMAnN2: Functional profiling using HUMAnN2
 * F2_functional_stats: Rscripts for the analysis of the functional profiling output (identify subspecies associated biological processes, quantify contributions of different taxa to biological processes, etc.)
 
-## Metagenomes-assembled genomes (MAGs): This part will probably be replaced by a new pipeline
+## Metagenomes-assembled genomes (MAGs)
+### This part will probably be replaced by a new pipeline
 * M1_MAGassemblies: Contig assembly using MEGAHIT
 * M2_readmapping: Mapping reads back to assemblies in preparation for binning
 * M3_binning: MAG binning script using MetaBAT
