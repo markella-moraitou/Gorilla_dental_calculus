@@ -31,10 +31,10 @@ jena_euk <- subset_samples(euk_genus, euk_genus@sam_data$Seq.centre=="Jena") #on
 #In this analysis, the null hypothesis is that taxa are NOT contaminants
 
 #For Uppsala samples - taxa identified by either prevalence or frequency
-isContaminant(t(uppsala_euk), method=c("either"), conc="pre.seq.conc.copies.ul", neg="is.neg", normalize = FALSE, threshold = uppsala_threshold) -> upp_contam_euk
+isContaminant(t(uppsala_euk), method=c("combined"), conc="pre.seq.conc.copies.ul", neg="is.neg", normalize = FALSE, threshold = uppsala_threshold) -> upp_contam_euk
 
 #For Jena samples
-isContaminant(t(jena_euk), method=c("either"), conc="pre.seq.conc.copies.ul",  neg="is.neg", normalize = FALSE, threshold = jena_threshold) -> jena_contam_euk
+isContaminant(t(jena_euk), method=c("combined"), conc="pre.seq.conc.copies.ul",  neg="is.neg", normalize = FALSE, threshold = jena_threshold) -> jena_contam_euk
 
 #How many contaminants identified?
 print("Contaminants in the Uppsala dataset")
