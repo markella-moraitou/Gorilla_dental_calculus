@@ -1,0 +1,124 @@
+#This table contains all taxa listed as part of the Grauer's gorilla diet in Kahuzi, DRC
+#by Yamagiwa et al 2005 (Table I = preferred, Table II, Table III + animal species Crematogaster sp. and Apis sp. mentioned in the text. Beatles, earthworms and caterpillars are also mentioned but not specific species)
+Myrianthus holstii	preferred 
+Ficus oreadryadum	preferred 
+Ficus thonningii	preferred 
+Bridelia bridelifolia	preferred 
+Allophyllus sp.	preferred 
+Syzygium guineense	preferred 
+Rubus adenocomus	preferred 
+Psychotha palustris	preferred 
+Piper capense	preferred 
+Maesa lanceolata	preferred 
+Urera hypselodendron
+Basella alba
+Galiniera coffeoides
+Myrianthus holstii
+Jasminium abyssinicum
+Arundinaria alpina
+Taccazea apiculata
+Helichrysum sp.
+Piper capense
+Allophyllus sp.
+Smilax anceps
+Barieria ventricosa
+Schefflera goetzenii
+Ensete ventricosum
+Asplenium theciferum
+Embelia schimperi
+Ficus oreadryadum
+Symphonia globulifera
+Cyathea manniana
+Urera hypselodendron
+Urera hypselodendron
+Basella alba
+Galiniera coffeoides
+Jabsminium abyssinicum
+Myrianthus holstii
+Taccazea apiculata
+Arundinaria alpina
+Taccazea apiculata
+Myrianthus holstii
+Myrianthus holstii
+Smilax anceps
+Helichrysum sp.
+Piper capense
+Piper capense
+Schefflera goetzenii
+Allophyllus sp.
+Barieria ventricosa
+Asplenium theciferum
+Ficus oreadryadum
+Cyathea manniana
+Embelia schimperi
+Barieria ventricosa
+Embelia schimperi
+Symphonia globulifera
+Ensete ventricosum
+Vernonia hochstetteri
+Ficus thonningii
+Cyathea manniana
+Clerodendron welwitschii
+Cyperus latifolius
+Viscum congolense
+Hagenia abyssinica
+Periploca linearifolia
+Viscum congolense
+Symphonia globulifera
+Mikania cordata
+Commelina cecilae
+Ficus thonningii
+Gouania longispicata
+Gouania longispicata
+Ipomea ivolucrata
+Mikania cordata
+Englerina woodfordioides
+Bridelia bridelifolia
+Ouratea brunneopupurea
+Rubia cordifolia
+Vernonia kirubgae
+Englerina woodfordioides
+Mussularia acuminata
+Periploca linearifolia
+Syzygium guineense
+Ipomea ivolucrata
+Lobelia mildbraedii
+Mimulopsis excellence
+Triumfetta cordifolia
+Crassocephalum bumbense
+Globimetula kivuensis
+Impatians irvingii
+Rubus adenocomus
+Rumex bequaertii
+Usnea sp.
+Ficus thonningii
+Loeseneriella apocynoides
+Maesa lanceolata
+Periploca linearifolia
+Caper capense
+Rumex bequaertii
+Schefflera goetzenii
+Arisaema mildbraedii
+Artabotrys palutris
+Barieria ventricosa
+Cyathea manniana
+Cyperus latifolius
+Dombeya goetzenii
+Baphoglossum sp.
+Englerina woodfordioides
+Erigeron floribundus
+Ficus oreadryadum
+Globimetula kivuensis
+Jasminium abyssinicum
+Leplaca cf. mayumbensis
+Melothria punctata
+Mystroxylon aethiopicum
+Mystroxylon aethiopicum
+Penisetum purpureum
+Caper capense
+Pycnostachys cricirosenii
+Tapinanthus constrictiflorus
+Tricalysia sp.
+Triumfetta annua
+Crematogaster sp.
+Apis sp.
