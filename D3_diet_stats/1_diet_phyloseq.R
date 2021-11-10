@@ -130,6 +130,7 @@ summary(taxa_sums(subset_taxa(euk_genus, tax_table(euk_genus)[,7] %in% extra_pro
 
 summary(taxa_sums(euk_genus))
 
+sessionInfo()
 #Stop logging
 sink(file = NULL)
 

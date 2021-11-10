@@ -309,5 +309,6 @@ for (i in 1:nrow(lookup_diet_genera)) {
   lookup_diet_genera$mountain_diet[i] <- ifelse(is_empty(mo), NA, mo)
 }
 
+save.image()
 sessionInfo()
 
