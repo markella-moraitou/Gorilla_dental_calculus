@@ -50,7 +50,7 @@ ggsave(
   theme_light() + geom_point(size=3) + theme(legend.text = element_text(size=12), legend.title = element_text(size=12),
                                              legend.position = "right", plot.title = element_text(size=15)) +
   scale_colour_brewer(palette="Set2", name="Host subspecies", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri"="Grauer's")) + 
-  scale_shape_manual(values=c(16, 15, 17, 16), name="Grauer's altitude", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri < 1500"="Grauer's <1500m", "graueri > 1500"="Grauer's >1500m")),
+  scale_shape_manual(values=c(16, 15, 17, 16), name="Grauer's altitude", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri <1500"="Grauer's <1500m", "graueri >1500"="Grauer's >1500m")),
   file="/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/clr_with_altitude.png",
   device="png")
   
@@ -59,7 +59,7 @@ ggsave(
   theme_light() + geom_point(size=3) + theme(legend.text = element_text(size=12), legend.title = element_text(size=12),
                                              legend.position = "right", plot.title = element_text(size=15))  +
   scale_colour_brewer(palette="Set2", name="Host subspecies", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri"="Grauer's")) + 
-  scale_shape_manual(values=c(16, 15, 17, 16), name="Grauer's altitude", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri < 1500"="Grauer's <1500m", "graueri > 1500"="Grauer's >1500m")),
+  scale_shape_manual(values=c(16, 15, 17, 16), name="Grauer's altitude", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri <1500"="Grauer's <1500m", "graueri >1500"="Grauer's >1500m")),
   file="/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/jaccard_with_altitude.png", device="png")
   
 ggsave(
@@ -267,5 +267,6 @@ GO_BP_model_w_altitude <- adonis(t(otu_table(GO_BP_phyloseq)) ~ read_count + seq
 
 GO_BP_model_w_altitude
 
+save.image()
 #Stop logging
 sink(file = NULL)
