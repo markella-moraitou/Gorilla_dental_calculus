@@ -1,0 +1,6 @@
+original_name	update_names	update_reason	GBIF_ID
+Turreanthus	Turraeanthus	misspelled
+Pseudogardenia	Pseudogardenia	absent_ncbi	2897800
+Stylochiton	Stylochiton	absent_ncbi	7315325
+Ancistrophyllum	NA	doubtful_gbif
+Duboscia	Duboscia	absent_ncbi	7311211 

@@ -1,0 +1,29 @@
+original_name	update_names	update_reason	GBIF_ID
+Whitfieldra elongata	Whitfieldia elongata	misspelled
+Annonidium mannii	Anonidium mannii	misspelled
+Hexalobus sp	Hexalobus	unspecified_species
+Polyalthia suaveoleons	NA	absent_ncbi	3156192
+Landolphia sp.	Landolphia	unspecified_species
+Orthopichonia barterii	Orthopichonia barteri	absent_ncbi	3615439
+Tabernaemontana sp.	Tabernaemontana	unspecified_species
+Santira trimera	NA	absent_gbif
+Dialum zenkerei	Dialium zenkeri	misspelled	
+Diospyros iturensis bipendensis	Diospyros iturensis	subspecies_classification
+Drypetes sp.	Drypetes	unspecified_species
+Beilschmiedia obscura	Beilschmiedia obscura	absent_ncbi	4175928	
+Entrandrophragma cylindricum	NA	absent_gbif
+Lovoa sp.	Lovoa	unspecified_species
+Maranthes glabra chrysobalanceae	Maranthes glabra	miscopied
+Tetraplaura teraptera	Tetrapleura tetraptera	misspelled
+Chlorophora excelsa	Chlorophora excelsa	absent_ncbi	5361892
+Ficus sp.	Ficus	unspecified_species
+Strombosia pustulata tetranda	Strombosia pustulata	subspecies_classification
+Lonchocarpus sp.	Lonchocarpus	unspecified_species
+Zhana cf. Gulungensis	NA	absent_gbif
+Desplatsia deweverei	Desplatsia dewevrei	misspelled
+Duboscia cf. Viridiflora	Duboscia viridiflora	absent_ncbi	4261707
+Duboscia macrocarpa	Duboscia macrocarpa	absent_ncbi	4261717
+Celtis sp.	Celtis	unspecified_species
+Aframomum sp.	Aframomum	unspecified_species
+Aframomum sulcatum	Aframomum sulcatum	absent_ncbi	2758909
+Renalria sp.	Renealmia	unspecified_species_misspelled

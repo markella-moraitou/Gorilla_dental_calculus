@@ -1,0 +1,45 @@
+original_name	update_names	update_reason	GBIF_ID
+Acalypha ornata	Acalypha ornata	absent_ncbi	3056092
+Allophylus sp.	Allophylus	unspecified_species
+Baissea sp.	Baissea	unspecified_species
+Carpodinus glabra	NA	doubtful_gbif
+Carduus kikuyorua	NA	absent_gbif
+Cassipourea ruwenzoriensis	Cassipourea ruwensorensis	misspelled
+Chrysophyllum albidum	Chrysophyllum albidum	absent_ncbi	2885627
+Chrysophyllum gorungosanum	Chrysophyllum gorungosanum	absent_ncbi	2885905
+Clematis sp.	Clematis	unspecified_species
+Combretum fuscum	Combretum fuscum	absent_ncbi	3698472
+Crassocephalum sp.	Crassocephalum	unspecified_species
+Desmodium repandum	Hylodesmum repandum	synonym
+Diaphanathe subsimplex	NA	absent_gbif
+Dicliptera sp.	Dicliptera	unspecified_species
+Dolichos sericeus	Dolichos sericeus	absent_ncbi	2975561
+Dombeya goetzenii	Dombeya torrida	synonym
+Drypetes sp.	Drypetes	unspecified_species
+Ficus spp. (Unidentified Ficus)	Ficus	unspecified_species
+Galiniera coffeoides	Galiniera saxifraga	synonym
+Gandoderma australe	Ganoderma australe	misspelled
+Ipomoea involcrata	Ipomoea involucrata	misspelled
+Isoglossa sp.	Isoglossa	unspecified_species
+Jasminum schimperi	Jasminum schimperi Vatke	absent_ncbi	3682200
+Justicia glabra	Justicia scandens	synonym
+Landolphia buchananii	Landolphia buchananii	absent_ncbi	3617345
+Lasanthus sersecusis	NA	absent_gbif
+Olinia rochetiana	Olinia rochetiana	absent_ncbi	3672670
+Oncinotis sp.	Oncinotis	unspecified_species
+Rapanea rhododendroides	Myrsine melanophloeos	synonym
+Rawnsonia lucida	Rawsonia lucida	misspelled
+Rubus sp.	Rubus	unspecified_species
+Rubus steudneri	Rubus steudneri Schweinf.	absent_ncbi	2994678
+Rytigynia kigeziensis	Rytigynia kigeziensis.	absent_ncbi	2904283
+Rytigynia ruwenzoriensis	Rytigynia ruwenzoriensis	absent_ncbi
+Salacia elegans	NA	doubtful_gbif
+Sarcorhynchus bilobatus	Rhipidoglossum bilobatum	synonym
+Schefflera sp.	Schefflera	unspecified_species
+Solanum welwitschii	Solanum welwitschii	absent_ncbi	2932119
+Symphonia sp.	Symphonia	unspecified_species
+Tapinanthus sp.	Tapinanthus	unspecified_species
+Urera cameroonensis	Urera trinervis	synonym
+Vernonia iodocalyx	Baccharoides lasiopus	synonym
+Vernonia pteropoda	Vernonia pteropoda	absent_ncbi	 5396653
+Vernonia tufnelliae	Distephanus biafrae	synonym
