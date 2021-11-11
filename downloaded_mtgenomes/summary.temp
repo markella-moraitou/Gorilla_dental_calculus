@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE DocumentSummarySet PUBLIC "-//NLM//DTD esummary nuccore 20201205//EN" "https://eutils.ncbi.nlm.nih.gov/eutils/dtd/20201205/esummary_nuccore.dtd">
+<DocumentSummarySet status="OK">
+  <DocumentSummary>
+    <Id>1222560</Id>
+    <Caption>L76760</Caption>
+    <Title>Gorilla gorilla gorilla (Jojo 086210, Saint Louis Zoo) mitochondrial D-loop DNA</Title>
+    <Extra>gi|1222560|gb|L76760.1|GORMTDLOOA</Extra>
+    <Gi>1222560</Gi>
+    <CreateDate>1996/03/11</CreateDate>
+    <UpdateDate>1996/03/11</UpdateDate>
+    <Flags>0</Flags>
+    <TaxId>9595</TaxId>
+    <Slen>275</Slen>
+    <Biomol>genomic</Biomol>
+    <MolType>dna</MolType>
+    <Topology>linear</Topology>
+    <SourceDb>insd</SourceDb>
+    <SegSetSize>0</SegSetSize>
+    <ProjectId>0</ProjectId>
+    <Genome>mitochondrion</Genome>
+    <SubType>isolate|sub_species|sex</SubType>
+    <SubName>Jojo 086210, Saint Louis Zoo|gorilla|male</SubName>
+    <AssemblyGi>0</AssemblyGi>
+    <GeneticCode>1</GeneticCode>
+    <Strand>ds</Strand>
+    <Organism>western lowland gorilla</Organism>
+    <Statistics>
+      <Stat type="Length" count="275"/>
+      <Stat type="Length" subtype="literal" count="275"/>
+      <Stat type="all" count="2"/>
+      <Stat type="blob_size" count="1894"/>
+      <Stat type="imp" count="1"/>
+      <Stat type="imp" subtype="D-loop" count="1"/>
+      <Stat type="org" count="1"/>
+      <Stat type="pub" count="1"/>
+      <Stat type="pub" subtype="PubMed" count="1"/>
+      <Stat source="all" type="Length" count="275"/>
+      <Stat source="all" type="all" count="2"/>
+      <Stat source="all" type="blob_size" count="1894"/>
+      <Stat source="all" type="imp" count="1"/>
+      <Stat source="all" type="org" count="1"/>
+      <Stat source="all" type="pub" count="1"/>
+    </Statistics>
+    <Properties na="1">1</Properties>
+    <OSLT indexed="yes">L76760.1</OSLT>
+    <AccessionVersion>L76760.1</AccessionVersion>
+  </DocumentSummary>
+</DocumentSummarySet>
