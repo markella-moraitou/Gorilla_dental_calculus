@@ -34,5 +34,6 @@ Studying the oral microbiome of three gorilla subspecies using a shotgun metagen
 * M7_mapdamage: Authentication using mapDamage 
 * M8_dereplicateMAGs: Dereplication of MAGs
 
-*plots: script producing most figures presented in the report and the supplement
-*tables_and_stats: script producing most supplementary table
+## Other
+* plots: script producing most figures presented in the report and the supplement
+* tables_and_stats: script producing most supplementary table
