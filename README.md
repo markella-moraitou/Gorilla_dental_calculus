@@ -9,11 +9,11 @@ Studying the oral microbiome of three gorilla subspecies using a shotgun metagen
 * 7_phixRem: Removal of sequences mapping to the PhiX genome 
 * 8_humanHostFilt: Removal of sequences mapping to the human and gorilla genome
 ## Host mtDNA analysis
-* H1_mtgenomes: Obtaining mt genomes from dental calculus by mapping to a the gorilla mitochondrial genome reference 
+* H1_mtgenomes: Obtaining mt genomes from dental calculus by mapping to a the gorilla mitochondrial genome reference. Script for obtaining mitochondrial sequences using a reference genome were adapted from Samantha Lopez Clinton's work.
 * H2_haplotype_network: Plot haplotype network using downloaded complete mt genomes and dental calculus genomes > 80% complete. For dental calculus genomes < 80% and > 8% complete, find the most closely related genome from the haplotype network based on ANI values. Haplotype network script plot_hapnets.r was adapted from Zach Nolen's work. (not used in final report)
 * H3_diagnostic_sites: Identifying and using mitochondrial diagnostic sites to verify species and subspecies assignments. Python and R scripts (DistanceToReferences.py, FindDiagnosticSites_edited.py, plot_readCoverage.r) were adapted from Axel Jensen's work.
 ## Taxonomic classification and analysis
-* T1_kraken2: Taxonomic classification using Kraken2. Script for obtaining mitochondrial sequences using a reference genome were adapted from Samantha Lopez Clinton's work.
+* T1_kraken2: Taxonomic classification using Kraken2. 
 * T2_bracken: Re-estimation of taxa abundances using Bracken 
 * T3_community-level: Rscripts for the analysis of the taxonomic classification output (decontamination, abundancefiltering, PERMANOVA, identification of differentially abundant taxa, etc.)
 ## Read-level decontamination and MapDamage
