@@ -9,6 +9,7 @@ library(ape)
 library(vegan)
 library(ggtree)
 library(tibble)
+library(MutationalPatterns)
 load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
 
 #### Figure 2 - Dataset summary ####
@@ -20,8 +21,8 @@ sample_data(spe_data_final) %>% as.matrix %>% as.data.frame %>%
   ggbarplot(x="Spec.subspecies", y="Freq", fill="Seq.centre", color="Seq.centre") +
   scale_x_discrete(labels=c("gorilla" = "Western lowland", "graueri" = "Grauer's", "beringei" = "Mountain")) +
   xlab("Gorilla subspecies") + ylab("Number of samples") +
-  scale_fill_brewer(palette="Set2", name="Dataset", labels = c("Fellows Yates et al. 2021", "Uppsala")) +
-  scale_colour_brewer(palette="Set2", name="Dataset", labels = c("Fellows Yates et al. 2021", "Uppsala")) + theme_bw(),
+  scale_fill_brewer(palette="Pastel1", name="Dataset", labels = c("Fellows Yates et al. 2021", "Uppsala")) +
+  scale_colour_brewer(palette="Pastel1", name="Dataset", labels = c("Fellows Yates et al. 2021", "Uppsala")) + theme_bw(),
   file="metadata_summary_barplot.png",
   device="png")  
 
@@ -271,8 +272,34 @@ heat_diet_complete <- plot_grid(heat_diet, heat_sidebar, align = "h", ncol = 2, 
 
 ggsave(heat_diet_complete, file="diet_heatmap.png", device="png")
 
-#### Figure S1 - oral/contaminant proportion ####
+#### Figure S1 - read count histogram ####
 load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
+
+spe_data@sam_data$readcount_log <- log(spe_data@sam_data$readcount.m.before.Kraken)
+#Check distribution of read
+ggsave(file="read_count_raw_hist.png",
+            gghistogram(spe_data@sam_data, "readcount_log", fill="Sample.type", position="stack") +
+            geom_vline(xintercept= log(300000), size=1, colour="red"),
+            device="png")
+
+#### Figure S2 - compositions of samples + oral proportion histogram ####
+
+#Compositions of samples
+source_contribution <- plot_contribution(t(feast_output_env)) +
+  theme(axis.text.x=element_text(angle = +90, hjust = 0)) +
+  scale_fill_brewer(palette = "Spectral")
+
+png(file = "source_contribution.png", width = 1000, height = 480)
+source_contribution
+dev.off()
+
+#Oral proportion histogram
+ggsave(file="oral_proporton_hist.png", 
+        gghistogram(oral_proportion, "oral_proportion_log", fill="Sample.type", position="stack") +
+        #Include vertical line with the cutoff of 0.03 (3%)
+        geom_vline(xintercept=log(0.03), size=1, colour="red"))
+
+#### Figure S3 - oral/contaminant proportion ####
 decontam_prop_core_micr <- 
   heat(decontam_test, Xvar="uppsala_threshold", Yvar="jena_threshold", fill="prop_core_micr",
        order.rows=FALSE, order.cols=FALSE) +
@@ -281,7 +308,16 @@ decontam_prop_core_micr <-
 
 ggsave(decontam_prop_core_micr, file="decontam_prop_core_micr.png", device="png")
 
-#### Figure S4 - taxonomic ordinations with altitude ####
+#### Figure S4 - taxonomic ordinations with duplicate samples ####
+jaccard_with_duplicates <- jaccard_with_duplicates + theme_light() + geom_point(size=3) + theme(legend.position="none") + scale_colour_brewer(palette="Pastel1", name="Dataset", labels=c("Uppsala"="Uppsala", "Jena"="Fellows Yates et al. 2021"))
+
+clr_with_duplicates <- clr_with_duplicates + theme_light() + geom_point(size=3) + scale_colour_brewer(palette="Pastel1", name="Dataset", labels=c("Uppsala"="Uppsala", "Jena"="Fellows Yates et al. 2021"))
+
+ordinations_with_duplicates <- grid.arrange(jaccard_with_duplicates, clr_with_duplicates, ncol=2, widths=c(2.4, 3.2))
+
+ggsave(ordinations_with_duplicates, file="ordinations_with_duplicates.png", device="png", height=7, width=14)
+
+#### Figure S5 - taxonomic ordinations with altitude ####
 jaccard_with_altitude <- plot_ordination(spe_data_final, jaccard_5, color="Spec.subspecies", shape = "subspecies_locality", title="a) Jaccard distances") +
   theme_light() + geom_point(size=3) + theme(legend.text = element_text(size=12), legend.title = element_text(size=12),
                                              legend.position = "none", plot.title = element_text(size=15))  +
@@ -298,6 +334,8 @@ ordinations_with_altitude <- grid.arrange(jaccard_with_altitude, clr_with_altitu
 
 ggsave(ordinations_with_altitude, file="ordinations_with_altitude.png", device="png", height=7, width=14)
   
+  
+# PLOTS NOT INCLUDED IN REPORT #
 #### Dendrogram ####
 
 #Aitchison
