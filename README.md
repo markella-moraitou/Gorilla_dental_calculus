@@ -10,7 +10,7 @@ Studying the oral microbiome of three gorilla subspecies using a shotgun metagen
 * 8_humanHostFilt: Removal of sequences mapping to the human and gorilla genome
 ## Host mtDNA analysis
 * H1_mtgenomes: Obtaining mt genomes from dental calculus by mapping to a the gorilla mitochondrial genome reference 
-* H2_haplotype_network: Plot haplotype network using downloaded complete mt genomes and dental calculus genomes > 80% complete. For dental calculus genomes < 80% and > 8% complete, find the most closely related genome from the haplotype network based on ANI values
+* H2_haplotype_network: Plot haplotype network using downloaded complete mt genomes and dental calculus genomes > 80% complete. For dental calculus genomes < 80% and > 8% complete, find the most closely related genome from the haplotype network based on ANI values. Haplotype network script plot_hapnets.r was adapted from Zach Nolen's work
 ## Taxonomic classification and analysis
 * T1_kraken2: Taxonomic classification using Kraken2 
 * T2_bracken: Re-estimation of taxa abundances using Bracken 
@@ -32,3 +32,6 @@ Studying the oral microbiome of three gorilla subspecies using a shotgun metagen
 * M6_MAGstats: Rscripts for the analysis of MAGs (phylogenetic trees, coverage and abundance per subspecies) 
 * M7_mapdamage: Authentication using mapDamage 
 * M8_dereplicateMAGs: Dereplication of MAGs
+
+*plots: script producing most figures presented in the report and the supplement
+*tables_and_stats: script producing most supplementary table
