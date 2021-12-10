@@ -1,0 +1,289 @@
+
+
+|Sample_ID |Spec.subspecies | Approximate.altitude.old| Approximate.altitude.new|subspecies_locality.old |subspecies_locality.new |
+|:---------|:---------------|------------------------:|------------------------:|:-----------------------|:-----------------------|
+|G0008     |gorilla         |                       80|                       60|gorilla                 |gorilla                 |
+|GDC002    |gorilla         |                      650|                      700|gorilla                 |gorilla                 |
+|GDC004    |gorilla         |                      650|                      700|gorilla                 |gorilla                 |
+|GDC005    |gorilla         |                      650|                      700|gorilla                 |gorilla                 |
+|FDM001    |graueri         |                     1200|                      500|graueri >1200           |graueri <1200           |
+|G0014     |graueri         |                      800|                     1000|graueri <1200           |graueri <1200           |
+|G0016     |graueri         |                     1600|                     1300|graueri >1200           |graueri >1200           |
+|G0017     |graueri         |                     1600|                     1000|graueri >1200           |graueri <1200           |
+|G0019     |graueri         |                     1600|                     1300|graueri >1200           |graueri >1200           |
+|G0020     |graueri         |                      600|                      700|graueri <1200           |graueri <1200           |
+|G0028     |graueri         |                     1200|                      500|graueri >1200           |graueri <1200           |
+|G0031     |graueri         |                     1600|                     1300|graueri >1200           |graueri >1200           |
+|Gb2wash   |graueri         |                      500|                      600|graueri <1200           |graueri <1200           |
+|LOB001    |graueri         |                      800|                     1800|graueri <1200           |graueri >1200           |
+|G0021     |beringei        |                     2300|                     3300|beringei                |beringei                |
+|Gb1wash   |beringei        |                     1600|                     3600|beringei                |beringei                |
+|MTK001    |beringei        |                     1800|                     3600|beringei                |beringei                |
+|MTM001    |beringei        |                      500|                     3300|beringei                |beringei                |
+|MTM002    |beringei        |                     3900|                     3300|beringei                |beringei                |
+|MTM005    |beringei        |                     3100|                     3300|beringei                |beringei                |
+|MTS001    |beringei        |                     3300|                     3100|beringei                |beringei                |
+|MTS002    |beringei        |                     3300|                     3100|beringei                |beringei                |
+|MTS003    |beringei        |                     3300|                     3100|beringei                |beringei                |
+[1] "PERMANOVA, including subspecies locality"
+
+
+|                    | Df| SumsOfSqs| MeanSqs| F.Model|   R2| Pr..F.|
+|:-------------------|--:|---------:|-------:|-------:|----:|------:|
+|read_count          |  1|      1.13|    1.13|    3.49| 0.07|    0.0|
+|seq_centre          |  1|      0.60|    0.60|    1.84| 0.04|    0.0|
+|spec.subspecies     |  2|      1.10|    0.55|    1.69| 0.07|    0.0|
+|subspecies_locality |  3|      1.15|    0.38|    1.18| 0.07|    0.1|
+|Residuals           | 38|     12.37|    0.33|      NA| 0.76|     NA|
+|Total               | 45|     16.35|      NA|      NA| 1.00|     NA|
+
+
+|                    | Df| SumsOfSqs| MeanSqs| F.Model|   R2| Pr..F.|
+|:-------------------|--:|---------:|-------:|-------:|----:|------:|
+|read_count          |  1|    988.54|  988.54|    1.10| 0.02|   0.29|
+|seq_centre          |  1|   1221.70| 1221.70|    1.36| 0.03|   0.07|
+|spec.subspecies     |  2|   3149.69| 1574.84|    1.76| 0.07|   0.00|
+|subspecies_locality |  3|   3020.03| 1006.68|    1.12| 0.07|   0.18|
+|Residuals           | 38|  34055.26|  896.19|      NA| 0.80|     NA|
+|Total               | 45|  42435.22|      NA|      NA| 1.00|     NA|
+
+Call:
+adonis(formula = t(otu_table(GO_BP_phyloseq)) ~ read_count +      seq_centre + spec.subspecies + subspecies_locality, permutations = 12000,      method = "euclidean") 
+
+Permutation: free
+Number of permutations: 12000
+
+Terms added sequentially (first to last)
+
+                    Df SumsOfSqs  MeanSqs F.Model      R2  Pr(>F)  
+read_count           1   3903070  3903070 0.37003 0.00786 0.73169  
+seq_centre           1  14977323 14977323 1.41991 0.03018 0.22065  
+spec.subspecies      2  49758060 24879030 2.35864 0.10026 0.06341 .
+subspecies_locality  3  26806480  8935493 0.84712 0.05402 0.51704  
+Residuals           38 400825794 10548047         0.80768          
+Total               45 496270727                  1.00000          
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "Pairwise PERMANOVA"
+                      combination SumsOfSqs   MeanSqs   F.Model         R2   P.value P.value.corrected
+1       gorilla <-> graueri <1200 1115.7368 1115.7368 1.1184390 0.05850054 0.2497502         0.6893107
+2       gorilla <-> graueri >1200 1018.2501 1018.2501 1.0353680 0.06886216 0.3446553         0.6893107
+3            gorilla <-> beringei 1297.7222 1297.7222 1.3441693 0.05303663 0.1128871         0.6773227
+4 graueri <1200 <-> graueri >1200  775.3238  775.3238 0.8532255 0.04525621 0.7312687         0.7312687
+5      graueri <1200 <-> beringei  845.8092  845.8092 0.9194038 0.03179194 0.5794206         0.7312687
+6      graueri >1200 <-> beringei  789.9419  789.9419 0.8789040 0.03532728 0.7042957         0.7312687
+[1] "Mantel test on Jaccard"
+
+Mantel statistic based on Pearson's product-moment correlation 
+
+Call:
+mantel(xdis = jaccard_dist, ydis = altitude_dist, permutations = 12000) 
+
+Mantel statistic r: 0.1316 
+      Significance: 0.0019998 
+
+Upper quantiles of permutations (null model):
+   90%    95%  97.5%    99% 
+0.0463 0.0642 0.0797 0.0987 
+Permutation: free
+Number of permutations: 12000
+
+[1] "Mantel test on Aitchison"
+
+Mantel statistic based on Spearman's rank correlation rho 
+
+Call:
+mantel(xdis = aitchison_dist, ydis = altitude_dist, method = "spear",      permutations = 12000) 
+
+Mantel statistic r: 0.0149 
+      Significance: 0.33406 
+
+Upper quantiles of permutations (null model):
+   90%    95%  97.5%    99% 
+0.0470 0.0617 0.0751 0.0889 
+Permutation: free
+Number of permutations: 12000
+
+[1] "Mantel test on function euclidean"
+
+Mantel statistic based on Spearman's rank correlation rho 
+
+Call:
+mantel(xdis = func_dist, ydis = altitude_dist, method = "spear",      permutations = 12000) 
+
+Mantel statistic r: -0.005927 
+      Significance: 0.52287 
+
+Upper quantiles of permutations (null model):
+   90%    95%  97.5%    99% 
+0.0430 0.0597 0.0777 0.1002 
+Permutation: free
+Number of permutations: 12000
+
+[1] "Mantel test on Jaccard after accounting for geographic distance"
+
+Partial Mantel statistic based on Pearson's product-moment correlation 
+
+Call:
+mantel.partial(xdis = jaccard_dist, ydis = altitude_dist, zdis = log(geo_dist +      1), permutations = 12000) 
+
+Mantel statistic r: 0.07641 
+      Significance: 0.090992 
+
+Upper quantiles of permutations (null model):
+   90%    95%  97.5%    99% 
+0.0727 0.0969 0.1179 0.1463 
+Permutation: free
+Number of permutations: 12000
+
+[1] "Mantel test on Aitchison after accounting for geographic distance"
+
+Partial Mantel statistic based on Spearman's rank correlation rho 
+
+Call:
+mantel.partial(xdis = aitchison_dist, ydis = altitude_dist, zdis = log(geo_dist +      1), method = "spear", permutations = 12000) 
+
+Mantel statistic r: -0.1185 
+      Significance: 0.97475 
+
+Upper quantiles of permutations (null model):
+   90%    95%  97.5%    99% 
+0.0803 0.1057 0.1280 0.1504 
+Permutation: free
+Number of permutations: 12000
+
+[1] "Mantel test on function euclidead after accounting for geographic distance"
+
+Partial Mantel statistic based on Spearman's rank correlation rho 
+
+Call:
+mantel.partial(xdis = func_dist, ydis = altitude_dist, zdis = log(geo_dist +      1), method = "spear", permutations = 12000) 
+
+Mantel statistic r: 0.03308 
+      Significance: 0.23956 
+
+Upper quantiles of permutations (null model):
+   90%    95%  97.5%    99% 
+0.0671 0.0893 0.1099 0.1359 
+Permutation: free
+Number of permutations: 12000
+
+[1] "How correlated are altitudinal and geographic?"
+
+Mantel statistic based on Pearson's product-moment correlation 
+
+Call:
+mantel(xdis = log(geo_dist + 1), ydis = altitude_dist, permutations = 12000) 
+
+Mantel statistic r: 0.3947 
+      Significance: 8.3326e-05 
+
+Upper quantiles of permutations (null model):
+   90%    95%  97.5%    99% 
+0.0437 0.0664 0.0858 0.1175 
+Permutation: free
+Number of permutations: 12000
+
+[1] "Mantel test on Jaccard after accounting for geographic distance - Only Grauer's gorillas"
+
+Partial Mantel statistic based on Pearson's product-moment correlation 
+
+Call:
+mantel.partial(xdis = jaccard_dist_grauers, ydis = altitude_dist_grauers,      zdis = log(geo_dist_grauers + 1), permutations = 12000) 
+
+Mantel statistic r: -0.1404 
+      Significance: 0.86401 
+
+Upper quantiles of permutations (null model):
+  90%   95% 97.5%   99% 
+0.172 0.220 0.258 0.304 
+Permutation: free
+Number of permutations: 12000
+
+[1] "Mantel test on Aitchison after accounting for geographic distance - Only Grauer's gorillas"
+
+Partial Mantel statistic based on Spearman's rank correlation rho 
+
+Call:
+mantel.partial(xdis = aitchison_dist_grauers, ydis = altitude_dist_grauers,      zdis = log(geo_dist_grauers + 1), method = "spear", permutations = 12000) 
+
+Mantel statistic r: -0.04297 
+      Significance: 0.64878 
+
+Upper quantiles of permutations (null model):
+  90%   95% 97.5%   99% 
+0.132 0.174 0.215 0.261 
+Permutation: free
+Number of permutations: 12000
+
+[1] "Mantel test on function euclidead after accounting for geographic distance - Only Grauer's gorillas"
+
+Partial Mantel statistic based on Spearman's rank correlation rho 
+
+Call:
+mantel.partial(xdis = func_dist_grauers, ydis = altitude_dist_grauers,      zdis = log(geo_dist_grauers + 1), method = "spear", permutations = 12000) 
+
+Mantel statistic r: -0.1741 
+      Significance: 0.98908 
+
+Upper quantiles of permutations (null model):
+  90%   95% 97.5%   99% 
+0.139 0.184 0.226 0.281 
+Permutation: free
+Number of permutations: 12000
+
+[1] "PERMANOVA, including altitude"
+
+Call:
+adonis(formula = t(otu_table(spe_data_final)) ~ read_count +      seq_centre + spec.subspecies + altitude, permutations = 12000,      method = "jaccard") 
+
+Permutation: free
+Number of permutations: 12000
+
+Terms added sequentially (first to last)
+
+                Df SumsOfSqs MeanSqs F.Model      R2    Pr(>F)    
+read_count       1    1.1343 1.13431  3.4460 0.06936 8.333e-05 ***
+seq_centre       1    0.6004 0.60040  1.8240 0.03671 0.0053329 ** 
+spec.subspecies  2    1.1005 0.55023  1.6716 0.06729 0.0009166 ***
+altitude         1    0.3524 0.35242  1.0707 0.02155 0.3308891    
+Residuals       40   13.1665 0.32916         0.80509              
+Total           45   16.3541                 1.00000              
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Call:
+adonis(formula = t(otu_table(spe_data_final_norm)) ~ read_count +      seq_centre + spec.subspecies + altitude, permutations = 12000,      method = "euclidean") 
+
+Permutation: free
+Number of permutations: 12000
+
+Terms added sequentially (first to last)
+
+                Df SumsOfSqs MeanSqs F.Model      R2  Pr(>F)   
+read_count       1       989  988.54  1.0999 0.02330 0.29114   
+seq_centre       1      1222 1221.70  1.3594 0.02879 0.07349 . 
+spec.subspecies  2      3150 1574.84  1.7523 0.07422 0.00150 **
+altitude         1      1126 1125.93  1.2528 0.02653 0.13957   
+Residuals       40     35949  898.73         0.84716           
+Total           45     42435                 1.00000           
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Call:
+adonis(formula = t(otu_table(GO_BP_phyloseq)) ~ read_count +      seq_centre + spec.subspecies + altitude, permutations = 12000,      method = "euclidean") 
+
+Permutation: free
+Number of permutations: 12000
+
+Terms added sequentially (first to last)
+
+                Df SumsOfSqs  MeanSqs F.Model      R2  Pr(>F)  
+read_count       1   3903070  3903070 0.37479 0.00786 0.71586  
+seq_centre       1  14977323 14977323 1.43819 0.03018 0.21332  
+spec.subspecies  2  49758060 24879030 2.38899 0.10026 0.05908 .
+altitude         1  11070913 11070913 1.06308 0.02231 0.31906  
+Residuals       40 416561361 10414034         0.83938          
+Total           45 496270727                  1.00000          
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
