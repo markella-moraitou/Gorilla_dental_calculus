@@ -1,5 +1,5 @@
 #Start logging
-sink(file = "F2_functional_stats/log11_altitude.txt")
+# sink(file = "F2_functional_stats/log11_altitude.txt")
 
 #load packages
 library(phyloseq)
@@ -18,18 +18,16 @@ library(cowplot)
 load("F2_functional_stats/.RData")
 
 #Check effect of altitude - Running the full script also requires the output of HUMAnN2
-
 #Load location info
-
 #Get functional analysis phyloseq
 GO_BP_phyloseq <- readRDS("F2_functional_stats/GO_BP_phyloseq")
 GO_eucl <- readRDS("F2_functional_stats/GO_eucl")
 
 #### Grauer's grouped altitude ####
+#For Western Lowland and Mountain beringeis, use the subspecies classification without any grouping
+#For Grauer's group by altitude (less vs greater than 1000)
 spe_data_final@sam_data$subspecies_locality <-
-  #For Western Lowland and Mountain gorillas, use the subspecies classification without any grouping
   ifelse(spe_data_final@sam_data$Spec.subspecies %in% c("gorilla", "beringei"), as.character(spe_data_final@sam_data$Spec.subspecies),
-    #For Grauer's group by altitude (less vs greater than 1000)
     ifelse(as.numeric(spe_data_final@sam_data$Approximate.altitude) < 1000, "graueri <1000", "graueri >1000"))
 
 #Turn into factor
@@ -51,42 +49,51 @@ alt.table<-sample_data(spe_data_final) %>% data.frame() %>%
   left_join(new.alt %>% rownames_to_column("Sample_ID"),by="Sample_ID",suffix = c(".old",".new")) %>% 
   rename("subspecies_locality.old"="subspecies_locality") %>% 
   mutate(subspecies_locality.new = ifelse(Spec.subspecies %in% c("gorilla", "beringei"), as.character(Spec.subspecies),
-                                      ifelse(as.numeric(Approximate.altitude.new) < 1000, "graueri <1000", "graueri >1000")),
+                                      ifelse(as.numeric(Approximate.altitude.new) <= 1000, "graueri <1000", "graueri >1000")),
          subspecies_locality.new = factor(subspecies_locality.new, levels=c("gorilla", "graueri <1000", "graueri >1000", "beringei")))
 alt.table %>% 
   filter(Approximate.altitude.old != Approximate.altitude.new) %>% 
   select(Sample_ID,Spec.subspecies,Approximate.altitude.old,Approximate.altitude.new,subspecies_locality.old,subspecies_locality.new) %>% 
-  arrange(Spec.subspecies) 
-alt.table %>% knitr::kable()
+  arrange(Spec.subspecies) %>% knitr::kable()
 
 # replace old altitude data with new data in phyloseq object 
-spe_data_final@sam_data$Approximate.altitude <- new.alt[rownames(spe_data_final@sam_data),"Approximate.altitude"]
-spe_data_final@sam_data$Approximate.latitude <- new.alt[rownames(spe_data_final@sam_data),"Approximate.latitude"]
-spe_data_final@sam_data$Approximate.longtitude <- new.alt[rownames(spe_data_final@sam_data),"Approximate.longtitude"]
-spe_data_final@sam_data$subspecies_locality <- alt.table[alt.table$Sample_ID %in% rownames(spe_data_final@sam_data),"subspecies_locality.new"]
-  
-GO_BP_phyloseq@sam_data$Approximate.altitude <- new.alt[rownames(GO_BP_phyloseq@sam_data),"Approximate.altitude"]
-GO_BP_phyloseq@sam_data$Approximate.latitude <- new.alt[rownames(GO_BP_phyloseq@sam_data),"Approximate.latitude"]
-GO_BP_phyloseq@sam_data$Approximate.longtitude <- new.alt[rownames(GO_BP_phyloseq@sam_data),"Approximate.longtitude"]
-GO_BP_phyloseq@sam_data$subspecies_locality <- alt.table[alt.table$Sample_ID %in% rownames(GO_BP_phyloseq@sam_data),"subspecies_locality.new"]
+spe_data_final@sam_data$Approximate.altitude <- alt.table[which(alt.table$Sample_ID %in% rownames(spe_data_final@sam_data)),"Approximate.altitude.new"]
+spe_data_final@sam_data$Approximate.latitude <- alt.table[which(alt.table$Sample_ID %in% rownames(spe_data_final@sam_data)),"Approximate.latitude"]
+spe_data_final@sam_data$Approximate.longitude <- alt.table[which(alt.table$Sample_ID %in% rownames(spe_data_final@sam_data)),"Approximate.longitude"]
+spe_data_final@sam_data$subspecies_locality <- alt.table[which(alt.table$Sample_ID %in% rownames(spe_data_final@sam_data)),"subspecies_locality.new"]
+
+GO_BP_phyloseq@sam_data$Approximate.altitude <- alt.table[which(alt.table$Sample_ID %in% rownames(GO_BP_phyloseq@sam_data)),"Approximate.altitude.new"]
+GO_BP_phyloseq@sam_data$Approximate.latitude <- alt.table[which(alt.table$Sample_ID %in% rownames(GO_BP_phyloseq@sam_data)),"Approximate.latitude"]
+GO_BP_phyloseq@sam_data$Approximate.longitude <- alt.table[which(alt.table$Sample_ID %in% rownames(GO_BP_phyloseq@sam_data)),"Approximate.longitude"]
+GO_BP_phyloseq@sam_data$subspecies_locality <- alt.table[which(alt.table$Sample_ID %in% rownames(GO_BP_phyloseq@sam_data)),"subspecies_locality.new"]
 
 #Get the same info in the normalized phyloseq and in the functional phyloseq
 sample_data(spe_data_final_norm) <- sample_data(spe_data_final)
 sample_data(GO_BP_phyloseq) <- sample_data(spe_data_final)
 
 #### Plot ordination ####
-aitch<-plot_ordination(spe_data_final_norm, clr_5, color="Spec.subspecies", shape = "subspecies_locality", title="Aitchison") + 
+spe_data_final@sam_data$Seq.label<-rownames(spe_data_final@sam_data)
+spe_data_final_norm@sam_data$Seq.label<-rownames(spe_data_final_norm@sam_data)
+aitch<-plot_ordination(spe_data_final_norm, clr_5,color="Spec.subspecies", shape = "subspecies_locality", title="Aitchison") + 
   geom_point(size=3) +
+  # ggrepel::geom_text_repel(aes(label = Seq.label))+
   scale_colour_brewer(palette="Set2", name="Host subspecies", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri"="Grauer's")) + 
-  scale_shape_manual(values=c(16, 15, 17, 16), name="Grauer's altitude", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri <1000"="Grauer's <1000m", "graueri >1000"="Grauer's >1000m")) +
+  scale_shape_manual(values=c(16, 15, 17, 16), name="Grauer's altitude", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri <1000"="Grauer's \u2264 1000m", "graueri >1000"="Grauer's > 1000m")) +
+  stat_ellipse(aes(color=Spec.subspecies, linetype = subspecies_locality))+
+  scale_linetype_manual(values = c(1,2,4,1))+
+  guides(linetype="none")+
   theme_light() + theme(axis.text = element_text(size=12),axis.title = element_text(size = 14),legend.text = element_text(size=14), legend.title = element_text(size=14),
                         legend.position = "right", plot.title = element_text(size=15,hjust = 0.5))
   
-jacc<-plot_ordination(spe_data_final, jaccard_5, color="Spec.subspecies", shape = "subspecies_locality", title="Jaccard") + 
+jacc<-plot_ordination(spe_data_final,jaccard_5, color="Spec.subspecies", shape = "subspecies_locality", title="Jaccard") + 
   geom_point(size=3) +
+  # ggrepel::geom_text_repel(aes(label = Seq.label))+
   scale_colour_brewer(palette="Set2", name="Host subspecies", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri"="Grauer's")) + 
-  scale_shape_manual(values=c(16, 15, 17, 16), name="Grauer's altitude", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri <1000"="Grauer's <1000m", "graueri >1000"="Grauer's >1000m"))+
+  scale_shape_manual(values=c(16,15,17,16), name="Grauer's altitude", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri <1000"="Grauer's \u2264 1000m", "graueri >1000"="Grauer's > 1000m"))+
   theme_light() + 
+  stat_ellipse(aes(color=Spec.subspecies, linetype = subspecies_locality))+
+  scale_linetype_manual(values = c(1,2,4,1))+
+  guides(linetype="none")+
   theme(axis.text = element_text(size=12),axis.title = element_text(size = 14),legend.text = element_text(size=14), legend.title = element_text(size=14),
       legend.position = "none", plot.title = element_text(size=15,hjust = 0.5))
 
@@ -100,9 +107,8 @@ plot_ordination(GO_BP_phyloseq, GO_eucl, color="Spec.subspecies", shape = "subsp
   theme_light() + geom_point(size=3) + theme(legend.text = element_text(size=12), legend.title = element_text(size=12),
                                              legend.position = "right", plot.title = element_text(size=15))  +
   scale_colour_brewer(palette="Set2", name="Host subspecies", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri"="Grauer's")) + 
-  scale_shape_manual(values=c(16, 15, 17, 16), name="Grauer's altitude", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri < 1000"="Grauer's <1000m", "graueri > 1000"="Grauer's >1000m"))
-ggsave(plot = last_plot(),
-  file="T3_community-level/GO_abund_with_altitude.png", device="png")
+  scale_shape_manual(values=c(16, 15, 17, 16), name="Grauer's altitude", labels = c("beringei"="Mountain", "gorilla"="Western", "graueri < 1000"="Grauer's \u2264 1000m", "graueri > 1000"="Grauer's > 1000m"))
+ggsave(plot = last_plot(),file="T3_community-level/GO_abund_with_altitude.png", device="png")
 
 #### PERMANOVA ####
 print("PERMANOVA, including subspecies locality")
@@ -110,12 +116,13 @@ read_count <- sample_data(spe_data_final)$readcount.m.before.Kraken
 seq_centre <- sample_data(spe_data_final)$Seq.centre
 spec.subspecies <- sample_data(spe_data_final)$Spec.subspecies
 subspecies_locality <- sample_data(spe_data_final)$subspecies_locality
+altitude <- sample_data(spe_data_final)$Approximate.altitude
 
 model2_jaccard_w_locality <- adonis(t(otu_table(spe_data_final)) ~ read_count + seq_centre + spec.subspecies + subspecies_locality, permutations = 10000, method = "jaccard")
-model2_jaccard_w_locality$aov.tab %>%  data.frame() %>% mutate(across(where(is.numeric)),round(.,digits = 2)) %>% knitr::kable(format = "markdown")
+model2_jaccard_w_locality$aov.tab %>%  data.frame() %>% knitr::kable(format = "markdown",digits=3)
 
 model2_clr_w_locality <- adonis(t(otu_table(spe_data_final_norm)) ~ read_count + seq_centre + spec.subspecies + subspecies_locality, permutations = 10000, method = "euclidean")
-model2_clr_w_locality$aov.tab %>%  data.frame() %>% mutate(across(where(is.numeric)),round(.,digits = 2)) %>% knitr::kable(format = "markdown")
+model2_clr_w_locality$aov.tab %>%  data.frame() %>% knitr::kable(format = "markdown",digits=3)
 
 read_count <- sample_data(GO_BP_phyloseq)$readcount.m.before.Kraken
 seq_centre <- sample_data(GO_BP_phyloseq)$Seq.centre
@@ -123,13 +130,18 @@ spec.subspecies <- sample_data(GO_BP_phyloseq)$Spec.subspecies
 subspecies_locality <- sample_data(GO_BP_phyloseq)$subspecies_locality
 
 GO_BP_model_w_locality <- adonis(t(otu_table(GO_BP_phyloseq)) ~ read_count + seq_centre + spec.subspecies + subspecies_locality, permutations = 10000, method = "euclidean")
-GO_BP_model_w_locality
+GO_BP_model_w_locality$aov.tab %>%  data.frame() %>% knitr::kable(format = "markdown",digits=3)
 
 #Pairwise PERMANOVA
 print("Pairwise PERMANOVA")
 
-vegdist(t(otu_table(spe_data_final_norm)), method="euclidean") %>%
+pperm<-vegdist(t(otu_table(spe_data_final_norm)), method="euclidean") %>%
   adonis.pair(Factor=subspecies_locality)
+pperm %>% data.frame(.) %>% knitr::kable(format = "markdown",digits = 3)
+
+pperm<-vegdist(t(otu_table(spe_data_final)), method="jaccard") %>%
+  adonis.pair(Factor=subspecies_locality)
+pperm %>% data.frame(.) %>% knitr::kable(format = "markdown",digits = 3)
 
 #### Get distance matrices ####
 #Turn altitude, latitude, longitude into numeric values
@@ -161,7 +173,8 @@ geo_dist <- vegdist(cbind(spe_data_final@sam_data$Approximate.latitude,
 #Perform Mantel test for presence-absence of taxa
 print("Mantel test on Jaccard")
 jaccard_mantel <- mantel(jaccard_dist, altitude_dist, perm = 10000)
-jaccard_mantel
+jaccard_mantel$statistic
+jaccard_mantel$signif
 plot(jaccard_dist, altitude_dist)
 
 #Perform Mantel test for relative abundance of taxa
@@ -205,7 +218,7 @@ jacc_plot <-
     geom_point(aes(colour=log_geo), size=3) +
     scale_colour_gradient2(low="#8DA0CB", mid="#FFD92F", high="#FC8D62",
                            guide_colorbar(barheight = 2, title = "log-transformed geographical distance (degrees)", midpoint=mean(distances$log_geo), draw.ulim=FALSE)) +
-    theme_bw() + theme(legend.position="none", axis.title=element_text(size=15), plot.title=element_text(size=15)) + ggtitle("a)") +
+    theme_bw() + theme(legend.position="none", axis.title=element_text(size=15), plot.title=element_text(size=15)) +
     ylab("Altitudinal distance (km)") + xlab("Jaccard") 
 
 
@@ -214,7 +227,7 @@ aitch_plot <-
     geom_point(aes(colour=log_geo), size=3) +
     scale_colour_gradient2(low="#8DA0CB", mid="#FFD92F", high="#FC8D62",
                            guide_colorbar(barheight = 2, title = "log-transformed geographical distance (degrees)", midpoint=mean(distances$log_geo), draw.ulim=FALSE, label.position="bottom")) +
-    theme_bw() + theme(legend.position="bottom", axis.title=element_text(size=15), axis.title.y=element_blank(), plot.title=element_text(size=15)) + ggtitle("b)") +
+    theme_bw() + theme(legend.position="bottom", axis.title=element_text(size=15), axis.title.y=element_blank(), plot.title=element_text(size=15)) + 
     ylab("Altitudinal distance (km)") + xlab("Aitchison")
     
         
@@ -227,9 +240,9 @@ func_plot <-
     ylab("Altitudinal distance (km)") + xlab("Euclidean functional")
     
 #Plot grid
-ggsave(plot_grid(jacc_plot, aitch_plot, func_plot,
+ggsave(plot_grid(jacc_plot, aitch_plot, func_plot,labels = c("a)","b)"),
        align = "h", axis="tb", ncol = 3),
-       file="T3_community-level/altitude_vs_geo_scatteplots.png", device="png", height=6, width=15)
+       file="T3_community-level/altitude_vs_geo_scatteplots.png", device="png", height=6, width=15,dpi=300)
     
 #### Mantel test only for Grauer's ####
 #microbial composition
@@ -246,15 +259,15 @@ altitude_dist_grauers <- vegdist(subset_samples(spe_data_final, Spec.subspecies=
 geo_dist_grauers <- vegdist(cbind(subset_samples(spe_data_final, Spec.subspecies=="graueri")@sam_data$Approximate.latitude, 
                           subset_samples(spe_data_final, Spec.subspecies=="graueri")@sam_data$Approximate.longitude), "euclidean")
                           
-print("Mantel test on Jaccard after accounting for geographic distance - Only Grauer's gorillas")
+print("Mantel test on Jaccard after accounting for geographic distance - Only Grauer's beringeis")
 jaccard_mantel_partial_Gbg <- mantel.partial(jaccard_dist_grauers, altitude_dist_grauers, log(geo_dist_grauers+1), perm = 10000)
 jaccard_mantel_partial_Gbg
 
-print("Mantel test on Aitchison after accounting for geographic distance - Only Grauer's gorillas")
+print("Mantel test on Aitchison after accounting for geographic distance - Only Grauer's beringeis")
 aitchison_mantel_partial_Gbg <-mantel.partial(aitchison_dist_grauers, altitude_dist_grauers, log(geo_dist_grauers+1), perm = 10000, method="spear")
 aitchison_mantel_partial_Gbg
 
-print("Mantel test on function euclidead after accounting for geographic distance - Only Grauer's gorillas")
+print("Mantel test on function euclidead after accounting for geographic distance - Only Grauer's beringeis")
 func_mantel_partial_Gbg <-mantel.partial(func_dist_grauers, altitude_dist_grauers, log(geo_dist_grauers+1), perm = 10000, method="spear")
 func_mantel_partial_Gbg
 
@@ -277,13 +290,11 @@ seq_centre <- spe_data_final@sam_data$Seq.centre %>% factor
 spec.subspecies <- spe_data_final@sam_data$Spec.subspecies %>% factor(level=c("gorilla", "graueri", "beringei"))
 altitude <- spe_data_final@sam_data$Approximate.altitude %>% as.numeric
 
-model2_jaccard_w_altitude <- adonis(t(otu_table(spe_data_final)) ~ read_count + seq_centre + spec.subspecies + altitude, permutations = 10000, method = "jaccard")
+model2_jaccard_w_altitude <- adonis(t(otu_table(spe_data_final)) ~ read_count + seq_centre + spec.subspecies + subspecies_locality, permutations = 10000, method = "jaccard")
+model2_jaccard_w_altitude$aov.tab %>%  data.frame() %>% knitr::kable(format = "markdown",digits = 3)
 
-model2_jaccard_w_altitude
-
-model2_clr_w_altitude <- adonis(t(otu_table(spe_data_final_norm)) ~ read_count + seq_centre + spec.subspecies + altitude, permutations = 10000, method = "euclidean")
-
-model2_clr_w_altitude
+model2_clr_w_altitude <- adonis(t(otu_table(spe_data_final_norm)) ~ read_count + seq_centre + spec.subspecies + subspecies_locality, permutations = 10000, method = "euclidean")
+model2_clr_w_altitude$aov.tab %>%  data.frame() %>% knitr::kable(format = "markdown",digits = 3)
 
 read_count <- GO_BP_phyloseq@sam_data$readcount.m.before.Kraken %>% as.numeric
 seq_centre <- GO_BP_phyloseq@sam_data$Seq.centre %>% factor
@@ -291,9 +302,8 @@ spec.subspecies <- GO_BP_phyloseq@sam_data$Spec.subspecies %>% factor(level=c("g
 altitude <- GO_BP_phyloseq@sam_data$Approximate.altitude %>% as.numeric
 
 GO_BP_model_w_altitude <- adonis(t(otu_table(GO_BP_phyloseq)) ~ read_count + seq_centre + spec.subspecies + altitude, permutations = 10000, method = "euclidean")
-
-GO_BP_model_w_altitude
+GO_BP_model_w_altitude$aov.tab %>%  data.frame() %>% knitr::kable(format = "markdown",digits = 3)
 
 save.image()
 #Stop logging
-sink(file = NULL)
+# sink(file = NULL)
