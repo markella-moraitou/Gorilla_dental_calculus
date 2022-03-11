@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-#SBATCH -A snic2020-5-528
+#SBATCH -A SNIC_PROJECT_ID
 #SBATCH -p core
 #SBATCH -n 1
 #SBATCH -t 6:00:00
@@ -8,7 +8,7 @@
 #SBATCH --mail-type BEGIN
 #SBATCH --mail-type END
 #SBATCH --mail-type FAIL
-#SBATCH --mail-user Markella.Moraitou.0437@student.uu.se
+#SBATCH --mail-user USER_EMAIL
 
 module load R_packages
 

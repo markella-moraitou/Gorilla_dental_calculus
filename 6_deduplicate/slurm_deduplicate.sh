@@ -1,13 +1,13 @@
 #!/bin/bash -l
 
-#SBATCH -A snic2020-5-528
+#SBATCH -A SNIC_PROJECT_ID
 #SBATCH -p core
 #SBATCH -n 1
 #SBATCH -t 15:00:00
 #SBATCH -J deduplicate
 #SBATCH -C mem256GB
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=Markella.Moraitou.0437@student.uu.se
+#SBATCH --mail-user=USER_EMAIL
 
 # analysis step 5: Removing duplicates 
 # with Tom's in house script
@@ -15,29 +15,29 @@
 
 # may need to increase memory depending on input file size
 
-echo $SLURM_JOB_NAME
+echo "$SLURM_JOB_NAME"
 echo $(module list)
 
 # define shortcuts
 
-DATADIR=/proj/sllstore2017021/nobackup/MARKELLA/5_qualityFilt
-OUTDIR=/proj/sllstore2017021/nobackup/MARKELLA/6_deduplicate
+DATADIR=5_qualityFilt
+OUTDIR=6_deduplicate
 rmdup_script=/proj/sllstore2017021/nobackup/EXAMPLES_for_new_users/remove_duplicates_single_end.py
 
 #run deduplication
-cd $DATADIR
+cd $DATADIR || exit
 
 find . -name "*passed.fastq.gz" | while read i
 do
-    cd $OUTDIR
-    python2.7 $rmdup_script $DATADIR/$i ${i%_passed.fastq.gz};
+    cd $OUTDIR || exit
+    python2.7 $rmdup_script $DATADIR/"$i" "${i%_passed.fastq.gz}";
 done
 
 # output is not compressed, compress with gzip
-cd $OUTDIR
+cd $OUTDIR || exit
 
 for i in *.fastq;
 do
-    gzip $i;
+    gzip "$i";
 done
 

@@ -13,13 +13,13 @@ library(reshape2)
 library(microbiome)
 library(EcolUtils)
 
-load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
+load("F2_functional_stats/.RData")
 
 #Functional analysis - Script 1
 #Gene ontology terms
 
 #Import unstratified GO table
-GO_unstr <- read_tsv("/proj/sllstore2017021/nobackup/MARKELLA/F1_HUMAnN2/all_GOterms_cpm_unstratified_renamed.tsv")
+GO_unstr <- read_tsv("F2_functional_stats/all_GOterms_cpm_unstratified_renamed.tsv")
 GO_unstr <- as.data.frame(GO_unstr)
 
 #Rename columns
@@ -49,7 +49,7 @@ GO_phyloseq <- phyloseq(otu_table(GO_unstr, taxa_are_rows = TRUE), sample_data(s
 GO_BP_phyloseq <- phyloseq(otu_table(GO_unstr[which(grepl("BP", rownames(GO_unstr))),], taxa_are_rows = TRUE), sample_data(spe_data_final))
 
 #save object
-saveRDS(GO_BP_phyloseq, "GO_BP_phyloseq")
+saveRDS(GO_BP_phyloseq, "F2_functional_stats/GO_BP_phyloseq")
 
 ### PCoA ### 
 
@@ -57,7 +57,7 @@ saveRDS(GO_BP_phyloseq, "GO_BP_phyloseq")
 GO_eucl <- ordinate(GO_BP_phyloseq, method="PCoA", distance="euclidean")
 
 #Plot and save ordinations
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/GO_abund_ordination.pdf")
+pdf(file = "F2_functional_stats/GO_abund_ordination.pdf")
 plot_ordination(GO_BP_phyloseq, GO_eucl, color="Spec.subspecies", shape = "Seq.centre", title="PCoA plot based on normalized relative abundance\nof biological processes") + 
   theme_bw() + geom_point(size=4)  + theme(legend.text = element_text(size=15), legend.title = element_text(size=15)) +
   scale_color_manual(values=c("darkgoldenrod2", "dark grey", "steelblue1"))

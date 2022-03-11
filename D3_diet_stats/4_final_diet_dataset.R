@@ -154,7 +154,7 @@ heat_diet_full_complete <- plot_grid(heat_diet_full, heat_sidebar_full, align = 
 
 #Save plot
 ggsave(heat_diet_full_complete, device="png", width=10, height=7,
-       filename = "/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/heat_diet_full_complete.png")
+       filename = "D3_diet_stats/heat_diet_full_complete.png")
 
 
 #### Summarize at the family level ####
@@ -263,7 +263,7 @@ heat_diet_fam_full_complete <- plot_grid(heat_diet_fam_full, heat_sidebar_full.f
 
 #Save plot
 ggsave(heat_diet_fam_full_complete, device="png", height=9, width=9,
-       filename = "/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/heat_diet_fam_full_complete_family.png")
+       filename = "D3_diet_stats/heat_diet_fam_full_complete_family.png")
 
 
 #Compare average abundance of all taxa vs diet taxa

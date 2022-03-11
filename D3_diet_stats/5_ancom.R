@@ -15,7 +15,7 @@ library(tidyverse)
 library(reshape2)
 library(scales)
 library(cowplot)
-source("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/ancom-functions.R")
+source("T3_community-level/ancom-functions.R")
 
 load(".RData")
 #Diet analysis - Script 5
@@ -109,7 +109,7 @@ euk_ancom_res = ANCOM(feature_table, meta_data, struc_zero, main_var, p_adj_meth
 save.image()
 
 # save results
-write_csv(cbind(euk_ancom_res$out,struc_zero), "/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/euk_ancom_results.csv")
+write_csv(cbind(euk_ancom_res$out,struc_zero), "D3_diet_stats/euk_ancom_results.csv")
 
 #### Step 3: Volcano Plot ####
 # Number of taxa except structural zeros
@@ -130,7 +130,7 @@ euk_ancom_fig = euk_ancom_res$fig +
 
 euk_ancom_fig
 
-ggsave(plot=ancom_fig,filename = "/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/euk_ancom_fig.png")
+ggsave(plot=ancom_fig,filename = "D3_diet_stats/euk_ancom_fig.png")
 
 
 #### Look into differentially abundant species ####
@@ -283,7 +283,7 @@ heat_diet_complete <- plot_grid(heat_diet, heat_sidebar, align = "h", ncol = 2, 
                                 axis="tb")
 heat_diet_complete
 
-ggsave(heat_diet_complete, file="/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/heat_diet_complete.png", device="png", height=7, width=10)
+ggsave(heat_diet_complete, file="D3_diet_stats/heat_diet_complete.png", device="png", height=7, width=10)
 
 #Get the total number of reads for differentially abundant taxa
 ancom_taxa_rc <- taxa_sums(subset_taxa(euk_genus_diet, taxa_names(euk_genus_diet) %in% ancom_euk$genus))

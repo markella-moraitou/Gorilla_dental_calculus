@@ -23,7 +23,7 @@ for (i in 1:nrow(alpha)){ #extract subspecies, seq. centre and read count metada
   alpha$readcount[i] =  as.character(sample_data(spe_data_final)$readcount.m.before.Kraken[which(sample_names(spe_data_final)==row.names(alpha)[i])])
 }
 #Save plots
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/alpha_plots.pdf")
+pdf(file = "T3_community-level/alpha_plots.pdf")
 
 #Have a look at the data
 ggboxplot(alpha, y = "Observed", x = "Spec.subspecies")

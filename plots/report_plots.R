@@ -10,7 +10,7 @@ library(vegan)
 library(ggtree)
 library(tibble)
 library(MutationalPatterns)
-load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
+load("T3_community-level/.RData")
 
 #### Figure 2 - Dataset summary ####
 ggsave(
@@ -213,7 +213,7 @@ png("diff_abund_heat_legend.png")
 dev.off()
 
 #### Figure 6 - Subspecies-associated biological processes ####
-load("/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/.RData")
+load("F2_functional_stats/.RData")
 go_heatmap <-
   heat(GO_unstr_signif_m, "Sample", "GO term","Copies/million", order.cols = FALSE, order.rows=TRUE) +
   scale_fill_gradient2(low="blue", mid="white", high="red",
@@ -251,7 +251,7 @@ ggsave(tax_func_grid, file="BP_heatmap_with_tax_contributions.png",
        height=8, width=15)
 
 #### Figure 7 - Dietary heatmap ####
-load("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/.RData")
+load("D3_diet_stats/.RData")
 
 #Labeller for the facet labels
 facet.labels <- list("gorilla"="western lowland", "graueri"="Grauer's", "beringei"="mountain")
@@ -349,7 +349,7 @@ heat_diet_complete <- plot_grid(heat_diet, heat_sidebar, align = "h", ncol = 2, 
 ggsave(heat_diet_complete, file="diet_heatmap.png", device="png")
 
 #### Figure S1 - read count histogram ####
-load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
+load("T3_community-level/.RData")
 
 spe_data@sam_data$readcount_log <- log(spe_data@sam_data$readcount.m.before.Kraken)
 #Check distribution of read
@@ -442,8 +442,8 @@ grid.arrange(
 
 #### Decontam mapping database ####
 #Load contaminant and noncontaminant genome lists
-contaminant_genomes <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/contaminant_genomes_list_recent.txt", sep="\t", comment.char="", header=F)
-noncontaminant_genomes <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/noncontaminant_genomes_list_recent.txt", sep="\t", comment.char="", header=F)
+contaminant_genomes <- read.table("RD2_mapping/contaminant_genomes_list_recent.txt", sep="\t", comment.char="", header=F)
+noncontaminant_genomes <- read.table("RD2_mapping/noncontaminant_genomes_list_recent.txt", sep="\t", comment.char="", header=F)
 
 colnames(contaminant_genomes) <- c("taxon_ID", "RefSeq", "Assembly_level", "Genome_repres", "Date", "ftp" )
 colnames(noncontaminant_genomes) <- c("taxon_ID", "RefSeq", "Assembly_level", "Genome_repres", "Date", "ftp" )
@@ -480,7 +480,7 @@ plot_grid(ggpie(as.data.frame(table(contaminant_genomes$Assembly_level)), x="Fre
 
 #### Functional ordinations ####
 
-load("/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/.RData")
+load("F2_functional_stats/.RData")
 
 sample_data(GO_BP_phyloseq)$Spec.subspecies <- factor(sample_data(GO_BP_phyloseq)$Spec.subspecies, levels=c("gorilla", "graueri", "beringei"))
 

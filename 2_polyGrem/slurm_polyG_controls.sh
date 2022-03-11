@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-#SBATCH -A snic2020-5-528
+#SBATCH -A SNIC_PROJECT_ID
 #SBATCH -p core
 #SBATCH -n 1
 #SBATCH -t 1:00:00
@@ -8,7 +8,7 @@
 #SBATCH --mail-type BEGIN
 #SBATCH --mail-type END
 #SBATCH --mail-type FAIL
-#SBATCH --mail-user Markella.Moraitou.0437@student.uu.se
+#SBATCH --mail-user USER_EMAIL
 
 # analysis step 1: PolyG removal -- 2nd run: for extraction, library and museum controls
 # removes the polyG tails that result from the two-colour technology of the NextSeq and NovaSeq Illumina platforms 
@@ -18,10 +18,10 @@
 module load bioinfo-tools
 module load fastp
 
-echo $SLURM_JOB_NAME
+echo "$SLURM_JOB_NAME"
 echo $(module list)
 
-OUTDIR=/proj/sllstore2017021/nobackup/MARKELLA/2_polyGrem
+OUTDIR=2_polyGrem
 
 conda activate fastp #activate the environment where fastp is installed
 
@@ -36,9 +36,9 @@ do
     find $DATADIR/P1_demux_run**/**/ -name "$name*" | while read i
     do
         label=${i##/**/}
-        ls -d -1 $DATADIR/P1_demux_run**/**/$label | xargs cat > $OUTDIR/${label%.fastq.gz}_concat.fastq.gz
-        fastp -i $OUTDIR/${label%.fastq.gz}_concat.fastq.gz --trim_poly_g -A -Q -L -o $OUTDIR/${label%.fastq.gz}_concat_Gtrimmed.fastq.gz
-        rm $OUTDIR/${label%.fastq.gz}_concat.fastq.gz
+        ls -d -1 $DATADIR/P1_demux_run**/**/"$label" | xargs cat > $OUTDIR/"${label%.fastq.gz}"_concat.fastq.gz
+        fastp -i $OUTDIR/"${label%.fastq.gz}"_concat.fastq.gz --trim_poly_g -A -Q -L -o $OUTDIR/"${label%.fastq.gz}"_concat_Gtrimmed.fastq.gz
+        rm $OUTDIR/"${label%.fastq.gz}"_concat.fastq.gz
     done
 done
 
@@ -54,9 +54,9 @@ do
     find $DATADIR/** -name "$name*pair1.fastq.gz" | while read i
     do
         label=${i##/**/}
-        ls -d -1 $DATADIR/**/$label | xargs cat > $OUTDIR/${label%.pair1.fastq.gz}_F_concat.fastq.gz
-        fastp -i $OUTDIR/${label%.pair1.fastq.gz}_F_concat.fastq.gz --trim_poly_g -A -Q -L -o $OUTDIR/${label%.pair1.fastq.gz}_F_concat_Gtrimmed.fastq.gz
-        rm $OUTDIR/${label%.pair1.fastq.gz}_F_concat.fastq.gz
+        ls -d -1 $DATADIR/**/"$label" | xargs cat > $OUTDIR/"${label%.pair1.fastq.gz}"_F_concat.fastq.gz
+        fastp -i $OUTDIR/"${label%.pair1.fastq.gz}"_F_concat.fastq.gz --trim_poly_g -A -Q -L -o $OUTDIR/"${label%.pair1.fastq.gz}"_F_concat_Gtrimmed.fastq.gz
+        rm $OUTDIR/"${label%.pair1.fastq.gz}"_F_concat.fastq.gz
     done
 done
 
@@ -66,9 +66,9 @@ do
     find $DATADIR/** -name "$name*pair2.fastq.gz" | while read i
     do
         label=${i##/**/}
-        ls -d -1 $DATADIR/**/$label | xargs cat > $OUTDIR/${label%.pair2.fastq.gz}_R_concat.fastq.gz
-        fastp -i $OUTDIR/${label%.pair2.fastq.gz}_R_concat.fastq.gz --trim_poly_g -A -Q -L -o $OUTDIR/${label%.pair2.fastq.gz}_R_concat_Gtrimmed.fastq.gz
-        rm $OUTDIR/${label%.pair2.fastq.gz}_R_concat.fastq.gz
+        ls -d -1 $DATADIR/**/"$label" | xargs cat > $OUTDIR/"${label%.pair2.fastq.gz}"_R_concat.fastq.gz
+        fastp -i $OUTDIR/"${label%.pair2.fastq.gz}"_R_concat.fastq.gz --trim_poly_g -A -Q -L -o $OUTDIR/"${label%.pair2.fastq.gz}"_R_concat_Gtrimmed.fastq.gz
+        rm $OUTDIR/"${label%.pair2.fastq.gz}"_R_concat.fastq.gz
     done
 done
 
@@ -80,14 +80,14 @@ DATADIR=/proj/sllstore2017021/nobackup/GORILLA_METAGENOMES/blanks
 find $DATADIR -name "*_S0_L000_R1_000.trimmed.fastq.gz" | while read i
 do
     label=${i##/**/}
-    fastp -i $i --trim_poly_g -A -Q -L -o $OUTDIR/${label%_S0_L000_R1_000.trimmed.fastq.gz}_F_concat_Gtrimmed.fastq.gz
+    fastp -i "$i" --trim_poly_g -A -Q -L -o $OUTDIR/"${label%_S0_L000_R1_000.trimmed.fastq.gz}"_F_concat_Gtrimmed.fastq.gz
 done
 
 #reverse reads
 find $DATADIR -name "*_S0_L000_R2_000.trimmed.fastq.gz" | while read i
 do
     label=${i##/**/}
-    fastp -i $i --trim_poly_g -A -Q -L -o $OUTDIR/${label%_S0_L000_R2_000.trimmed.fastq.gz}_R_concat_Gtrimmed.fastq.gz
+    fastp -i "$i" --trim_poly_g -A -Q -L -o $OUTDIR/"${label%_S0_L000_R2_000.trimmed.fastq.gz}"_R_concat_Gtrimmed.fastq.gz
 done
 
 
@@ -96,7 +96,7 @@ done
 #Rename 24EB1 to make it match DC2 blanks
 ls 24EB1* | while read i
 do
-    mv $i BE124${i#24EB1}
+    mv "$i" BE124"${i#24EB1}"
 done
 
 conda deactivate

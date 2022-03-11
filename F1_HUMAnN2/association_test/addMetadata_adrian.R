@@ -8,7 +8,7 @@ require(tidyverse)
 args = commandArgs(trailingOnly=TRUE)
 
   dat<-read.table(args[1],header=T,comment.char = " ")
-  subsp_dat<-read.table("/proj/sllstore2017021/nobackup/MARKELLA/metadata_gorilla_analysis.txt", header=T, sep="\t")
+  subsp_dat<-read.table("metadata_gorilla_analysis.txt", header=T, sep="\t")
   dat.m<- dat %>%
     separate(col = 1,into=c("Seq.label","file"), sep="_") %>%
     #changed left_join to right_join because some of the original samples in the metadata table aren't being used

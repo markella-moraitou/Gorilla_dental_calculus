@@ -105,7 +105,7 @@ nCol <- floor(sqrt(n))
 ggsave("relabund_ratio_per_sample.png",
   plot = grid.arrange(grobs = ra_ratio_plots, ncol = nCol),
   device = "png",
-  path = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level",
+  path = "T3_community-level",
   width = 100, height = 100, units = "cm")
 
 
@@ -200,7 +200,7 @@ length(taxa_names(spe_data_envrem)[which(taxa_names(spe_data_envrem) %in% homd$N
 jaccard_4 <- ordinate(spe_data_envrem, method="PCoA", distance="jaccard")
 
 #Plot ordination
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/jaccard_4.pdf")
+pdf(file = "T3_community-level/jaccard_4.pdf")
 par(mfrow=c(1,3))
 plot_ordination(spe_data_envrem, jaccard_4, color=c("Seq.centre"), shape="Spec.subspecies", title="PCoA on jaccard distances based on species level assignments \nafter abudance filtering and removing \"bad\" samples and environmental taxa") #to highlight seq. centre
 plot_ordination(spe_data_envrem, jaccard_4, color=c("Spec.subspecies"), title="PCoA on jaccard distances based on species level assignments \nafter abudance filtering and removing \"bad\" samples and environmental taxa") #to highlight subspecies
@@ -214,7 +214,7 @@ dev.off()
 clr_4 <- ordinate(spe_data_envrem_norm, method="PCoA", distance="euclidean")
 
 #Plot ordination
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/clr_4.pdf")
+pdf(file = "T3_community-level/clr_4.pdf")
 par(mfrow=c(1,3))
 plot_ordination(spe_data_envrem_norm, clr_4, color=c("Seq.centre"), shape="Spec.subspecies", title="PCoA on Aitchison distances based on species level assignments \nafter abudance filtering and removing \"bad\" samples and environmental taxa") #to highlight seq. centre
 plot_ordination(spe_data_envrem_norm, clr_4, color=c("Spec.subspecies"), title="PCoA on Aitchison distances based on species level assignments \nafter abudance filtering and removing \"bad\" samples and environmental taxa") #to highlight subspecies

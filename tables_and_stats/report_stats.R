@@ -6,14 +6,14 @@ library(phyloseq)
 library(dplyr)
 library(tibble)
 
-load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
+load("T3_community-level/.RData")
 
 #Technical stats that will be needed for the dataset + tables for the Supplementary.
 
 #### Table S2 - Read counts ####
 
 ##Read counts for read preprocessing
-rc_prepro <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/readcount_211016.txt", sep=",", comment.char="", header=T)
+rc_prepro <- read.table("readcount_211016.txt", sep=",", comment.char="", header=T)
 
 #Remove _m suffix
 colnames(rc_prepro) <- str_remove(colnames(rc_prepro), "_m")
@@ -22,7 +22,7 @@ colnames(rc_prepro) <- str_remove(colnames(rc_prepro), "_m")
 rc_prepro <- rc_prepro[,-which(colnames(rc_prepro) == "hostHumFilt")]
 
 ##Read counts after human-host mapping
-rc_human_host <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/8_humanHostFilt/unmapped/readcount_hostmapping.txt", sep=",", comment.char="", header=T)
+rc_human_host <- read.table("8_humanHostFilt/unmapped/readcount_hostmapping.txt", sep=",", comment.char="", header=T)
 
 #Fix row names
 rc_human_host$sample <- str_remove(rc_human_host$sample, "_m")
@@ -31,12 +31,12 @@ rc_human_host$sample <- str_remove(rc_human_host$sample, "_m")
 colnames(rc_human_host) <- c("sample", "unmapped", "mapped", "mapped_host", "mapped_human")
 
 ##Read counts after decontaminating using Kraken-Tools
-rc_decontam_kt <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/RD1_krakentools/readcount_decontam_kt_211024.txt", sep=",", comment.char="", header=T)
+rc_decontam_kt <- read.table("RD1_krakentools/readcount_decontam_kt_211024.txt", sep=",", comment.char="", header=T)
 
 colnames(rc_decontam_kt) <- c("sample", "after_kraken_tools")
 
 ##Read counts after decontaminating with mapping
-rc_decontam_map <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/decontam_files/readcount_decontam_211021.txt", sep=",", comment.char="", header=T)
+rc_decontam_map <- read.table("RD2_mapping/decontam_files/readcount_decontam_211021.txt", sep=",", comment.char="", header=T)
 
 ##Merge tables together
 
@@ -190,10 +190,10 @@ write.table(taxa_per_sample, file="taxa_per_sample.txt", sep=",", quote=FALSE, d
 #Gather all data on mitochondrial genomes
 
 #Get mitochondrial genome coverage per sample
-mt_coverage <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/H1_mtgenomes/mt_coverage.csv", header=TRUE, sep=",", dec=".")
+mt_coverage <- read.table("H1_mtgenomes/mt_coverage.csv", header=TRUE, sep=",", dec=".")
 
 #Add diagnostic sites per sample
-diagnostic_sites <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/H3_diagnostic_sites/output/distance_to_refs_east_west.txt", header=TRUE, sep="\t", row.names="Sample") %>% cbind(read.table("/proj/sllstore2017021/nobackup/MARKELLA/H3_diagnostic_sites/output/distance_to_refs_mountain_grauers.txt", header=TRUE, sep="\t", row.names="Sample"))
+diagnostic_sites <- read.table("H3_diagnostic_sites/output/distance_to_refs_east_west.txt", header=TRUE, sep="\t", row.names="Sample") %>% cbind(read.table("H3_diagnostic_sites/output/distance_to_refs_mountain_grauers.txt", header=TRUE, sep="\t", row.names="Sample"))
 
 #Fix colnames
 colnames(diagnostic_sites) <- make.unique(colnames(diagnostic_sites))
@@ -223,11 +223,11 @@ write.table(mt_info, "mt_genomes_info.txt", sep=",", quote=FALSE, dec=".")
 #Show all differentially abundant species by host and facility
 
 ancom_subspecies <-
- read.table("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/ancom_results.csv", header = TRUE, sep = ",", dec = ".") %>% filter(detected_0.9==TRUE) %>% select(taxa_id, W, structural_zero..gorilla., structural_zero..graueri., structural_zero..beringei.) %>% mutate(taxa_names=taxonomy_species[match(taxa_id, rownames(taxonomy_species)),8]) %>%
+ read.table("T3_community-level/ancom_results.csv", header = TRUE, sep = ",", dec = ".") %>% filter(detected_0.9==TRUE) %>% select(taxa_id, W, structural_zero..gorilla., structural_zero..graueri., structural_zero..beringei.) %>% mutate(taxa_names=taxonomy_species[match(taxa_id, rownames(taxonomy_species)),8]) %>%
  mutate(diff_abund_by_subspecies="YES")
  
 ancom_facility <-
- read.table("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/ancom_results_seqc.csv", header = TRUE, sep = ",", dec = ".") %>% filter(detected_0.9==TRUE) %>% select(taxa_id, W, structural_zero..Jena., structural_zero..Uppsala.) %>%
+ read.table("T3_community-level/ancom_results_seqc.csv", header = TRUE, sep = ",", dec = ".") %>% filter(detected_0.9==TRUE) %>% select(taxa_id, W, structural_zero..Jena., structural_zero..Uppsala.) %>%
  mutate(diff_abund_by_facility="YES")
  
 #Merge tables
@@ -245,11 +245,11 @@ write.table(ancom_full, file="ancom_full.csv", sep=",", quote=FALSE)
 
 #### Table S7 - Subspecies associated BP processes ####
 
-load("/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/.RData")
+load("F2_functional_stats/.RData")
 write.table(most_signif_BP, file="most_signif_BPs.csv", sep=",", quote=FALSE)
 
 #### Table S8 - MAG taxonomy ####
-load("/proj/sllstore2017021/nobackup/MARKELLA/M6_MAGstats/.RData")
+load("M6_MAGstats/.RData")
 
 hq_mq_table <- hq_mq_mags %>% select(user_genome, phylum, family, genus, species, host_subspecies, draft_quality, fastani_reference)
 
@@ -260,7 +260,7 @@ write.table(hq_mq_table, file="hq_mq_table.csv", sep=",", quote=FALSE)
 #Show all differentially abundant species by host and facility
 
 ancom_diet <-
- read.table("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/euk_ancom_results.csv", header = TRUE, sep = ",", dec = ".") %>% filter(detected_0.9==TRUE) %>% select(taxa_id, W, structural_zero..gorilla., structural_zero..graueri., structural_zero..beringei.)
+ read.table("D3_diet_stats/euk_ancom_results.csv", header = TRUE, sep = ",", dec = ".") %>% filter(detected_0.9==TRUE) %>% select(taxa_id, W, structural_zero..gorilla., structural_zero..graueri., structural_zero..beringei.)
 
 ancom_diet[,which(grepl("structural.zero", colnames(ancom_diet)))] <- sapply(ancom_diet[,which(grepl("structural.zero", colnames(ancom_diet)))], as.logical)
  
@@ -270,7 +270,7 @@ write.table(ancom_diet, file="ancom_diet.csv", sep=",", quote=FALSE)
 #### MAG assembly ####
 
 ## contig assembly
-mag_assemblies <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/M1_MAGassemblies/log_mag_assembly_210719.txt", sep=",", comment.char="", header=T)
+mag_assemblies <- read.table("M1_MAGassemblies/log_mag_assembly_210719.txt", sep=",", comment.char="", header=T)
 dim(mag_assemblies)
 
 table(mag_assemblies$contig_n<2)
@@ -286,7 +286,7 @@ summary(mag_assemblies$contig1.5kb_n)
 summary(mag_assemblies$contig20kb_n)
 
 ## binning
-bins <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/M3_binning/CheckM_results/all_checkm_results.tab", sep="\t", comment.char="", header=T)
+bins <- read.table("M3_binning/CheckM_results/all_checkm_results.tab", sep="\t", comment.char="", header=T)
 
 dim(bins)
 table(substring(bins$Bin.Id, 1, 6))

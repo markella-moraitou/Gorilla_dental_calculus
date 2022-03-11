@@ -22,7 +22,7 @@ load(".RData")
 
 #Import stratified feature table
 #Import stratified GO table
-GO_str <- read_tsv("/proj/sllstore2017021/nobackup/MARKELLA/F1_HUMAnN2/all_GOterms_cpm_renamed.tsv")
+GO_str <- read_tsv("F1_HUMAnN2/all_GOterms_cpm_renamed.tsv")
 GO_str <- as.data.frame(GO_str)
 
 #Rename columns
@@ -158,7 +158,7 @@ tax_func_grid <- plot_grid(go_heatmap +
                           tax_fun_comp, align = "h", axis="tb",
           ncol = 2, rel_widths = c(25, 10))
 
-ggsave(tax_func_grid, file="/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/tax_func_grid.png",
+ggsave(tax_func_grid, file="F2_functional_stats/tax_func_grid.png",
        height=8, width=15)
        
 sessionInfo()

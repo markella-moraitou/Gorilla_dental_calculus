@@ -1,12 +1,12 @@
 #!/bin/bash -l
 
-#SBATCH -A snic2020-5-528
+#SBATCH -A SNIC_PROJECT_ID
 #SBATCH -p core
 #SBATCH -n 1
 #SBATCH -t 02:00:00
 #SBATCH -J humann2_regroup
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=Markella.Moraitou.0437@student.uu.se
+#SBATCH --mail-user=USER_EMAIL
 
 #Script for doing some additional manipulations to HUMANn2 output
 conda activate /home/markmora/.conda/envs/humann2
@@ -14,28 +14,28 @@ conda activate /home/markmora/.conda/envs/humann2
 #error loading humann2 straight, had to load metaphlan2 first
 module load bioinfo-tools metaphlan2 biopython humann2/0.11.2
 
-echo $SLURM_JOB_NAME
+echo "$SLURM_JOB_NAME"
 echo $(module list)
 
-OUTDIR=/proj/sllstore2017021/nobackup/MARKELLA/F1_HUMAnN2
-MAPPING_DIR=/proj/sllstore2017021/nobackup/MARKELLA/software/utility_mapping/ #tables downloaded with humann2_databases --download utility_mapping full $DIR
+OUTDIR=F1_HUMAnN2
+MAPPING_DIR=software/utility_mapping/ #tables downloaded with humann2_databases --download utility_mapping full $DIR
 
 #postprocessing:
 #regroup gene families into different functional categories (KEGG orthogroups and GO terms)
 #renormalization
 #joining tables
 
-cd $OUTDIR
+cd $OUTDIR || exit
 for i in *genefamilies.tsv;
 do
     #Get KO groups
-    humann2_regroup_table --input $i --custom  $MAPPING_DIR/map_ko_uniref90.txt.gz --output ${i%genefamilies.tsv}KOgroups.tsv
-    humann2_renorm_table --input ${i%genefamilies.tsv}KOgroups.tsv --output ${i%genefamilies.tsv}KOgroups_cpm.tsv --units cpm
+    humann2_regroup_table --input "$i" --custom  $MAPPING_DIR/map_ko_uniref90.txt.gz --output "${i%genefamilies.tsv}"KOgroups.tsv
+    humann2_renorm_table --input "${i%genefamilies.tsv}"KOgroups.tsv --output "${i%genefamilies.tsv}"KOgroups_cpm.tsv --units cpm
     #Normalize path abundances
-    humann2_renorm_table --input ${i%genefamilies.tsv}pathabundance.tsv --output ${i%genefamilies.tsv}pathabundance_cpm.tsv --units cpm;
+    humann2_renorm_table --input "${i%genefamilies.tsv}"pathabundance.tsv --output "${i%genefamilies.tsv}"pathabundance_cpm.tsv --units cpm;
     #Get GO terms
-    humann2_regroup_table --input $i --custom $MAPPING_DIR/map_go_uniref90.txt.gz --output ${i%genefamilies.tsv}go.tsv
-    humann2_renorm_table --input ${i%genefamilies.tsv}go.tsv --output ${i%genefamilies.tsv}go_cpm.tsv --units cpm
+    humann2_regroup_table --input "$i" --custom $MAPPING_DIR/map_go_uniref90.txt.gz --output "${i%genefamilies.tsv}"go.tsv
+    humann2_renorm_table --input "${i%genefamilies.tsv}"go.tsv --output "${i%genefamilies.tsv}"go_cpm.tsv --units cpm
 done
 
 # join all normalized output files into one table

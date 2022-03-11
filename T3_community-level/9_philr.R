@@ -63,7 +63,7 @@ species_philr_dist <- dist(species_philr, method="euclidean")
 #Plot ordination
 philr <- ordinate(spe_data_final, 'PCoA', distance=species_philr_dist)
 
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/philr.pdf")
+pdf(file = "T3_community-level/philr.pdf")
 plot_ordination(spe_data_final, philr, color="Spec.subspecies", shape="Seq.centre", title="PCoA on philr distances based on species level assignments")
 dev.off()
 
@@ -76,8 +76,8 @@ model2_philr <- adonis(species_philr ~ sample_data(spe_data_final)$readcount.m.b
 model2_philr
 
 #Write model output as files
-write.table(as.data.frame(model1_philr[1:1]), "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/T3_community-level/model1_philr.txt", sep = "\t", quote = FALSE, row.names = TRUE, dec=",")
-write.table(as.data.frame(model2_philr[1:1]), "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/T3_community-level/model2_philr.txt", sep = "\t", quote = FALSE, row.names = TRUE, dec=",")
+write.table(as.data.frame(model1_philr[1:1]), "T3_community-level/T3_community-level/model1_philr.txt", sep = "\t", quote = FALSE, row.names = TRUE, dec=",")
+write.table(as.data.frame(model2_philr[1:1]), "T3_community-level/T3_community-level/model2_philr.txt", sep = "\t", quote = FALSE, row.names = TRUE, dec=",")
 
 #### Logistic regression ####
 

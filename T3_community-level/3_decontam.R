@@ -26,11 +26,11 @@ jena <- subset_samples(spe_data, spe_data@sam_data$Seq.centre=="Jena") #only Jen
 
 #Load contaminant lists
 
-salter_contam <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/contaminant_list_Salter.txt") %>%
+salter_contam <- read.table("T3_community-level/contaminant_list_Salter.txt") %>%
   pull(V1)
 
 #From Weyrich et al I am retaining only genus level
-weyrich_contam <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/contaminant_list_Weyrich.txt",
+weyrich_contam <- read.table("T3_community-level/contaminant_list_Weyrich.txt",
                              sep="\t", header = TRUE) %>%
   pull(Genera.taxonomy) %>% str_remove(pattern=".*g__") %>% unique
 
@@ -41,7 +41,7 @@ contaminant_list <- append(salter_contam, weyrich_contam) %>% unique
 contaminant_list <- append(contaminant_list, c("Mycobacterium", "Streptomyces"))
 
 #Load data downloaded from https://github.com/jfy133/Hominid_Calculus_Microbiome_Evolution/blob/master/06-additional_data_files/Data_R22_S22A_CoreMicrobiome/coremicrobiome_presenceabsence_upsettable_allsoftware_maltdbnt_0.04_fracinds0.5_fracpops0.66_singleindpopsdroppedF_hostgenus_species_20190902.tsv
-core_micr <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/core_microbiome.txt", sep = "\t", header = TRUE)
+core_micr <- read.table("T3_community-level/core_microbiome.txt", sep = "\t", header = TRUE)
 #Substitute underscores with spaces in Taxon columns
 core_micr$Taxon <- sub("_", " ", core_micr$Taxon)
 core_micr$Taxon <- sub("_", " ", core_micr$Taxon)
@@ -49,7 +49,7 @@ core_micr$Taxon <- sub("_", " ", core_micr$Taxon)
 core_micr$Taxon <- sub("_", " ", core_micr$Taxon) #Couldn't find better way to remove underscores
 
 #Load data from HOMD
-homd <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/homd_taxonomy_table.txt", sep = "\t", header = TRUE, fill=T)
+homd <- read.table("T3_community-level/homd_taxonomy_table.txt", sep = "\t", header = TRUE, fill=T)
 
 #Keep only explicitly oral taxa
 homd <- homd %>% filter(Body_site=="Oral")
@@ -57,7 +57,7 @@ homd <- homd %>% filter(Body_site=="Oral")
 #Choose thresholds for decontam by taking into account the proportion of the dataset that consists of oral and known contaminants
 
 #Table is already produced, just read from file
-decontam_test <- read.table(file="/crex/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/decontam_test.txt", sep=",",
+decontam_test <- read.table(file="/crexT3_community-level/decontam_test.txt", sep=",",
                             header=TRUE)
 
 decontam_test <- data.frame()
@@ -95,7 +95,7 @@ for (u_threshold in c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)) {
 }
 
 #Save table
-write.table(decontam_test, file="/crex/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/decontam_test.txt", sep=",",
+write.table(decontam_test, file="/crexT3_community-level/decontam_test.txt", sep=",",
             quote=FALSE, row.names=FALSE)
 
 #Plot some heatmaps
@@ -149,7 +149,7 @@ decontam_test_mycob <- heat(decontam_test, Xvar="uppsala_threshold", Yvar="jena_
   scale_fill_gradient2(guide = guide_colorbar(barheight = 10, title="Number of\nMycobacterium taxa")) +
   ylab("jena_threshold") + xlab("uppsala_threshold")
 
-pdf(file="/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/decontam_test_heatmaps.pdf")
+pdf(file="T3_community-level/decontam_test_heatmaps.pdf")
 decontam_prop_core_micr
 decontam_prop_homd
 decontam_test_contam
@@ -237,7 +237,7 @@ spe_data_decontam_norm <- phyloseq(otu_table(microbiome::transform(otu_table(spe
 jaccard_2 <- ordinate(spe_data_decontam, method="PCoA", distance="jaccard")
 
 #Plot ordination
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/jaccard_2.pdf")
+pdf(file = "T3_community-level/jaccard_2.pdf")
 par(mfrow=c(1,3))
 plot_ordination(spe_data_decontam, jaccard_2, color=c("Seq.centre"), shape="Spec.subspecies", title="PCoA on jaccard distances based on species level assignments \nafter decontam using lab blanks") #to highlight seq. centre
 plot_ordination(spe_data_decontam, jaccard_2, color=c("Spec.subspecies"), title="PCoA on jaccard distances based on species level assignments \nafter decontam using lab blanks") #to highlight subspecies
@@ -251,7 +251,7 @@ dev.off()
 clr_2 <- ordinate(spe_data_decontam_norm, method="PCoA", distance="euclidean")
 
 #Plot ordination
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/clr_2.pdf")
+pdf(file = "T3_community-level/clr_2.pdf")
 par(mfrow=c(1,3))
 plot_ordination(spe_data_decontam_norm, clr_2, color=c("Seq.centre"), shape="Spec.subspecies", title="PCoA on Aitchison distances based on species level assignments \nafter decontam") #to highlight seq. centre
 plot_ordination(spe_data_decontam_norm, clr_2, color=c("Spec.subspecies"), title="PCoA on Aitchison distances based on species level assignments \nafter decontam") #to highlight subspecies

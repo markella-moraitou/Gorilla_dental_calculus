@@ -62,7 +62,7 @@ spe_data_filt_norm <- phyloseq(otu_table(microbiome::transform(species_table_fil
 jaccard_3 <- ordinate(spe_data_filt, method="PCoA", distance="jaccard")
 
 #Plot ordination
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/jaccard_3.pdf")
+pdf(file = "T3_community-level/jaccard_3.pdf")
 par(mfrow=c(1,3))
 plot_ordination(spe_data_filt, jaccard_3, color=c("Seq.centre"), shape="Spec.subspecies", title="PCoA on jaccard distances based on species level assignments \nafter abudance filtering") #to highlight seq. centre
 plot_ordination(spe_data_filt, jaccard_3, color=c("Spec.subspecies"), title="PCoA on jaccard distances based on species level assignments \nafter abudance filtering") #to highlight subspecies
@@ -76,7 +76,7 @@ dev.off()
 clr_3 <- ordinate(spe_data_filt_norm, method="PCoA", distance="euclidean")
 
 #Plot ordination
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/clr_3.pdf")
+pdf(file = "T3_community-level/clr_3.pdf")
 par(mfrow=c(1,3))
 plot_ordination(spe_data_filt_norm, clr_3, color=c("Seq.centre"), shape="Spec.subspecies", title="PCoA on Aitchison distances based on species level assignments \nafter abudance filtering") #to highlight seq. centre
 plot_ordination(spe_data_filt_norm, clr_3, color=c("Spec.subspecies"), title="PCoA on Aitchison distances based on species level assignments \nafter abudance filtering") #to highlight subspecies

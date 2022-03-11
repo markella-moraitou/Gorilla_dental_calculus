@@ -1,18 +1,18 @@
 #!/bin/bash -l
 
-#SBATCH -A snic2020-5-528
+#SBATCH -A SNIC_PROJECT_ID
 #SBATCH -p devel
 #SBATCH -N 1-1
 #SBATCH -t 1:00:00
 #SBATCH -J haplotype_net
-#SBATCH --mail-user=markella.moraitou.0437@student.uu.se
+#SBATCH --mail-user=USER_EMAIL
 #SBATCH --mail-type=ALL
 
 #This script concatenates mitochondrial genomes assembled from DC (with completeness above a certain threshold) and downloaded from NCBI,
 #and prepares the input needed for PopArt to plot the network
-DATADIR=/proj/sllstore2017021/nobackup/MARKELLA/H1_mtgenomes
-OUTDIR=/proj/sllstore2017021/nobackup/MARKELLA/H2_haplotype_network
-REFDIR=/proj/sllstore2017021/nobackup/MARKELLA/downloaded_mtgenomes
+DATADIR=H1_mtgenomes
+OUTDIR=H2_haplotype_network
+REFDIR=downloaded_mtgenomes
 DBPREFIX=/proj/sllstore2017021/nobackup/JAELLE/REFERENCES/gorilla_gorilla_human/calculushost
 coveragefile=$DATADIR/mt_coverage.csv
 
@@ -29,71 +29,71 @@ threshold=80
 mkdir $OUTDIR/genomes_for_popart
 
 #First, get the downloaded genomes selected to be included in the haplotype network
-cd $REFDIR
+cd $REFDIR || exit
 
 #Trim reference genomes to remove hypervariable region 
 cat gorilla_mt_genomes_to_download.txt | awk '{print $1}' | while read j
 do
-    ls ${j}*fasta.gz
+    ls "${j}"*fasta.gz
 done | uniq | while read i
 do
-   gunzip $i
+   gunzip "$i"
    #Get chromosome name
-   chr=$(head -1 ${i%.gz} | awk '{print $1}' | sed "s/>//g" )
-   samtools faidx ${i%.gz} "${chr}:1-15446" -o $OUTDIR/genomes_for_popart/${i%fasta.gz}trimmed.fasta
-   sed -i 's/:1-15446//g' $OUTDIR/genomes_for_popart/${i%fasta.gz}trimmed.fasta #Remove suffix from header
-   gzip ${i%.gz}
-   gzip $OUTDIR/genomes_for_popart/${i%fasta.gz}trimmed.fasta
+   chr=$(head -1 "${i%.gz}" | awk '{print $1}' | sed "s/>//g" )
+   samtools faidx "${i%.gz}" "${chr}:1-15446" -o $OUTDIR/genomes_for_popart/"${i%fasta.gz}"trimmed.fasta
+   sed -i 's/:1-15446//g' $OUTDIR/genomes_for_popart/"${i%fasta.gz}"trimmed.fasta #Remove suffix from header
+   gzip "${i%.gz}"
+   gzip $OUTDIR/genomes_for_popart/"${i%fasta.gz}"trimmed.fasta
 done
 
-cd $OUTDIR
+cd $OUTDIR || exit
 
 #Only complete genomes with be used as references for FastANI
 ls genomes_for_popart/*fasta.gz > $OUTDIR/fastani_ref_list.txt
 
 #Also select the DC-assembled mt genomes above the threshold
-cd $DATADIR
+cd $DATADIR || exit
 awk -v FS=", " -v threshold=$threshold 'NR > 1 && $2 > threshold {print $1}' $coveragefile | while read j
 do
-    ls ${j}*fa.gz
+    ls "${j}"*fa.gz
 done | uniq | while read i
 do
-    gunzip $i
+    gunzip "$i"
     #Get chromosome name
-    chr=$(head -1 ${i%.gz} | awk '{print $1}' | sed "s/>//g" )
-    samtools faidx ${i%.gz} "${chr}:1-15446" -o $OUTDIR/genomes_for_popart/${i%fa.gz}trimmed.fasta
-    sed -i 's/:1-15446//g' $OUTDIR/genomes_for_popart/${i%fa.gz}trimmed.fasta #Remove suffix from header
-    gzip ${i%.gz}
-    gzip $OUTDIR/genomes_for_popart/${i%fa.gz}trimmed.fasta
+    chr=$(head -1 "${i%.gz}" | awk '{print $1}' | sed "s/>//g" )
+    samtools faidx "${i%.gz}" "${chr}:1-15446" -o $OUTDIR/genomes_for_popart/"${i%fa.gz}"trimmed.fasta
+    sed -i 's/:1-15446//g' $OUTDIR/genomes_for_popart/"${i%fa.gz}"trimmed.fasta #Remove suffix from header
+    gzip "${i%.gz}"
+    gzip $OUTDIR/genomes_for_popart/"${i%fa.gz}"trimmed.fasta
 done
 
-cd $OUTDIR
+cd $OUTDIR || exit
 
 #List all files that are as long as the reference
 echo "" > $OUTDIR/fasta_list.txt
 
-cd $OUTDIR/genomes_for_popart/
+cd $OUTDIR/genomes_for_popart/ || exit
 ls *.fasta.gz | while read i
 do
     #Get sequence length (number of characters excluding title, minus newlines)
-    length=$(zcat $i | tail -n +2 | wc | awk '{print $3-$1}')
+    length=$(zcat "$i" | tail -n +2 | wc | awk '{print $3-$1}')
     #If the sequence is smaller
     if [[ 15445 -gt $length ]]
     then
         continue
     else
-        echo $OUTDIR/genomes_for_popart/$i
+        echo $OUTDIR/genomes_for_popart/"$i"
     fi
 done  >> $OUTDIR/fasta_list.txt
 
-cd $OUTDIR
+cd $OUTDIR || exit
 
 #Concatenate all fasta files that were listed, in preparation for multiple sequence alignment
 rm  mt_genomes.fa*
 cat $OUTDIR/fasta_list.txt | xargs cat > mt_genomes.fa.gz
 
 #decompress
-pigz -d -p $SLURM_CPUS_ON_NODE mt_genomes.fa.gz
+pigz -d -p "$SLURM_CPUS_ON_NODE" mt_genomes.fa.gz
 
 #Get NEXUS format
 conda activate /home/markmora/.conda/envs/seqmagick
@@ -122,30 +122,30 @@ end;" >> mt_genomes_with_traits.nex
 #Use this output on PopArt (desktop)
 
 #compress
-pigz -p $SLURM_CPUS_ON_NODE mt_genomes.fa
+pigz -p "$SLURM_CPUS_ON_NODE" mt_genomes.fa
 
 ### DC genomes below the threshold will be placed near the closest haplotype (genome with the smallest ANI) ###
 
 mkdir $OUTDIR/genomes_for_fastani
 
-cd $DATADIR
+cd $DATADIR || exit
 #Also use a lower threshold
 awk -v FS=", " -v threshold=$threshold '$2 < threshold && $2 > 8 {print $1}' $coveragefile | while read j
 do
-    ls ${j}*fa.gz
+    ls "${j}"*fa.gz
 done | uniq | while read i
 do
-    gunzip $i
+    gunzip "$i"
     #Get chromosome name
-    chr=$(head -1 ${i%.gz} | awk '{print $1}' | sed "s/>//g" )
-    samtools faidx ${i%.gz} "${chr}:1-15446" -o $OUTDIR/genomes_for_fastani/${i%fa.gz}trimmed.fasta
-    sed -i 's/:1-15446//g' $OUTDIR/genomes_for_fastani/${i%fa.gz}trimmed.fasta #Remove suffix from header
-    gzip $OUTDIR/genomes_for_fastani/${i%fa.gz}trimmed.fasta
-    gzip ${i%.gz}
+    chr=$(head -1 "${i%.gz}" | awk '{print $1}' | sed "s/>//g" )
+    samtools faidx "${i%.gz}" "${chr}:1-15446" -o $OUTDIR/genomes_for_fastani/"${i%fa.gz}"trimmed.fasta
+    sed -i 's/:1-15446//g' $OUTDIR/genomes_for_fastani/"${i%fa.gz}"trimmed.fasta #Remove suffix from header
+    gzip $OUTDIR/genomes_for_fastani/"${i%fa.gz}"trimmed.fasta
+    gzip "${i%.gz}"
 done
 
 #List all incomplete genomes to be used as queries with fastani
-cd $OUTDIR
+cd $OUTDIR || exit
 
 ls genomes_for_fastani/*fasta.gz > $OUTDIR/fastani_query_list.txt
 

@@ -19,7 +19,7 @@ library(ggpubr)
 ### Importing Data ###
 
 #Import kraken-biom species tables into R
-species_table <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/T2_bracken/species_table.txt", skip=1, sep="\t", comment.char="", header=T)
+species_table <- read.table("T2_bracken/species_table.txt", skip=1, sep="\t", comment.char="", header=T)
 
 #Modifications on otu tables
 species_table <- species_table[,which(colSums(species_table)!=0)] #remove columns with sum 0
@@ -38,7 +38,7 @@ species_table=t(species_table) #transpose again to use phyloseq
 species_table_norm=microbiome::transform(species_table, transform = "clr") #CLR normalization
 
 #Import metadata
-metadata <- read_excel("/proj/sllstore2017021/nobackup/MARKELLA/metadata_gorilla_analysis.xlsx", sheet = "Sheet1")
+metadata <- read_excel("metadata_gorilla_analysis.xlsx", sheet = "Sheet1")
 
 #Modifications on metadata table
 metadata <- as.data.frame(metadata) #turn from tibble to data frame
@@ -53,7 +53,7 @@ metadata$Spec.subspecies <- factor(metadata$Spec.subspecies, levels = c("gorilla
 
 #Add read count before Kraken
 ##Read counts after human-host mapping
-rc_human_host <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/8_humanHostFilt/unmapped/readcount_hostmapping.txt", sep=",", comment.char="", header=T)
+rc_human_host <- read.table("8_humanHostFilt/unmapped/readcount_hostmapping.txt", sep=",", comment.char="", header=T)
 
 #Fix row names
 rc_human_host$sample <- str_remove(rc_human_host$sample, "_m") %>% str_remove("./")
@@ -68,7 +68,7 @@ saveRDS(metadata, file="metadata.RDS")
 
 #Create taxonomic table for species-level classifications
 #Already created and it takes time, so I am just getting it from the save file
-taxonomy_species_original <- read_excel("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/taxonomy_species_original.xlsx", sheet = "taxonomy_species_original")
+taxonomy_species_original <- read_excel("T3_community-level/taxonomy_species_original.xlsx", sheet = "taxonomy_species_original")
 
 #taxonomy_species_original <- matrix( nrow = length(row.names(species_table_norm)), ncol = 9) #create empty taxonomic matrix
 #colnames(taxonomy_species_original)=c("ID", "superkingdom", "clade", "phylum", "class", "order", "family", "genus", "species") #set names of taxonomic rankings
@@ -123,7 +123,7 @@ taxonomy_species_extension = as.data.frame(taxonomy_species_extension)
 taxonomy_species <- rbind(taxonomy_species, taxonomy_species_extension)
 
 #Save it as text for back-up, since it takes long to generate
-write.table(taxonomy_species, "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/taxonomy_species_original.txt", sep = "\t", row.names = FALSE, col.names = TRUE)
+write.table(taxonomy_species, "T3_community-level/taxonomy_species_original.txt", sep = "\t", row.names = FALSE, col.names = TRUE)
 
 taxonomy_species <- taxonomy_species[order(taxonomy_species$ID),] #order by ID
 taxonomy_species <- unique(taxonomy_species) #keep only unique entries
@@ -173,7 +173,7 @@ jaccard_1 <- ordinate(spe_data, method="PCoA", distance="jaccard")
 
 
 #Plot and save ordinations
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/jaccard_1.pdf")
+pdf(file = "T3_community-level/jaccard_1.pdf")
 par(mfrow=c(1,3))
 plot_ordination(spe_data, jaccard_1, color=c("Seq.centre"), shape="Spec.subspecies", title="PCoA on jaccard distances based on species level assignments") #to highlight seq. centre
 plot_ordination(spe_data, jaccard_1, color=c("plot.label"), title="PCoA on jaccard distances based on species level assignments") #to highlight subspecies
@@ -187,7 +187,7 @@ dev.off()
 clr_1 <- ordinate(spe_data_norm, method="PCoA", distance="euclidean")
 
 #Plot and save ordinations
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/clr_1.pdf")
+pdf(file = "T3_community-level/clr_1.pdf")
 par(mfrow=c(1,3))
 plot_ordination(spe_data_norm, clr_1, color=c("Seq.centre"), shape="Spec.subspecies", title="PCoA on Aitchison distances based on species level assignments") #to highlight seq. centre
 plot_ordination(spe_data_norm, clr_1, color=c("plot.label"), title="PCoA on Aitchison distances based on species level assignments") #to highlight subspecies

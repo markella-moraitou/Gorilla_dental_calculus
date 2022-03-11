@@ -12,14 +12,14 @@ library(ggplot2)
 library(microbiome)
 library(tidyverse)
 
-load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
+load("T3_community-level/.RData")
 
 #Diet analysis - Script 1
 #Set up phyloseq object for analysis
 
 #Import kraken-biom otu table for eukaryotic taxa into R
 #Based on Kraken2 output instead of Bracken
-euk_table <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/D2_kraken2_full_db/otu_table_kraken_fulldb.txt", skip=1, sep="\t", comment.char="", header=T)
+euk_table <- read.table("D2_kraken2_full_db/otu_table_kraken_fulldb.txt", skip=1, sep="\t", comment.char="", header=T)
 
 #Modifications on otu table
 
@@ -46,8 +46,8 @@ euk_table=t(euk_table)
 #  taxonomy_euk_original[taxon] <- classification(sci_id=taxon, db="ncbi")
 #}
 
-#saveRDS(taxonomy_euk_original, file = "/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/taxonomy_euk_original_kraken.rds")
-taxonomy_euk_original <- readRDS(file = "/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/taxonomy_euk_original_kraken.rds")
+#saveRDS(taxonomy_euk_original, file = "D3_diet_stats/taxonomy_euk_original_kraken.rds")
+taxonomy_euk_original <- readRDS(file = "D3_diet_stats/taxonomy_euk_original_kraken.rds")
 
 taxonomy_euk <- matrix(nrow = nrow(euk_table), ncol = 9)
 colnames(taxonomy_euk) <- c("taxonID","superkingdom", "clade", "phylum", "class", "order", "family", "genus", "species")
