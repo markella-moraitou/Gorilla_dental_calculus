@@ -12,7 +12,7 @@
 # if needed), creates a bam file that is then subsetted to only include mitochondrial genome, adds read group data,
 # and uses angsd to create a consensus fasta file.
 
-#Adapted from: /proj/sllstore2017021/nobackup/SAM/Bear_Lineage_Project/scripts/bwa.RG.dup.sh
+#Adapted from: /proj/SNIC_PROJECT/nobackup/SAM/Bear_Lineage_Project/scripts/bwa.RG.dup.sh
 
 module load bioinfo-tools BEDTools bwa samtools picard ANGSD
 
@@ -21,7 +21,7 @@ echo $(module list)
 
 OUTDIR=H1_mtgenomes
 DATADIR=8_humanHostFilt/mapped
-DBPREFIX=/proj/sllstore2017021/nobackup/JAELLE/REFERENCES/gorilla_gorilla_human/calculushost
+DBPREFIX=/proj/SNIC_PROJECT/nobackup/JAELLE/REFERENCES/gorilla_gorilla_human/calculushost
 #Samples that were retained in the analysis
 retainedsamples=RD2_mapping/retained_samples.txt
 

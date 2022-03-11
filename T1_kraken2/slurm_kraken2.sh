@@ -12,7 +12,7 @@
 # Microbial assignments using kraken for merged data
 # Standard kraken database (RefSeq bacteria+archaea+viral+human)
 # build by UPPMAX $KRAKEN_DB (updated started of each month)
-# Adapted from /proj/sllstore2017021/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/kraken2_190618.sh
+# Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/kraken2_190618.sh
 
 # Merged data reads that couldn't be merged
 

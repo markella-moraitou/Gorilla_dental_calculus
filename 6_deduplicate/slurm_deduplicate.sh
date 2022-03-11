@@ -11,7 +11,7 @@
 
 # analysis step 5: Removing duplicates 
 # with Tom's in house script
-# Adapted from /proj/sllstore2017021/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/rmdup_merged_190606.sh
+# Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/rmdup_merged_190606.sh
 
 # may need to increase memory depending on input file size
 
@@ -22,7 +22,7 @@ echo $(module list)
 
 DATADIR=5_qualityFilt
 OUTDIR=6_deduplicate
-rmdup_script=/proj/sllstore2017021/nobackup/EXAMPLES_for_new_users/remove_duplicates_single_end.py
+rmdup_script=/proj/SNIC_PROJECT/nobackup/EXAMPLES_for_new_users/remove_duplicates_single_end.py
 
 #run deduplication
 cd $DATADIR || exit

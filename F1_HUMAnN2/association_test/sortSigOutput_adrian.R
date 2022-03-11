@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-#Based on /proj/sllstore2017021/nobackup/ADRIAN/scripts/functional/sortSigOutput.R
+#Based on /proj/SNIC_PROJECT/nobackup/ADRIAN/scripts/functional/sortSigOutput.R
 
 require(tidyverse)
 

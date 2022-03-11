@@ -12,7 +12,7 @@
 # Building Bracken db file from Kraken2 default database
 # For average read length of 55 bp -- the average of the mean read length of every sample in the dataset (see: log_readlength_hostfilt_05022021.txt)
 # Using kmer length of 35, as recommended by Bracken for Kraken2
-# Adapted from /proj/sllstore2017021/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/bracken_unmerged_190801.sh
+# Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/bracken_unmerged_190801.sh
 
 # Bracken on merged samples
 # species level (-l S)

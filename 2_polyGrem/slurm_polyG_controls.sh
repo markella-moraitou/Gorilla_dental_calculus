@@ -27,7 +27,7 @@ conda activate fastp #activate the environment where fastp is installed
 
 #For DC2 library and extraction blanks (I am using only controls from the batches that contained samples from my analysis)
 
-DATADIR=/proj/sllstore2017021/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219
+DATADIR=/proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219
 
 controls=(BE108 BE208 BE109 BE209 BE110 BE210 BE111 BE211 BE112 BE212 BE213 BE114 BE214 BE115 BE215 BE116 BE216 BE117 BE217 BE118 BE218 BE119 BE219 BE319 BE121 BE221 BkL2 BL105 BL106 BL107 BL108 BL110 BL111 BL112 BS001 BS005)
 
@@ -44,7 +44,7 @@ done
 
 #For DC2 library and extraction blanks (I am using only controls from the batches that contained samples from my analysis)
 
-DATADIR=/proj/sllstore2017021/nobackup/ADRIAN/calculus/DC3/P1_demux_211001/
+DATADIR=/proj/SNIC_PROJECT/nobackup/ADRIAN/calculus/DC3/P1_demux_211001/
 
 controls=(13EB2 14EB2 15EB2 17EB2 BL113 BL114 BL115 BL116 24EB1)
 
@@ -74,7 +74,7 @@ done
 
 #For Jena library and extraction blanks
 
-DATADIR=/proj/sllstore2017021/nobackup/GORILLA_METAGENOMES/blanks
+DATADIR=/proj/SNIC_PROJECT/nobackup/GORILLA_METAGENOMES/blanks
 
 #forward reads
 find $DATADIR -name "*_S0_L000_R1_000.trimmed.fastq.gz" | while read i

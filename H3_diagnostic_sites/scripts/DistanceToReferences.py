@@ -1,4 +1,4 @@
-#Adapted from /proj/sllstore2017021/nobackup/SAM/Bear_Lineage_Project/scripts/DistanceToReferences.py
+#Adapted from /proj/SNIC_PROJECT/nobackup/SAM/Bear_Lineage_Project/scripts/DistanceToReferences.py
 
 #Import the modules to be used
 import os

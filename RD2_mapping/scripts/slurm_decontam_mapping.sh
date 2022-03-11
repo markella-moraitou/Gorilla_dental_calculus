@@ -10,7 +10,7 @@
 
 # Map to contaminant genomes
 # Save save unmapped reads for downstream analysis
-# Based on /proj/sllstore2017021/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/rmhost_merged_190606.sh,
+# Based on /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/rmhost_merged_190606.sh,
 # but adapted for filter decontamination
 
 module load bioinfo-tools samtools bwa BEDTools

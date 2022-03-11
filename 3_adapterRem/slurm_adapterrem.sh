@@ -11,7 +11,7 @@
 #SBATCH --mail-user USER_EMAIL
 
 # analysis step 2: Adapter Removal
-# adapted from: /proj/sllstore2017021/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/adrm_run1_190501.sh
+# adapted from: /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/adrm_run1_190501.sh
 # collapsing reads
 # trims @ < 30 and Ns (default mismatch rate mm 3)
 # removes sequences < 30 bp in length
@@ -63,7 +63,7 @@ done
 
 #DC1 samples also have the same set of adapters but are located in a different directory (polyG removal was not needed since they were sequenced on Illumina HiSeq)
 
-SEQDIR=/proj/sllstore2017021/nobackup/JAELLE
+SEQDIR=/proj/SNIC_PROJECT/nobackup/JAELLE
 
 find $SEQDIR/DENTAL_CALCULUS_FIRSTSCREEN_**/P1_** -name "G*wash*.fastq.gz" | while read i
 do

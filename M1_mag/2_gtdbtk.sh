@@ -1,11 +1,11 @@
 #!/bin/bash
-#SBATCH -A snic2021-5-477
+#SBATCH -A SNIC_PROJECT_ID
 #SBATCH -p node
 #SBATCH -n 1
 #SBATCH -C mem256GB
 #SBATCH -t 06:00:00
 #SBATCH -J gtdbtk
-#SBATCH -o /proj/sllstore2017021/nobackup/ADRIAN/logs/slurm-%A_%a.out
+#SBATCH -o /proj/SNIC_PROJECT/nobackup/ADRIAN/logs/slurm-%A_%a.out
 #SBATCH --mail-type=FAIL
 
 module load bioinfo-tools prodigal hmmer pplacer FastTree gsl GTDB-Tk/0.3.2

@@ -24,7 +24,7 @@ conda activate fastp #activate the environment where fastp is installed
 
 #For DC2 samples
 
-DATADIR=/proj/sllstore2017021/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/
+DATADIR=/proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/
 
 find $DATADIR/P1_demux_run**/**/ -name "G**.fastq.gz" | while read i
 do
@@ -39,7 +39,7 @@ done
 
 #For DC3 samples
 
-DATADIR=/proj/sllstore2017021/nobackup/ADRIAN/calculus/DC3/P1_demux_211001/
+DATADIR=/proj/SNIC_PROJECT/nobackup/ADRIAN/calculus/DC3/P1_demux_211001/
 
 #forward reads
 find $DATADIR/**/ -name "G**pair1**.fastq.gz" | while read i
@@ -87,7 +87,7 @@ done
 
 #For Jena samples
 
-DATADIR=/proj/sllstore2017021/nobackup/GORILLA_METAGENOMES/pairedend/paired_fastq #incomplete path: there are directories paired_fastq2 and paired_fastq3
+DATADIR=/proj/SNIC_PROJECT/nobackup/GORILLA_METAGENOMES/pairedend/paired_fastq #incomplete path: there are directories paired_fastq2 and paired_fastq3
 
 #forward reads
 find ${DATADIR}[23]/* -name "*R1_000.trimmed.fastq.gz" | while read i
