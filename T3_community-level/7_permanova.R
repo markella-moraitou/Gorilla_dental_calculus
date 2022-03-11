@@ -17,7 +17,7 @@ load(".RData")
 #PERMANOVA after decontaminating and filtering for abundance
 
 #Add sexing output
-gorilla_sexing <- read_xlsx("/crex/proj/sllstore2017021/nobackup/MARKELLA/Gorilla_sexing_full_summary.xlsx", skip=1)
+gorilla_sexing <- read_xlsx("/crexGorilla_sexing_full_summary.xlsx", skip=1)
 
 #Keep only columns with sex assignments then get a summary of all the sex assignments per sample (hopefully on test does not contradict the other)
 gorilla_sexing <- gorilla_sexing[,1:7] %>%

@@ -22,7 +22,7 @@ load(".RData")
 #### Investigate misincorporation in ambiguous taxa ####
 
 #Load table
-edge_misinc <- read_tsv(file="/proj/sllstore2017021/nobackup/MARKELLA/RD3_mapdamage4ambiguoustaxa/edge_misincorporation.txt")
+edge_misinc <- read_tsv(file="RD3_mapdamage4ambiguoustaxa/edge_misincorporation.txt")
 
 #TaxID and position shouldn't be treated as numericals
 edge_misinc$TaxID <- as.character(edge_misinc$TaxID)
@@ -64,7 +64,7 @@ damage_assessment %>% left_join(otu_table(spe_data_envrem) %>% as.data.frame %>%
                                   mutate(TaxID=taxa_names(spe_data_envrem)), copy=TRUE, by="TaxID") %>%
   #Get mean abundances per taxon
   melt %>% group_by(TaxID, damage) %>% summarise(mean_abund=mean(value)) %>% ggboxplot(x="damage", y="mean_abund") %>%
-  ggsave(device="png", file="/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/ambiguous_taxa_abundance.png")
+  ggsave(device="png", file="T3_community-level/ambiguous_taxa_abundance.png")
 
 #Ancient looking taxa tend to be on average more abundant. 
 #However there are several highly abundant modern taxa
@@ -131,9 +131,9 @@ for (i in 1:nrow(feast_metadata_filt)){ #change the id's so that they are consis
 
 #Rerun FEAST for filtered dataset
 #feast_output_filt <- FEAST(feast_table_filt, feast_metadata_filt, different_sources_flag = FALSE,
-#                           outfile = "species_dc_filt", dir_path = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level")
+#                           outfile = "species_dc_filt", dir_path = "T3_community-level")
 #Already produced so I am reading off the saved file
-feast_output_filt <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/species_dc_filt_source_contributions_matrix.txt", header = TRUE, sep = "\t", dec = ".")
+feast_output_filt <- read.table("T3_community-level/species_dc_filt_source_contributions_matrix.txt", header = TRUE, sep = "\t", dec = ".")
                            
 #Construct an edited matrix that shows the contributions per environment not per source
 feast_output_env_filt <- matrix(nrow = nrow(feast_output_filt), ncol = 7)
@@ -168,7 +168,7 @@ oral_proportion_filt <- feast_output_env_filt %>% as.data.frame %>% select(human
 ggsave(gghistogram(oral_proportion_filt, "oral_proportion_log", fill="#C77CFF", position="stack") +
         #Include vertical line with the cutoff of 0.03 (3%)
         geom_vline(xintercept=log(0.03)),
- file="/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/oral_proporton_hist_filt.png")
+ file="T3_community-level/oral_proporton_hist_filt.png")
 
 #### Taxa lists for read-level decontam ####
 #Extract a list of "exogenous" taxa -- based on this list, the taxa that have been removed in this analysis
@@ -178,7 +178,7 @@ ggsave(gghistogram(oral_proportion_filt, "oral_proportion_log", fill="#C77CFF", 
 exogenous_id_list <- append(rownames(contam), env_taxa$TaxID) %>% 
   append(damage_assessment %>% filter(damage==FALSE) %>% pull(TaxID))
 
-write.table(exogenous_id_list, file="/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/exogenous_id_list.txt",
+write.table(exogenous_id_list, file="RD2_mapping/exogenous_id_list.txt",
             row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 print("How many taxa are there in the exogenous taxa ID list")
@@ -190,7 +190,7 @@ print("How many samples are retained?")
 length(retained_samples)
 
 
-write.table(retained_samples, file="/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/retained_samples.txt",
+write.table(retained_samples, file="RD2_mapping/retained_samples.txt",
             row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 #I will also extract a list of the taxa with the highest read count in the envrem dataset, 
@@ -213,7 +213,7 @@ length(abundant_id_list)
 
 
 #Plot contributions of retained samples after filtering
-png(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/source_contribution_filt.png", width = 1000, height = 480)
+png(file = "T3_community-level/source_contribution_filt.png", width = 1000, height = 480)
 feast_output_env_filt[which(rownames(feast_output_env_filt) %in% retained_samples),] %>% t %>%
   plot_contribution() + 
   theme(axis.text.x=element_text(angle = +90, hjust = 0)) +
@@ -221,7 +221,7 @@ feast_output_env_filt[which(rownames(feast_output_env_filt) %in% retained_sample
 dev.off()
 
 #Plot contributions before filtering and decontam(only of retained samples for comparison purposes)
-png(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/source_contribution_retained_samples.png", width = 1000, height = 480)
+png(file = "T3_community-level/source_contribution_retained_samples.png", width = 1000, height = 480)
 #Filter out bad samples, blanks and controls
 feast_output_env[which(rownames(feast_output_env) %in% retained_samples),] %>% t %>%
   plot_contribution() + 
@@ -248,7 +248,7 @@ print("There should be no intersection with exogenous")
 length(intersect(abundant_id_list, exogenous_id_list))
 
 #Save file
-write.table(abundant_id_list, file="/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/abundant_id_list.txt",
+write.table(abundant_id_list, file="RD2_mapping/abundant_id_list.txt",
             row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 #### Plot ####
@@ -256,7 +256,7 @@ write.table(abundant_id_list, file="/proj/sllstore2017021/nobackup/MARKELLA/RD2_
 jaccard_5 <- ordinate(spe_data_final, method="PCoA", distance="jaccard")
 
 #Plot ordination
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/jaccard_5.pdf")
+pdf(file = "T3_community-level/jaccard_5.pdf")
 par(mfrow=c(1,3))
 plot_ordination(spe_data_final, jaccard_5, color=c("Seq.centre"), shape="Spec.subspecies", title="PCoA on jaccard distances based on species level assignments \nafter reference-based decontamination") #to highlight seq. centre
 plot_ordination(spe_data_final, jaccard_5, color=c("Spec.subspecies"), title="PCoA on jaccard distances based on species level assignments \nafter reference-based decontamination") #to highlight subspecies
@@ -268,7 +268,7 @@ dev.off()
 clr_5 <- ordinate(spe_data_final_norm, method="PCoA", distance="euclidean")
 
 #Plot ordination
-pdf(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/clr_5.pdf")
+pdf(file = "T3_community-level/clr_5.pdf")
 par(mfrow=c(1,3))
 plot_ordination(spe_data_final_norm, clr_5, color=c("Seq.centre"), shape="Spec.subspecies", title="PCoA on Aitchison distances based on species level assignments \nafter reference-based decontamination") #to highlight seq. centre
 plot_ordination(spe_data_final_norm, clr_5, color=c("Spec.subspecies"), title="PCoA on Aitchison distances based on species level assignments \nafter reference-based decontamination") #to highlight subspecies

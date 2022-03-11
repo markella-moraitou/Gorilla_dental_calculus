@@ -56,7 +56,7 @@ tax_table(spe_data_envrem)[which(taxa_names(spe_data_envrem) %in% ambiguous_cont
 
 #### Check number of reads per taxon ####
 #Use number of reads instead of taxon abundance - therefore using Kraken2 output
-spe_kraken <- read.table(file="/proj/sllstore2017021/nobackup/MARKELLA/T1_kraken2/otu_table_kraken.txt",
+spe_kraken <- read.table(file="T1_kraken2/otu_table_kraken.txt",
                          header = TRUE, comment.char = "", skip=1, sep="\t")
 
 spe_kraken$X.OTU.ID <- as.character(spe_kraken$X.OTU.ID)
@@ -86,7 +86,7 @@ ambiguous_abund$taxon_name <- taxonomy_species[match(ambiguous_abund$taxon,
 
 #Save the list - these taxa will be checked with mapDamage on UPPMAX
 #include sample name also (this will be the sample that will be used for mapping)
-write.table(ambiguous_abund %>% select(sample, taxon, taxon_name), file="/proj/sllstore2017021/nobackup/MARKELLA/RD3_mapdamage4ambiguoustaxa/top_ambiguous_taxa.txt",
+write.table(ambiguous_abund %>% select(sample, taxon, taxon_name), file="RD3_mapdamage4ambiguoustaxa/top_ambiguous_taxa.txt",
             col.names = FALSE, quote = FALSE, row.names = FALSE)
 
 sessionInfo()
@@ -95,4 +95,4 @@ sink(file=NULL)
         
 save.image()
 #### Run map damage for top ambiguous taxa ####
-#system("cd /proj/sllstore2017021/nobackup/MARKELLA/RD3_mapdamage4ambiguoustaxa; sbatch slurm_get_ambigtaxa_genomes.sh)
+#system("cd RD3_mapdamage4ambiguoustaxa; sbatch slurm_get_ambigtaxa_genomes.sh)

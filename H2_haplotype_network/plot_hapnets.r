@@ -8,7 +8,7 @@ library(readxl)
 #Based on Zach's script /proj/sllstore3017021/nobackup/ZACH/ORANGS/haplotype_networks/plot_hapnets.r
 
 #Set working directory
-setwd(dir="/crex/proj/sllstore2017021/nobackup/MARKELLA/")
+setwd(dir="/crex")
 
 #Get subspecies info for DC genomes from metadata
 metadata <- readRDS("T3_community-level/metadata.RDS")
@@ -42,8 +42,8 @@ colnames(haplotable) <- c('haplotype','sample_id')
 
 #Add previous info about haplotypes, when applicable
 downloaded_mt_metadata <- 
-  read.table("/crex/proj/sllstore2017021/nobackup/MARKELLA/downloaded_mtgenomes/duplicate_genomes.txt", sep='\t', header=TRUE) %>%
-  rbind(read.table("/crex/proj/sllstore2017021/nobackup/MARKELLA/downloaded_mtgenomes/sample_per_haplotype.txt", sep='\t', header=TRUE)) %>% unique
+  read.table("/crexdownloaded_mtgenomes/duplicate_genomes.txt", sep='\t', header=TRUE) %>%
+  rbind(read.table("/crexdownloaded_mtgenomes/sample_per_haplotype.txt", sep='\t', header=TRUE)) %>% unique
   
 haplotable$species <- subspecies.table[match(haplotable$sample_id, rownames(subspecies.table)),] %>% unname
 haplotable$vdV_haplotype <- downloaded_mt_metadata$mtDNA.haplotype[match(haplotable$sample_id, downloaded_mt_metadata$accession)]

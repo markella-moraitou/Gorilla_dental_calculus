@@ -19,7 +19,7 @@ load(".RData")
 #### Prepare files for running FEAST ####
 
 #Import kraken-biom of samples (sinks) and sources
-feast_table <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/T2_bracken/Sources/species_table_feast.txt", skip=1, sep="\t", comment.char="", header=T)
+feast_table <- read.table("T2_bracken/Sources/species_table_feast.txt", skip=1, sep="\t", comment.char="", header=T)
 
 #Modifications on otu table
 feast_table <- feast_table[,which(colSums(feast_table)!=0)] #remove columns with sum 0
@@ -70,9 +70,9 @@ for (i in 1:length(row.names(feast_table))){
 }
 
 #### Run feast and investigate output ####
-#feast_output <- FEAST(feast_table, feast_metadata, different_sources_flag = FALSE, outfile = "species_dc", dir_path = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level")
+#feast_output <- FEAST(feast_table, feast_metadata, different_sources_flag = FALSE, outfile = "species_dc", dir_path = "T3_community-level")
 #Already produced so I am reading off the saved file
-feast_output <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/species_dc_source_contributions_matrix.txt", header = TRUE, sep = "\t", dec = ".")
+feast_output <- read.table("T3_community-level/species_dc_source_contributions_matrix.txt", header = TRUE, sep = "\t", dec = ".")
 
 #Construct an edited matrix that shows the contributions per environment not per source
 feast_output_env <- matrix(nrow = nrow(feast_output), ncol = 7)
@@ -101,7 +101,7 @@ rowSums(feast_output_env)
 feast_output_env <- feast_output_env[,c(1,3,2,4,5,6,7)]
 
 #Plot contributions
-png(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/source_contribution.png", width = 1000, height = 480)
+png(file = "T3_community-level/source_contribution.png", width = 1000, height = 480)
 plot_contribution(t(feast_output_env)) +
   theme(axis.text.x=element_text(angle = +90, hjust = 0)) +
   scale_fill_brewer(palette = "Spectral")
@@ -117,7 +117,7 @@ oral_proportion <- feast_output_env %>% as.data.frame %>% select(human_calculus,
 ggsave(gghistogram(oral_proportion, "oral_proportion_log", fill="Sample.type", position="stack") +
         #Include vertical line with the cutoff of 0.03 (3%)
         geom_vline(xintercept=log(0.03), size=1, colour="red"),
- file="/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/oral_proporton_hist.png")
+ file="T3_community-level/oral_proporton_hist.png")
  
 #### Remove bad samples ####
 
@@ -131,7 +131,7 @@ bad_samples
 #Bad samples will be removed after running decontam (3_decontam.R)
 
 #Plot contributions only for retained samples (for comparison purposes)
-png(file = "/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/source_contribution_retained_samples.png", width = 1000, height = 480)
+png(file = "T3_community-level/source_contribution_retained_samples.png", width = 1000, height = 480)
 #Filter out bad samples, blanks and controls
 feast_output_env[which(!(rownames(feast_output_env) %in% bad_samples | grepl("BE|BL|BS|ER|EX|LI", rownames(feast_output_env)))),] %>% t %>%
   plot_contribution() + 

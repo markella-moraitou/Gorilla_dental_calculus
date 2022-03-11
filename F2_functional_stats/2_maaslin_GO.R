@@ -1,4 +1,4 @@
-sink(file="log2_maaslin_GO.txt")
+# sink(file="log2_maaslin_GO.txt")
 
 #load packages
 library(Maaslin2)
@@ -7,30 +7,40 @@ library(microbiome)
 library(ggpubr)
 library(dplyr)
 
-load(".RData")
+# load(".RData")
 
 #Functional analysis - Script 2
 #Differential abundance analysis with Maaslin2
+GO_BP_phyloseq<-readRDS("F2_functional_stats/GO_BP_phyloseq")
 
+# make pairs
+combs<-c("gorilla","graueri","beringei")
+results<-NULL
+for (i in combs) {
+  print(i)
+  #Run Maaslin2 for gene ontology terms
+  Maaslin2(input_data = t(otu_table(GO_BP_phyloseq)),normalization = "NONE", analysis_method = "LM",
+           input_metadata = as.data.frame(as.matrix(sample_data(GO_BP_phyloseq))),
+           fixed_effects = "Spec.subspecies", reference = paste0("Spec.subspecies,",i), plot_heatmap = TRUE,
+           output = paste0("F2_functional_stats/maaslin/GO_maaslin_output-",i,"ref"))
+  
+  #Load data
+  significant_BP <- read_tsv(paste0("F2_functional_stats/maaslin/GO_maaslin_output-",i,"ref/significant_results.tsv"))
+  
+  sig.BP<-length(unique(significant_BP$feature))
+  
+  #Only keep associations with a corrected p-value (qval) above  0.05
+  most_signif_BP <- significant_BP[significant_BP$qval<0.05,]
+  
+  #How many unique biological processes is this?
+  sig.BP.q<-length(unique(most_signif_BP$feature))
 
-#Run Maaslin2 for gene ontology terms
-#Maaslin2(input_data = t(otu_table(GO_BP_phyloseq)), normalization = "NONE", analysis_method = "LM",
-#         input_metadata = as.data.frame(as.matrix(sample_data(GO_BP_phyloseq))),
-#         fixed_effects = "Spec.subspecies", reference = "Spec.subspecies,gorilla", plot_heatmap = TRUE,
-#         output = "/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/GO_maaslin_output")
+  results<-rbind(results,cbind(sig.BP,sig.BP.q))
+}
 
-#Load data
-significant_BP <- read_tsv("/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/GO_maaslin_output/significant_results.tsv")
-
-print("How many associated biological processes?")
-length(unique(significant_BP$feature))
-
-#Only keep associations with a corrected p-value (qval) above  0.05
-most_signif_BP <- significant_BP[significant_BP$qval<0.05,]
-
-#How many unique biological processes is this?
-print("How many associated biological processes with qval < 0.05?")
-length(unique(most_signif_BP$feature))
+results<-cbind(combs,results)
+colnames(results)<-c("subspecies as reference","How many associated biological processes with qval < 0.05?","How many associated biological processes?")
+write.table(x = results,file = "F2_functional_stats/comparison-of-subspecies-reference.txt",quote = F,row.names = F)
 
 #Get the IDs of the most significant GO terms
 most_signif_BP_ids <- unique(sort(substr(most_signif_BP$feature, 0, 10)))
@@ -100,10 +110,10 @@ go_heatmap <-
         axis.title = element_text(size=15), axis.text.y = element_text(size=10), legend.position="right")
 go_heatmap
 
-ggsave(go_heatmap, file="/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/go_heatmap.png",
+ggsave(go_heatmap, file="F2_functional_stats/go_heatmap.png",
        height=6, width=9)
 
-write.table(rev(unique(sort(go_heatmap$data$YYYY))), row.names = FALSE, quote = FALSE, file = "/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/GO_signif_BP.txt")
+write.table(rev(unique(sort(go_heatmap$data$YYYY))), row.names = FALSE, quote = FALSE, file = "F2_functional_stats/GO_signif_BP.txt")
 
 
 #### Compare abundances of differentially abundant and total functions ####

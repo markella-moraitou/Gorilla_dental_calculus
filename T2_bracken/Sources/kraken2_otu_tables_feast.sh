@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Adapted from /proj/sllstore2017021/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/kraken2_otu_tables.sh
+#Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/kraken2_otu_tables.sh
 #Run it after activating conda environment kraken-biom
 
 #Include samples (sinks) to the table

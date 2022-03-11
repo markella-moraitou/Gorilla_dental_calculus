@@ -3,9 +3,9 @@
 
 module load bioinfo-tools HUMAnN/3.0 R_packages
 
-DATADIR=/proj/sllstore2017021/nobackup/MARKELLA/F1_HUMAnN2
-OUTDIR=/proj/sllstore2017021/nobackup/MARKELLA/F1_HUMAnN2/association_test
-PLOTDIR=/proj/sllstore2017021/nobackup/MARKELLA/F1_HUMAnN2/plots
+DATADIR=F1_HUMAnN2
+OUTDIR=F1_HUMAnN2/association_test
+PLOTDIR=F1_HUMAnN2/plots
 threads=$SLURM_NTASKS
 
 # for association test and plotting, humann3 has better functions

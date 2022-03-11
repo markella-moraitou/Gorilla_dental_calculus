@@ -4,14 +4,14 @@ library(phyloseq)
 library(taxize)
 library(dplyr)
 
-load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
+load("T3_community-level/.RData")
 
 #Checking the reference genomes table produced on Rackham
 #and choosing substitute species for the missing taxa
 
 #### For the contaminants ####
 
-contam_ref_recent <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/contaminant_genomes_list_recent.txt", sep="\t", fill=TRUE, row.names = NULL, header = FALSE)
+contam_ref_recent <- read.table("RD2_mapping/contaminant_genomes_list_recent.txt", sep="\t", fill=TRUE, row.names = NULL, header = FALSE)
 contam_ref_recent$V1 <- as.character(contam_ref_recent$V1)
 
 #Keep only unique entries
@@ -65,13 +65,13 @@ print("How many additional contaminant taxa we will need substitutes for?")
 nrow(exogenous_id_suppl)
 
 #Save file
-write.table(exogenous_id_suppl, file="/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/exogenous_id_suppl.txt",
+write.table(exogenous_id_suppl, file="RD2_mapping/exogenous_id_suppl.txt",
             row.names = FALSE, col.names = FALSE, quote = FALSE, sep="\t")
 
 
 #### For the noncontaminants ####
 
-noncontam_ref_recent <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/noncontaminant_genomes_list_recent.txt", sep="\t", row.names = NULL, header = FALSE)
+noncontam_ref_recent <- read.table("RD2_mapping/noncontaminant_genomes_list_recent.txt", sep="\t", row.names = NULL, header = FALSE)
 noncontam_ref_recent$V1 <- as.character(noncontam_ref_recent$V1)
 
 #Keep only unique entries
@@ -129,6 +129,6 @@ print("There should be no taxa in common amongst the taxa substituting contamina
 intersect(abundant_id_suppl$sister_species, exogenous_id_suppl$sister_species)
 
 #Save file
-write.table(abundant_id_suppl, file="/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/abundant_id_suppl.txt",
+write.table(abundant_id_suppl, file="RD2_mapping/abundant_id_suppl.txt",
             row.names = FALSE, col.names = FALSE, quote = FALSE, sep="\t")
 

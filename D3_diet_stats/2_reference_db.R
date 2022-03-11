@@ -17,27 +17,27 @@ load(".RData")
 #Script for processing the databases
 
 #Yamagiwa-2005
-yamagiwa_grauers <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/Yamagiwa-2005.txt", sep="\t", fill = TRUE)
+yamagiwa_grauers <- read.table("D3_diet_stats/Yamagiwa-2005.txt", sep="\t", fill = TRUE)
 yamagiwa_grauers <- as.data.frame(unique(yamagiwa_grauers$V1))
 colnames(yamagiwa_grauers) <- "taxon_name"
 
 #Rothman-2014
-rothman_mountain <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/Rothman-2014.txt", sep="\t", fill = TRUE)
+rothman_mountain <- read.table("D3_diet_stats/Rothman-2014.txt", sep="\t", fill = TRUE)
 colnames(rothman_mountain) <- "taxon_name"
 rothman_mountain <- unique(rothman_mountain)
 
 #Remis-2001
-remis_western <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/Remis-2001.txt", sep="\t", fill = TRUE)
+remis_western <- read.table("D3_diet_stats/Remis-2001.txt", sep="\t", fill = TRUE)
 colnames(remis_western) <- "taxon_name"
 remis_western <- unique(remis_western)
 
 #Rogers-2004
-rogers_western <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/Rogers-2004.txt", sep="\t", fill = TRUE)
+rogers_western <- read.table("D3_diet_stats/Rogers-2004.txt", sep="\t", fill = TRUE)
 colnames(rogers_western) <- "taxon_name"
 rogers_western <- unique(rogers_western)
 
 #Michel-in-prep
-michel_grauers <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/Michel-in-prep.txt", sep="\t", fill = TRUE)
+michel_grauers <- read.table("D3_diet_stats/Michel-in-prep.txt", sep="\t", fill = TRUE)
 michel_grauers <- as.data.frame(michel_grauers[!is.na(michel_grauers)])
 colnames(michel_grauers) <- "taxon_name"
 michel_grauers <- unique(michel_grauers)
@@ -64,7 +64,7 @@ diet_ref_list <- c("rogers_western", "remis_western", "yamagiwa_grauers", "miche
 for (i in diet_ref_list){
   assign(i, diet_db_1(get(i)))
   write.table(get(i)$taxon_name[which(is.na(get(i)$TaxID))],
-              file=paste("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/",
+              file=paste("D3_diet_stats/",
                          str_to_title(str_remove(i, "_.*")), "-ood_names.txt", sep = ""), 
               sep="\t", row.names = FALSE, col.names = FALSE, quote = FALSE)
   #Print table of missing tax IDs
@@ -85,7 +85,7 @@ for (i in diet_ref_list){
 
 #Function for processing the references - 2nd step: loading updated names and GBIF TaxIDs when a taxon was absent from NCBI
 diet_db_2 <- function(taxon_list, taxon_list_name){
-  taxon_list_updates <- read.table(paste("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/",
+  taxon_list_updates <- read.table(paste("D3_diet_stats/",
                                          str_to_title(str_remove(taxon_list_name, "_.*")), "-ood_names_updates.txt", sep = ""), 
                                    sep="\t", header = TRUE, fill = TRUE)
   ##Incorporate updated names and tax IDs in the main files

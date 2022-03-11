@@ -10,7 +10,7 @@ library(vegan)
 library(ggtree)
 library(tibble)
 library(MutationalPatterns)
-load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
+load("T3_community-level/.RData")
 
 #### Figure 2 - Dataset summary ####
 ggsave(
@@ -86,14 +86,90 @@ tax_ordinations <- grid.arrange(tax_jaccard, tax_aitchison, ncol=2, widths=c(2.3
 ggsave(tax_ordinations, file="tax_ordinations.png", device="png", height=7, width=14)
  
 #### Figure 5 - Differentially abundant taxa ####
+library(ggpubr)
 diff_abund_heat <-
   heat(ancom_species_table, Yvar="taxon_name", fill="clr-abundance", Xvar = "sample", order.cols = FALSE, order.rows = TRUE)+
   scale_fill_gradient2(low="blue", mid="white", high="red",
-    guide = guide_colorbar(barheight = 10, title = "clr-normalized\nabundance", draw.ulim=FALSE),
+    guide = guide_colorbar(title = "clr-normalized\nabundance", draw.ulim=FALSE,direction = "horizontal"),
     limits=c(min(clr.pseudozeros), NA), na.value="grey") +
-  facet_grid(~subspecies, scales="free", labeller=facet.labeller) +
-  theme(plot.title = element_text(size = 20, hjust = 0.8), axis.text.x = element_text(angle = 90, vjust = -0.2),
-        axis.title = element_text(size=15), axis.text.y = element_text())
+  facet_grid(~subspecies, scales="free", labeller=facet.labeller,switch = "x") +
+  theme(plot.title = element_text(size = 20, hjust = 0.8),
+        axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_text(size=15),
+        axis.text.y = element_blank(),
+        legend.position = "top",
+        strip.text.x = element_text(color = "white",face="bold"),
+        plot.margin = margin(0,0,0,0, "cm"))
+
+u_taxa_order<-ancom_species_table %>% 
+  mutate(taxon_order=ifelse(taxon_order=="Other","z",taxon_order)) %>% 
+  distinct(taxon_order) %>% pull(taxon_order)
+
+diff_abund_order<-ancom_species_table %>% 
+  mutate(taxon_order=ifelse(taxon_order=="Other","z",taxon_order)) %>% 
+  ggplot(aes(y=taxon_name,x=1,fill=taxon_order))+geom_tile(color="black")+
+  labs(y="")+
+  coord_equal()+
+  guides(fill=guide_legend(title="Microbial Order"))+
+  # facet_grid(~facet_label)+
+  scale_fill_manual(values=c(get_palette(palette = "Paired",k = 9),"gray"),
+                    labels=c(u_taxa_order[1:6],u_taxa_order[8:9],"Other"))+
+  theme(strip.text.x = element_text(angle = 90),
+        strip.background.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks = element_blank(),
+        plot.margin = margin(0,0,0,0, "cm"))
+
+legend<-get_legend(diff_abund_order)
+
+ggarrange(diff_abund_order+theme(legend.position = "none"),diff_abund_heat,legend,align = "hv",nrow = 1)
+ggsave(plot = last_plot(),filename = "T3_community-level/diff_abund_heat.png",dpi=300,height = 12,width = 16)
+###
+
+library(gtable)
+library(grid)
+ancom_species_table$pal<-ifelse(subspecies=="western lowland",get_palette(palette = "Set2",k=3)[2],
+                                ifelse(subspecies=="Grauer's",get_palette(palette = "Set2",k=3)[3],
+                                       ifelse(subspecies=="mountain",get_palette(palette = "Set2",k=3)[1],NA)))
+
+dummy <- diff_abund_heat
+dummy$layers <- NULL
+dummy <- dummy + geom_rect(data=ancom_species_table, xmin=-Inf, ymin=-Inf, xmax=Inf, ymax=Inf,
+                           aes(fill = pal))
+
+g1 <- ggplotGrob(diff_abund_heat)
+g2 <- ggplotGrob(dummy)
+
+gtable_select <- function (x, ...) 
+{
+  matches <- c(...)
+  x$layout <- x$layout[matches, , drop = FALSE]
+  x$grobs <- x$grobs[matches]
+  x
+}
+
+panels <- grepl(pattern="panel", g2$layout$name)
+strips <- grepl(pattern="strip-b", g2$layout$name)
+g2$grobs[strips] <- replicate(sum(strips), nullGrob(), simplify = FALSE)
+g2$layout$l[panels] <- g2$layout$l[panels] + 1
+g2$layout$r[panels] <- g2$layout$r[panels] + 2
+
+new_strips <- gtable_select(g2, panels | strips)
+grid.newpage()
+grid.draw(new_strips)
+
+gtable_stack <- function(g1, g2){
+  g1$grobs <- c(g1$grobs, g2$grobs)
+  g1$layout <- rbind(g1$layout, g2$layout)
+  g1
+}
+## ideally you'd remove the old strips, for now they're just covered
+new_plot <- gtable_stack(g1, new_strips)
+grid.newpage()
+grid.draw(new_plot)
+####
 
 levels <- ancom_species_table %>% pull(taxon_order) %>% unique %>% as.character
 #Bring 'Other' to be the first in order
@@ -137,7 +213,7 @@ png("diff_abund_heat_legend.png")
 dev.off()
 
 #### Figure 6 - Subspecies-associated biological processes ####
-load("/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/.RData")
+load("F2_functional_stats/.RData")
 go_heatmap <-
   heat(GO_unstr_signif_m, "Sample", "GO term","Copies/million", order.cols = FALSE, order.rows=TRUE) +
   scale_fill_gradient2(low="blue", mid="white", high="red",
@@ -175,7 +251,7 @@ ggsave(tax_func_grid, file="BP_heatmap_with_tax_contributions.png",
        height=8, width=15)
 
 #### Figure 7 - Dietary heatmap ####
-load("/proj/sllstore2017021/nobackup/MARKELLA/D3_diet_stats/.RData")
+load("D3_diet_stats/.RData")
 
 #Labeller for the facet labels
 facet.labels <- list("gorilla"="western lowland", "graueri"="Grauer's", "beringei"="mountain")
@@ -273,7 +349,7 @@ heat_diet_complete <- plot_grid(heat_diet, heat_sidebar, align = "h", ncol = 2, 
 ggsave(heat_diet_complete, file="diet_heatmap.png", device="png")
 
 #### Figure S1 - read count histogram ####
-load("/proj/sllstore2017021/nobackup/MARKELLA/T3_community-level/.RData")
+load("T3_community-level/.RData")
 
 spe_data@sam_data$readcount_log <- log(spe_data@sam_data$readcount.m.before.Kraken)
 #Check distribution of read
@@ -366,8 +442,8 @@ grid.arrange(
 
 #### Decontam mapping database ####
 #Load contaminant and noncontaminant genome lists
-contaminant_genomes <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/contaminant_genomes_list_recent.txt", sep="\t", comment.char="", header=F)
-noncontaminant_genomes <- read.table("/proj/sllstore2017021/nobackup/MARKELLA/RD2_mapping/noncontaminant_genomes_list_recent.txt", sep="\t", comment.char="", header=F)
+contaminant_genomes <- read.table("RD2_mapping/contaminant_genomes_list_recent.txt", sep="\t", comment.char="", header=F)
+noncontaminant_genomes <- read.table("RD2_mapping/noncontaminant_genomes_list_recent.txt", sep="\t", comment.char="", header=F)
 
 colnames(contaminant_genomes) <- c("taxon_ID", "RefSeq", "Assembly_level", "Genome_repres", "Date", "ftp" )
 colnames(noncontaminant_genomes) <- c("taxon_ID", "RefSeq", "Assembly_level", "Genome_repres", "Date", "ftp" )
@@ -404,7 +480,7 @@ plot_grid(ggpie(as.data.frame(table(contaminant_genomes$Assembly_level)), x="Fre
 
 #### Functional ordinations ####
 
-load("/proj/sllstore2017021/nobackup/MARKELLA/F2_functional_stats/.RData")
+load("F2_functional_stats/.RData")
 
 sample_data(GO_BP_phyloseq)$Spec.subspecies <- factor(sample_data(GO_BP_phyloseq)$Spec.subspecies, levels=c("gorilla", "graueri", "beringei"))
 

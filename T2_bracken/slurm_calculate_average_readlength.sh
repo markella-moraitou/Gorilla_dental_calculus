@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-#SBATCH -A snic2020-5-528
+#SBATCH -A SNIC_PROJECT_ID
 #SBATCH -p core
 #SBATCH -n 1
 #SBATCH -t 20:00:00
@@ -8,12 +8,12 @@
 
 #Script for calculating average read length for the sequences used as input for Kraken2
 #For merged reads only
-#Adapted from /proj/sllstore2017021/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/calculate_average_readlength_190731.sh
+#Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/calculate_average_readlength_190731.sh
 
 ymd=$(date +%y%m%d)
 
-DATADIR=/proj/sllstore2017021/nobackup/MARKELLA/8_humanHostFilt/unmapped
-outfile=/proj/sllstore2017021/nobackup/MARKELLA/T2_bracken/log_readlength_hostfilt_${ymd}.txt
+DATADIR=8_humanHostFilt/unmapped
+outfile=T2_bracken/log_readlength_hostfilt_${ymd}.txt
 
 echo "#sample, ave read length" > $outfile
 
