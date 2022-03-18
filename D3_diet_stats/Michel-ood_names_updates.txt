@@ -1,0 +1,2 @@
+original_name	update_names	update_reason	GBIF_ID
+NA	NA	absent_gbif	NA

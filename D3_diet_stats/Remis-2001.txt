@@ -1,0 +1,62 @@
+#This table contains all taxa listed as part of the western lowland gorilla diet durings seasons of food scarcity in Bai Kokou, Central African Republic
+#by Remis et al. 2001 (Appendix A)
+Whitfieldra elongata
+Annonidium mannii
+Hexalobus sp
+Polyalthia suaveoleons
+Polyalthia suaveoleons
+Landolphia sp.
+Landolphia sp.
+Orthopichonia barterii
+Tabernaemontana sp.
+Tabernaemontana sp.
+Tabernaemontana sp.
+Santira trimera
+Santira trimera
+Dialum zenkerei
+Diospyros bipindensis Gurke
+Diospyros iturensis
+Diospyros iturensis bipendensis
+Drypetes gilgiana
+Drypetes diopa
+Drypetes sp.
+Drypetes gossweileri
+Gnetum africanum
+Gnetum africanum
+Irvingia excelsa
+Irvingia excelsa
+Irvingia excelsa
+Klainedoxa gabonensis
+Beilschmiedia obscura
+Entrandrophragma cylindricum
+Lovoa sp.
+Maranthes glabra chrysobalanceae
+Tetraplaura teraptera
+Chlorophora excelsa
+Ficus sp.
+Ficus sp.
+Treculia africana
+Treculia africana
+Strombosia pustulata tetranda
+Strombosia pustulata tetranda
+Lonchocarpus sp.
+Pterocarpus soyauxii
+Zhana cf. Gulungensis
+Manilkara letouzeyi
+Manilkara letouzeyi
+Manilkara letouzeyi
+Manilkara letouzeyi
+Desplatsia deweverei
+Duboscia cf. Viridiflora
+Duboscia macrocarpa
+Duboscia macrocarpa
+Celtis mildbraedii
+Celtis sp.
+Celtis sp.
+Aframomum sp.
+Aframomum sp.
+Aframomum sp.
+Aframomum sp.
+Aframomum sulcatum
+Aframomum sulcatum
+Renalria sp.

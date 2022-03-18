@@ -1,0 +1,74 @@
+   Sample_ID Spec.subspecies Approximate.altitude.old Approximate.altitude.new subspecies_locality.old subspecies_locality.new
+1      G0008         gorilla                       80                       60                 gorilla                 gorilla
+2     GDC002         gorilla                      650                      700                 gorilla                 gorilla
+3     GDC004         gorilla                      650                      700                 gorilla                 gorilla
+4     GDC005         gorilla                      650                      700                 gorilla                 gorilla
+5     FDM001         graueri                     1200                      500           graueri >1000           graueri <1000
+6      G0014         graueri                      800                     1000           graueri <1000           graueri >1000
+7      G0016         graueri                     1600                     1300           graueri >1000           graueri >1000
+8      G0017         graueri                     1600                     1000           graueri >1000           graueri >1000
+9      G0019         graueri                     1600                     1300           graueri >1000           graueri >1000
+10     G0020         graueri                      600                      700           graueri <1000           graueri <1000
+11     G0028         graueri                     1200                      500           graueri >1000           graueri <1000
+12     G0031         graueri                     1600                     1300           graueri >1000           graueri >1000
+13   Gb2wash         graueri                      500                      600           graueri <1000           graueri <1000
+14    LOB001         graueri                      800                     1800           graueri <1000           graueri >1000
+15     G0021        beringei                     2300                     3300                beringei                beringei
+16   Gb1wash        beringei                     1600                     3600                beringei                beringei
+17    MTK001        beringei                     1800                     3600                beringei                beringei
+18    MTM001        beringei                      500                     3300                beringei                beringei
+19    MTM002        beringei                     3900                     3300                beringei                beringei
+20    MTM005        beringei                     3100                     3300                beringei                beringei
+21    MTS001        beringei                     3300                     3100                beringei                beringei
+22    MTS002        beringei                     3300                     3100                beringei                beringei
+23    MTS003        beringei                     3300                     3100                beringei                beringei
+
+
+|Sample_ID |Spec.subspecies | Approximate.altitude.old|subspecies_locality.old | Approximate.altitude.new| Approximate.latitude| Approximate.longtitude|subspecies_locality.new |
+|:---------|:---------------|------------------------:|:-----------------------|------------------------:|--------------------:|----------------------:|:-----------------------|
+|ABM006    |gorilla         |                      700|gorilla                 |                      700|                 3.98|                  13.18|gorilla                 |
+|DJA002    |gorilla         |                      700|gorilla                 |                      700|                 3.42|                  13.54|gorilla                 |
+|EBO001    |gorilla         |                      600|gorilla                 |                      600|                 2.93|                  11.16|gorilla                 |
+|FDM001    |graueri         |                     1200|graueri >1000           |                      500|                -3.07|                  26.04|graueri <1000           |
+|G0001     |graueri         |                      800|graueri <1000           |                      800|                -2.21|                  27.38|graueri <1000           |
+|G0005     |gorilla         |                      550|gorilla                 |                      550|                -2.20|                  13.40|gorilla                 |
+|G0007     |gorilla         |                      600|gorilla                 |                      600|                 1.56|                  12.85|gorilla                 |
+|G0008     |gorilla         |                       80|gorilla                 |                       60|                -1.04|                  10.03|gorilla                 |
+|G0009     |graueri         |                     2100|graueri >1000           |                     2100|                -4.05|                  29.05|graueri >1000           |
+|G0011     |graueri         |                     1600|graueri >1000           |                     1600|                -0.06|                  29.16|graueri >1000           |
+|G0012     |gorilla         |                      650|gorilla                 |                      650|                 3.17|                  14.02|gorilla                 |
+|G0013     |graueri         |                     1600|graueri >1000           |                     1600|                -0.06|                  29.16|graueri >1000           |
+|G0014     |graueri         |                      800|graueri <1000           |                     1000|                -1.00|                  28.00|graueri >1000           |
+|G0016     |graueri         |                     1600|graueri >1000           |                     1300|                -4.05|                  29.05|graueri >1000           |
+|G0017     |graueri         |                     1600|graueri >1000           |                     1000|                -2.42|                  27.20|graueri >1000           |
+|G0018     |graueri         |                     1800|graueri >1000           |                     1800|                -0.09|                  29.13|graueri >1000           |
+|G0019     |graueri         |                     1600|graueri >1000           |                     1300|                -4.05|                  29.05|graueri >1000           |
+|G0020     |graueri         |                      600|graueri <1000           |                      700|                -0.56|                  27.03|graueri <1000           |
+|G0021     |beringei        |                     2300|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|G0026     |gorilla         |                      600|gorilla                 |                      600|                 2.47|                  12.08|gorilla                 |
+|G0028     |graueri         |                     1200|graueri >1000           |                      500|                -3.07|                  26.04|graueri <1000           |
+|G0031     |graueri         |                     1600|graueri >1000           |                     1300|                -4.05|                  29.05|graueri >1000           |
+|G0033     |graueri         |                     1000|graueri >1000           |                     1000|                -2.42|                  27.20|graueri >1000           |
+|G0034     |gorilla         |                      400|gorilla                 |                      400|                -4.59|                  12.56|gorilla                 |
+|G0036     |gorilla         |                      700|gorilla                 |                      700|                 3.15|                  13.00|gorilla                 |
+|Gb1wash   |beringei        |                     1600|beringei                |                     3600|                -1.50|                  29.43|beringei                |
+|Gb2wash   |graueri         |                      500|graueri <1000           |                      600|                -2.20|                  27.36|graueri <1000           |
+|GDC002    |gorilla         |                      650|gorilla                 |                      700|                 3.15|                  13.00|gorilla                 |
+|GDC004    |gorilla         |                      650|gorilla                 |                      700|                 3.15|                  13.00|gorilla                 |
+|GDC005    |gorilla         |                      650|gorilla                 |                      700|                 3.15|                  13.00|gorilla                 |
+|LOB001    |graueri         |                      800|graueri <1000           |                     1800|                -0.09|                  29.13|graueri >1000           |
+|MTK001    |beringei        |                     1800|beringei                |                     3600|                -1.50|                  29.43|beringei                |
+|MTM001    |beringei        |                      500|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTM002    |beringei        |                     3900|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTM004    |beringei        |                     3300|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTM005    |beringei        |                     3100|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTM006    |beringei        |                     3300|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTM008    |beringei        |                     3300|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTM009    |beringei        |                     3300|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTM010    |beringei        |                     3300|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTM011    |beringei        |                     3300|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTM012    |beringei        |                     3300|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTM013    |beringei        |                     3300|beringei                |                     3300|                -1.46|                  29.42|beringei                |
+|MTS001    |beringei        |                     3300|beringei                |                     3100|                -1.39|                  29.59|beringei                |
+|MTS002    |beringei        |                     3300|beringei                |                     3100|                -1.39|                  29.59|beringei                |
+|MTS003    |beringei        |                     3300|beringei                |                     3100|                -1.39|                  29.59|beringei                |

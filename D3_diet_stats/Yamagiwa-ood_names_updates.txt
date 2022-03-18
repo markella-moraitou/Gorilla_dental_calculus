@@ -1,0 +1,36 @@
+original_name	update_names	update_reason	GBIF_ID
+Ficus oreadryadum	Ficus oreodryadum	misspelled
+Bridelia bridelifolia	Bridelia brideliifolia	misspelled
+Allophyllus sp.	Allophyllus	unspecified_species	
+Rubus adenocomus	Rubus adenocomus	absent_ncbi	2995029
+Psychotha palustris	NA	absent_gbif
+Galiniera coffeoides	Galiniera saxifraga	synonym
+Jasminium abyssinicum	Jasminum abyssinicum	misspelled
+Taccazea apiculata	Tacazzea apiculata	misspelled
+Helichrysum sp.	Helichrysum	unspecified_species
+Barieria ventricosa	Barleria ventricosa	misspelled
+Jabsminium abyssinicum	Jasminum abyssinicum	misspelled
+Vernonia hochstetteri	Ambassa hochstetteri	absent_ncbi	3124138
+Clerodendron welwitschii	NA	absent_gbif
+Commelina cecilae	Commelina cecilae	absent_ncbi	2764190	
+Ipomea ivolucrata	Ipomoea involucrata	misspelled
+Ouratea brunneopupurea	NA	absent_gbif
+Vernonia kirubgae	NA	absent_gbif
+Mussularia acuminata	Massularia acuminata	misspelled
+Mimulopsis excellence	NA	absent_gbif
+Crassocephalum bumbense	Crassocephalum montuosum	synonym
+Globimetula kivuensis	Globimetula kivuensis	absent_ncbi	4002202
+Impatians irvingii	Impatiens irvingii	misspelled
+Rumex bequaertii	Rumex bequaertii	absent_ncbi	4035992
+Loeseneriella apocynoides	Loeseneriella apocynoides	absent_ncbi	7265601
+Caper capense	NA	absent_gbif
+Artabotrys palutris	NA	absent_gbif
+Dombeya goetzenii	Dombeya torrida	synonym
+Baphoglossum sp.	Baphoglossum	unspecified_species
+Erigeron floribundus	Erigeron floribundus	absent_ncbi	3147018
+Leplaca cf. mayumbensis	NA	absent_gbif
+Melothria punctata	 Zehneria scabra	synonym
+Penisetum purpureum	Cenchrus purpureus	synonym
+Pycnostachys cricirosenii	NA	absent_gbif
+Tricalysia sp.	Tricalysia	unspecified_species
+Apis sp.	Apis	unspecified_species
