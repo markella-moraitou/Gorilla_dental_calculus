@@ -73,7 +73,7 @@ damage_assessment %>% left_join(otu_table(spe_data_envrem) %>% as.data.frame %>%
 
 #remove unambiguous contaminants
 spe_data_final <- subset_taxa(spe_data_envrem, 
-                              !(taxa_names(spe_data_envrem) %in% unambiguous_contam))
+                              !(taxa_names(spe_data_envrem) %in% c(unambiguous_contam,"9606")))
 
 #remove ambiguous contaminants without damage patterns
 spe_data_final <- subset_taxa(spe_data_final, 
@@ -189,7 +189,6 @@ retained_samples <- sample_names(spe_data_final)
 print("How many samples are retained?")
 length(retained_samples)
 
-
 write.table(retained_samples, file="RD2_mapping/retained_samples.txt",
             row.names = FALSE, col.names = FALSE, quote = FALSE)
 
@@ -231,6 +230,20 @@ dev.off()
 
 #Normalize
 spe_data_final_norm <- microbiome::transform(spe_data_final, "clr")
+
+#How many are oral?
+#core hominid microbiome
+print("How many of the retained taxa are from the core hominid microbiome?")
+length(taxa_names(spe_data_final_norm)[which(tax_table(spe_data_final_norm)[,8] %in% core_micr$Taxon)])
+
+
+#HOMD
+print("How many of the retained taxa are from HOMD?")
+length(taxa_names(spe_data_final_norm)[which(taxa_names(spe_data_final_norm) %in% homd$NCBI_taxon_id)])
+
+# contaminants
+print("How many of the retained taxa are from contaminants?")
+length(taxa_names(spe_data_final_norm)[which(taxa_names(spe_data_final_norm) %in% unambiguous_contam)])
 
 #
 print("How does the abundance compare?")

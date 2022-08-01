@@ -13,7 +13,7 @@
 DATADIR=H1_mtgenomes
 OUTDIR=H2_haplotype_network
 REFDIR=downloaded_mtgenomes
-DBPREFIX=/proj/SNIC_PROJECT/nobackup/JAELLE/REFERENCES/gorilla_gorilla_human/calculushost
+DBPREFIX=SNIC_PROJECT/JAELLE/REFERENCES/gorilla_gorilla_human/calculushost
 coveragefile=$DATADIR/mt_coverage.csv
 
 module load bioinfo-tools samtools python R_packages FastANI

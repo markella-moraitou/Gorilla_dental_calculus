@@ -1,4 +1,4 @@
-#Adapted from /proj/SNIC_PROJECT/nobackup/SAM/Bear_Lineage_Project/scripts/plot_readCoverage.r
+#Adapted from SNIC_PROJECT/SAM/Bear_Lineage_Project/scripts/plot_readCoverage.r
 
 #load libraries
 library(ggplot2)

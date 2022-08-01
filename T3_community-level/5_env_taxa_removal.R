@@ -145,6 +145,10 @@ env_taxa[which(env_taxa$Species %in% core_micr$Taxon),]
 print("How many of these are HOMD taxa?")
 env_taxa[which(env_taxa$TaxID %in% homd$NCBI_taxon_id),]
 
+# contaminants
+print("How many of these taxa are from contaminants?")
+env_taxa[which(env_taxa$TaxID %in% unambiguous_contam),]
+
 
 ### Boxplot per taxon ###
 #Boxplot of rel. abund. ratios per taxon
@@ -190,6 +194,9 @@ length(taxa_names(spe_data_envrem)[which(tax_table(spe_data_envrem)[,8] %in% cor
 print("How many of the retained taxa are from HOMD?")
 length(taxa_names(spe_data_envrem)[which(taxa_names(spe_data_envrem) %in% homd$NCBI_taxon_id)])
 
+#contaminants
+print("How many of the retained taxa are contaminants?")
+length(taxa_names(spe_data_envrem)[which(taxa_names(spe_data_envrem) %in% unambiguous_contam)])
 
 
 #### Plot ####

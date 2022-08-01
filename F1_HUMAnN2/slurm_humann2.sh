@@ -10,7 +10,7 @@
 
 # Humann2 pipeline with Metaphlan2 for tax profiling and mapping/DIAMOND for functional assignments
 # Using contam-filtered reads based on Kraken2 assignments (../M1_decontam/)
-# Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_FIRSTSCREEN_181220/SCRIPTS/func_humann2_190415.sh
+# Adapted from SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_FIRSTSCREEN_181220/SCRIPTS/func_humann2_190415.sh
 
 #Activate conda environment
 

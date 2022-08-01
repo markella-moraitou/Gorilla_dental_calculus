@@ -14,6 +14,12 @@ library(cowplot)
 
 load(".RData")
 
+euk_genus_diet<-readRDS("D3_diet_stats/euk_genus_diet.rds")
+euk_genus_diet_norm<-readRDS("D3_diet_stats/euk_genus_diet_norm.rds")
+diet_ref_fams<-readRDS("D3_diet_stats/diet_ref_fams.rds")
+euk_genus_decontam2<-readRDS("D3_diet_stats/euk_genus_decontam2.rds")
+diet_ref_gen <- readRDS("D3_diet_stats/diet_ref_gen.rds")
+
 print("Number of families in the reference db")
 nrow(diet_ref_fams) 
 print("How many families are found in each gorilla subspecies?")
@@ -28,7 +34,6 @@ print("How many families are unique to each subspecies?")
 colSums(diet_ref_fams[which(rowSums(diet_ref_fams)==1),])
 
 #### Extract genera based on a priori knowledge of diet ####
-
 #Extract taxa that belong to these 85 families (also keep only true samples)
 euk_genus_diet <- subset_taxa(euk_genus_decontam2, tax_table(euk_genus_decontam2)[,6] %in% rownames(diet_ref_fams))
 
@@ -54,7 +59,7 @@ for (s in colnames(euk_genus_diet_abund)) {
 
 #Melt
 euk_genus_diet_abund <- reshape2::melt(euk_genus_diet_abund)
-colnames(euk_genus_diet_abund) <- c("genus", "sample", "clr-abundance")
+colnames(euk_genus_diet_abund) <- c("genus", "sample", "CLR-abundance")
 
 #Add host subspecies column
 euk_genus_diet_abund$host_subspecies <- metadata$Spec.subspecies[match(euk_genus_diet_abund$sample, rownames(metadata))]
@@ -69,9 +74,9 @@ euk_genus_diet_abund$family_name <- taxonomy_euk[,6][match(euk_genus_diet_abund$
 euk_genus_diet_abund$host_subspecies <- factor(euk_genus_diet_abund$host_subspecies, levels = c("gorilla", "graueri", "beringei"))
 euk_genus_diet_abund <- euk_genus_diet_abund[order(euk_genus_diet_abund$host_subspecies, euk_genus_diet_abund$phylum_name, euk_genus_diet_abund$family_name),]
 
-heat_diet_full <- heat(euk_genus_diet_abund, Yvar="genus", fill="clr-abundance", Xvar = "sample", order.cols = FALSE, order.rows=FALSE) +
+heat_diet_full <- heat(euk_genus_diet_abund, Yvar="genus", fill="CLR-abundance", Xvar = "sample", order.cols = FALSE, order.rows=FALSE) +
   scale_fill_gradient2(low="blue", mid="white", high="red",
-    guide = guide_colorbar(barheight = 2, title = "clr-normalized\nabundance", draw.ulim=FALSE),
+    guide = guide_colorbar(barheight = 2, title = "CLR-normalized\nabundance", draw.ulim=FALSE),
     limits=c(min(clr.pseudozeros.d), NA), na.value="grey") +
   facet_grid(~host_subspecies, scales="free", labeller=facet.labeller) +
   theme(legend.position = "left", axis.text.y = element_text()) +
@@ -87,7 +92,8 @@ heat_diet_full_ylabs$phylum <- factor(heat_diet_full_ylabs$phylum)
 #Also add family infomation (will be needed later)
 heat_diet_full_ylabs$family <- tax_table(euk_genus_diet)[match(heat_diet_full_ylabs$genus, taxa_names(euk_genus_diet)),6]
 
-diet_palette_full <- c("steelblue1", "sienna3", "khaki3", "olivedrab3")
+diet_palette_full <- rev(c("#009E93","#56B4E9","#D55E00","#CC79A7"))
+
 names(diet_palette_full) <- levels(heat_diet_full_ylabs$phylum) # Give every color an appropriate name
 
 diet_palette_full.g <- heat_diet_full_ylabs
@@ -144,16 +150,17 @@ colnames(ref_sidebar_full) <- c("diet_genus", "host_subspecies", "presence/absen
 ref_sidebar_full$`presence/absence` <- as.numeric(ref_sidebar_full$`presence/absence`)
 
 #Plot heatmap
-heat_sidebar_full <- heat(ref_sidebar_full, Yvar="diet_genus", fill="presence/absence", Xvar = "host_subspecies", order.cols = FALSE, order.rows = FALSE) +
-  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), title = element_text(size=8)) +
-  guides(fill=FALSE) + scale_fill_gradient2(low = "grey", mid = "palegreen2", high = "palegreen4", midpoint=1)
+heat_sidebar_full <- heat(ref_sidebar_full, Yvar="diet_genus", fill="presence/absence", Xvar = "host_subspecies", order.cols = FALSE, order.rows = FALSE) + theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), axis.text.x = element_text(angle = 90, vjust = -0.2, size=10),
+                                                                                                                                                                  axis.title=element_text(size=14), plot.title=element_text(size=10, hjust = 0.5)) +
+  guides(fill=FALSE) + scale_fill_gradient2(low = "grey", mid = "palegreen2", high = "palegreen4", midpoint=1) +
+  ggtitle("Mentioned\nin literature")
 
 #Combine the two plots
-heat_diet_full_complete <- plot_grid(heat_diet_full, heat_sidebar_full, align = "hv", ncol = 2, rel_widths = c(45, 5),
+heat_diet_full_complete <- plot_grid(heat_diet_full, heat_sidebar_full, align = "hv", ncol = 2, rel_widths = c(44, 6),
                                      axis="tb")
 
 #Save plot
-ggsave(heat_diet_full_complete, device="png", width=10, height=7,
+ggsave(heat_diet_full_complete, device="png", width=9, height=7,
        filename = "D3_diet_stats/heat_diet_full_complete.png")
 
 
@@ -185,7 +192,7 @@ euk_fam_diet_abund <- otu_table(euk_fam_diet_norm)
 
 #Melt
 euk_fam_diet_abund <- reshape2::melt(euk_fam_diet_abund)
-colnames(euk_fam_diet_abund) <- c("family", "sample", "clr-abundance")
+colnames(euk_fam_diet_abund) <- c("family", "sample", "CLR-abundance")
 
 #Add host subspecies column
 euk_fam_diet_abund$host_subspecies <- metadata$Spec.subspecies[match(euk_fam_diet_abund$sample, rownames(metadata))]
@@ -197,13 +204,43 @@ euk_fam_diet_abund$phylum_name <- taxonomy_euk[,3][match(euk_fam_diet_abund$fami
 euk_fam_diet_abund$host_subspecies <- factor(euk_fam_diet_abund$host_subspecies, levels = c("gorilla", "graueri", "beringei"))
 euk_fam_diet_abund <- euk_fam_diet_abund[order(euk_fam_diet_abund$host_subspecies, euk_fam_diet_abund$phylum_name),]
 
-heat_diet_fam_full <- heat(euk_fam_diet_abund, Yvar="family", fill="clr-abundance", Xvar = "sample", order.cols = FALSE, order.rows=FALSE) +
+# update altitude in metadata
+alt.fix<-read_tsv("T3_community-level/new_altitude.csv") %>% 
+  right_join(sample_data(spe_data_final) %>% data.frame() %>% rownames_to_column("Sample_ID")) %>%
+  mutate(subspecies_locality=ifelse(Spec.subspecies=="graueri",
+                                    ifelse(`Approximate altitude`>1000,"graueri >1000","graueri <1000"),
+                                    as.character(subspecies_locality))) %>% 
+  pull(subspecies_locality)
+
+sample_data(spe_data_final)$subspecies_locality<-alt.fix
+
+heat_diet_fam_full <- 
+  euk_fam_diet_abund %>% 
+  rownames_to_column("taxa_id") %>% 
+  mutate(taxa_id=as.character(taxa_id)) %>%
+  left_join(sample_data(spe_data_final) %>% data.frame() %>% rownames_to_column("sample")) %>%
+  mutate(subspecies_locality=fct_recode(subspecies_locality,
+                                        "Western Lowland"="gorilla",
+                                        "HA Grauer's"="graueri >1000",
+                                        "LA Grauer's"="graueri <1000",
+                                        "Mountain"="beringei")) %>% 
+  as.data.frame() %>%
+  heat(., Yvar="family", fill="CLR-abundance", Xvar = "sample", order.cols = FALSE, order.rows=FALSE) +
   scale_fill_gradient2(low="blue", mid="white", high="red",
-    guide = guide_colorbar(barheight = 2, title = "clr-normalized\nabundance", draw.ulim=FALSE),
-    limits=c(min(clr.pseudozeros.d), NA), na.value="grey") +
-  facet_grid(~host_subspecies, scales="free", labeller=facet.labeller) +
-  theme(legend.position = "left", axis.text.y = element_text()) +
-  ggtitle("Abundances of known gorilla dietary families across samples")
+                       guide = guide_colorbar(barheight = 2, title = "CLR-normalized \nabundance", draw.ulim=FALSE),
+                       limits=c(min(clr.pseudozeros.d), NA), na.value="grey") +
+  facet_grid(~factor(subspecies_locality,c("Western Lowland","LA Grauer's","HA Grauer's","Mountain")), scales="free",space="free",switch = "both")+
+  theme(
+    axis.text.x = element_text(hjust=1,vjust = 0.5),
+        #     axis.ticks.x = element_line(),
+        #     line = element_blank(),
+        #     axis.title = element_text(size=16),
+        #     legend.position='top',
+        #     legend.text = element_text(size=17),
+        #     legend.title = element_text(size=19),
+        panel.spacing.x=unit(c(0.25,0,0.25),'lines'),
+        strip.text.x = element_text(color = "white",face="bold",size=12),
+        text = element_text(family="calibri"))
 
 #### Colour the axis ticks by phylum ####
 heat_diet_fam_full_ylabs <- levels(heat_diet_fam_full$data$YYYY)
@@ -213,6 +250,7 @@ colnames(heat_diet_fam_full_ylabs) <- c("family", "phylum")
 heat_diet_fam_full_ylabs$phylum <- factor(heat_diet_fam_full_ylabs$phylum)
 
 diet_palette_full.f <- heat_diet_fam_full_ylabs
+
 diet_palette_full.f$colour <- diet_palette_full[match(diet_palette_full.f$phylum, names(diet_palette_full))]
 
 rownames(diet_palette_full.f) <- diet_palette_full.f[,1]
@@ -223,7 +261,27 @@ diet_palette_full.f <- t(as.matrix(diet_palette_full.f))
 
 #Update plot
 heat_diet_fam_full <-
-  heat_diet_fam_full + theme(axis.text.y = element_text(colour = diet_palette_full.f), legend.position = "top")
+  heat_diet_fam_full + theme(axis.text.y = element_text(colour = diet_palette_full.f, size=10), 
+                                    legend.position = "top",
+                                    axis.text.x = element_text(angle = 90, vjust = -0.2, size=10), 
+                                    strip.text.x=element_text(colour="white", face="bold", size=14)) +
+  guides(color=guide_legend(title = "test"))
+
+# fill the facets with the right colour
+pal<-c(get_palette(palette = "Set2",k=3)[1],
+       get_palette(palette = "Set2",k=3)[2],
+       get_palette(palette = "Set2",k=3)[2],
+       get_palette(palette = "Set2",k=3)[3])
+heat_diet_fam_full_filled <- ggplot_gtable(ggplot_build(heat_diet_fam_full))
+stripr <- which(grepl('strip-b', heat_diet_fam_full_filled$layout$name))
+fills <- pal
+k <- 1
+for (i in stripr) {
+  j <- which(grepl('rect', heat_diet_fam_full_filled$grobs[[i]]$grobs[[1]]$childrenOrder))
+  heat_diet_fam_full_filled$grobs[[i]]$grobs[[1]]$children[[j]]$gp$fill <- fills[k]
+  k <- k+1
+}
+
 
 #### Create a sidebar ####
 #based on a priori knowledge of these taxa
@@ -252,17 +310,25 @@ colnames(ref_sidebar_full.f) <- c("diet_family", "host_subspecies", "presence/ab
 ref_sidebar_full.f$`presence/absence` <- as.numeric(ref_sidebar_full.f$`presence/absence`)
 
 #Plot heatmap
-heat_sidebar_full.f <- heat(ref_sidebar_full.f, Yvar="diet_family", fill="presence/absence", Xvar = "host_subspecies", order.cols = FALSE, order.rows = FALSE) +
-  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), title = element_text(size=8)) +
-  guides(fill=FALSE) + scale_fill_gradient2(low = "grey", mid = "palegreen2", high = "palegreen4", midpoint=1)
+heat_sidebar_full.f <- heat(ref_sidebar_full.f, Yvar="diet_family", fill="presence/absence", Xvar = "host_subspecies",
+                            order.cols = FALSE, order.rows = FALSE) +
+  theme(axis.text.y = element_blank(), 
+        axis.text.x = element_text(size=12,hjust=1,vjust = 0.5),
+        axis.ticks.y = element_blank(), 
+        plot.margin = margin(1.58,0,0.75,0, "cm"),
+        plot.title=element_text(size=10, hjust = 0.5)) +
+  guides(fill=FALSE) + scale_fill_gradient2(low = "grey", mid = "palegreen2", high = "palegreen4", midpoint=1) +
+  ggtitle("Mentioned\nin literature")
 
 #Combine the two plots
-heat_diet_fam_full_complete <- plot_grid(heat_diet_fam_full, heat_sidebar_full.f, align = "hv", ncol = 2, rel_widths = c(45, 5),
-                                     axis="tb")
-
+heat_diet_fam_full_complete <- plot_grid(as_ggplot(heat_diet_fam_full_filled), heat_sidebar_full.f, 
+                                         ncol = 2, 
+                                         align = "v",
+                                         axis="tb",
+                                         rel_widths = c(1, 0.1))
 
 #Save plot
-ggsave(heat_diet_fam_full_complete, device="png", height=9, width=9,
+ggsave(heat_diet_fam_full_complete, device="png", height=10, width=10,
        filename = "D3_diet_stats/heat_diet_fam_full_complete_family.png")
 
 
@@ -287,7 +353,11 @@ comp_euk_abund$taxon_sum <- log(as.numeric(comp_euk_abund$taxon_sum))
 
 gghistogram(comp_euk_abund, x="taxon_sum", fill="taxon_type")
 ggboxplot(comp_euk_abund, x="taxon_type", y = "taxon_sum")
-               
+
+# save your work!
+saveRDS(euk_genus_diet,"D3_diet_stats/euk_genus_diet.rds")
+saveRDS(euk_genus_diet_norm,"D3_diet_stats/euk_genus_diet_norm.rds")
+
 sessionInfo()
 
 #Start logging

@@ -12,14 +12,14 @@
 # Evaluate host content and human contamination
 # Save mapped reads for future analysis
 # Save unmapped reads for microbial analysis
-# Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/rmhost_merged_190606.sh
+# Adapted from SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/rmhost_merged_190606.sh
 
 module load bioinfo-tools samtools bwa BEDTools
 
 # save versions of tools
 echo $(module list)
 
-REFDIR=/proj/SNIC_PROJECT/nobackup/JAELLE/REFERENCES
+REFDIR=SNIC_PROJECT/JAELLE/REFERENCES
 DATADIR=7_phixRem
 UNMAPDIR=8_humanHostFilt/unmapped
 MAPDIR=8_humanHostFilt/mapped

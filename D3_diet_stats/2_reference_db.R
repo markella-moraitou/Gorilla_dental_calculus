@@ -139,7 +139,7 @@ for (i in diet_ref_list){
 }
 
 #Start logging
-sink(file = "log2_reference_db.txt")
+# sink(file = "log2_reference_db.txt")
 
 #### Look at the database and do some formatting ####
 #How many taxa for each subspecies
@@ -169,8 +169,8 @@ for (i in diet_ref_list) {
  diet_database <- rbind(diet_database, table)
 }
 
-#write.table(diet_database, "diet_database.txt", quote=FALSE, sep=",", row.names=FALSE)
-diet_database <- read.table("diet_database.txt", sep=",")
+write.table(diet_database, "D3_diet_stats/diet_database.txt", quote=FALSE, sep=",", row.names=FALSE)
+diet_database <- read.table("D3_diet_stats/diet_database.txt", sep=",")
 
 ## Create joint table with all taxa mentioned in the reference
 #first, collect the family name column from each table is a list
@@ -206,6 +206,9 @@ diet_ref_gen$grauers <- as.logical(diet_ref_gen$yamagiwa_grauers) | as.logical(d
 diet_ref_gen$mountain <- as.logical(diet_ref_gen$rothman_mountain)
 
 diet_ref_gen <- diet_ref_gen[,6:8]
+
+saveRDS(diet_ref_gen,"D3_diet_stats/diet_ref_gen.rds")
+saveRDS(diet_ref_fams,"D3_diet_stats/diet_ref_fams.rds")
 
 sessionInfo()
 #Stop logging

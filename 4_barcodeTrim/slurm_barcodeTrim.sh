@@ -9,8 +9,8 @@
 #SBATCH --mail-user=USER_EMAIL
 
 # analysis step 3: trimming barcodes and 3' adapters 
-# adapted from: /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/adrm_2_run1_190527.sh (merged)
-# and: /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/adrm_3_run1_190528.sh (unmerged)
+# adapted from: SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/adrm_2_run1_190527.sh (merged)
+# and: SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/adrm_3_run1_190528.sh (unmerged)
 # on merged and unmerged reads
 # 3' adapters could be in the sequence if a read is very short and the sequencing continues past the insert
 

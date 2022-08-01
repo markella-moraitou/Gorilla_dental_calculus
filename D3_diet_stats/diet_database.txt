@@ -1,0 +1,331 @@
+taxon_name,TaxID,updated_name,GBIF_taxon_ID,genus_id,genus_name,family_id,family_name,publication,subspecies
+Landolphia,141576,NA,NA,141576,Landolphia,4056,Apocynaceae,rogers,western
+Palisota,168076,NA,NA,168076,Palisota,4740,Commelinaceae,rogers,western
+Haumania,210082,NA,NA,210082,Haumania,4619,Marantaceae,rogers,western
+Hypselodelphys,94354,NA,NA,94354,Hypselodelphys,4619,Marantaceae,rogers,western
+Megaphrynium,210061,NA,NA,210061,Megaphrynium,4619,Marantaceae,rogers,western
+Thaumatococcus,4620,NA,NA,4620,Thaumatococcus,4619,Marantaceae,rogers,western
+Ficus,NA,NA,NA,NA,NA,NA,NA,rogers,western
+Aframomum,188478,NA,NA,188478,Aframomum,4642,Zingiberaceae,rogers,western
+Costus,4631,NA,NA,4631,Costus,4630,Costaceae,rogers,western
+Renealmia,105703,NA,NA,105703,Renealmia,4642,Zingiberaceae,rogers,western
+Dracaena,NA,NA,NA,NA,NA,NA,NA,rogers,western
+Pseudospondias,1321804,NA,NA,1321804,Pseudospondias,4011,Anacardiaceae,rogers,western
+Trichoscypha,289775,NA,NA,289775,Trichoscypha,4011,Anacardiaceae,rogers,western
+Anonidium,306991,NA,NA,306991,Anonidium,22140,Annonaceae,rogers,western
+Hexalobus,489329,NA,NA,489329,Hexalobus,22140,Annonaceae,rogers,western
+Monodora,296851,NA,NA,296851,Monodora,22140,Annonaceae,rogers,western
+Polyalthia,105756,NA,NA,105756,Polyalthia,22140,Annonaceae,rogers,western
+Uvariodendron,489354,NA,NA,489354,Uvariodendron,22140,Annonaceae,rogers,western
+Dictyophleba,52828,NA,NA,52828,Dictyophleba,4056,Apocynaceae,rogers,western
+Tabernaemontana,52860,NA,NA,52860,Tabernaemontana,4056,Apocynaceae,rogers,western
+Amorphophallus,74663,NA,NA,74663,Amorphophallus,4454,Araceae,rogers,western
+Dacryodes,173691,NA,NA,173691,Dacryodes,4014,Burseraceae,rogers,western
+Santiria,173686,NA,NA,173686,Santiria,4014,Burseraceae,rogers,western
+Diospyros,13492,NA,NA,13492,Diospyros,19955,Ebenaceae,rogers,western
+Drypetes,20145,NA,NA,20145,Drypetes,233879,Putranjivaceae,rogers,western
+Uapaca,283116,NA,NA,283116,Uapaca,233880,Phyllanthaceae,rogers,western
+Oncoba,179732,NA,NA,179732,Oncoba,3688,Salicaceae,rogers,western
+Garcinia,58227,NA,NA,58227,Garcinia,55961,Clusiaceae,rogers,western
+Pentadesma,198784,NA,NA,198784,Pentadesma,55961,Clusiaceae,rogers,western
+Irvingia,79318,NA,NA,79318,Irvingia,629715,Irvingiaceae,rogers,western
+Klainedoxa,289638,NA,NA,289638,Klainedoxa,629715,Irvingiaceae,rogers,western
+Angylocalyx,53826,NA,NA,53826,Angylocalyx,3803,Fabaceae,rogers,western
+Dialium,53868,NA,NA,53868,Dialium,3803,Fabaceae,rogers,western
+Erythrophleum,53876,NA,NA,53876,Erythrophleum,3803,Fabaceae,rogers,western
+Parkia,53911,NA,NA,53911,Parkia,3803,Fabaceae,rogers,western
+Pterocarpus,100169,NA,NA,100169,Pterocarpus,3803,Fabaceae,rogers,western
+Tetrapleura,148727,NA,NA,148727,Tetrapleura,3803,Fabaceae,rogers,western
+Strychnos,26496,NA,NA,26496,Strychnos,26468,Loganiaceae,rogers,western
+Turreanthus,403499,Turraeanthus,NA,403499,Turraeanthus,43707,Meliaceae,rogers,western
+Tiliacora,461640,NA,NA,461640,Tiliacora,3455,Menispermaceae,rogers,western
+Antiaris,241856,NA,NA,241856,Antiaris,3487,Moraceae,rogers,western
+Milicia,58663,NA,NA,58663,Milicia,3487,Moraceae,rogers,western
+Morus,NA,NA,NA,NA,NA,NA,NA,rogers,western
+Myrianthus,1220083,NA,NA,1220083,Myrianthus,3499,Urticaceae,rogers,western
+Treculia,709071,NA,NA,709071,Treculia,3487,Moraceae,rogers,western
+Pycnanthus,224863,NA,NA,224863,Pycnanthus,22274,Myristicaceae,rogers,western
+Syzygium,178174,NA,NA,178174,Syzygium,3931,Myrtaceae,rogers,western
+Strombosia,70869,NA,NA,70869,Strombosia,1003241,Strombosiaceae,rogers,western
+Barteria,343951,NA,NA,343951,Barteria,3683,Passifloraceae,rogers,western
+Maesopsis,106688,NA,NA,106688,Maesopsis,3608,Rhamnaceae,rogers,western
+Nauclea,43525,NA,NA,43525,Nauclea,24966,Rubiaceae,rogers,western
+Pseudogardenia,NA,NA,2897800,2911166,Adenorandia,8798,Rubiaceae,rogers,western
+Ganophyllum,290945,NA,NA,290945,Ganophyllum,23672,Sapindaceae,rogers,western
+Lecaniodiscus,290966,NA,NA,290966,Lecaniodiscus,23672,Sapindaceae,rogers,western
+Pancovia,290980,NA,NA,290980,Pancovia,23672,Sapindaceae,rogers,western
+Chrysophyllum,13424,NA,NA,13424,Chrysophyllum,3737,Sapotaceae,rogers,western
+Manilkara,3740,NA,NA,3740,Manilkara,3737,Sapotaceae,rogers,western
+Synsepalum,233754,NA,NA,233754,Synsepalum,3737,Sapotaceae,rogers,western
+Cola,82456,NA,NA,82456,Cola,3629,Malvaceae,rogers,western
+Grewia,82407,NA,NA,82407,Grewia,3629,Malvaceae,rogers,western
+Celtis,13408,NA,NA,13408,Celtis,3481,Cannabaceae,rogers,western
+Vitex,54476,NA,NA,54476,Vitex,4136,Lamiaceae,rogers,western
+Cissus,149357,NA,NA,149357,Cissus,3602,Vitaceae,rogers,western
+Thomandersia,324795,NA,NA,324795,Thomandersia,324794,Thomandersiaceae,rogers,western
+Whitfieldia,103767,NA,NA,103767,Whitfieldia,4185,Acanthaceae,rogers,western
+Pycnobotrya,1498964,NA,NA,1498964,Pycnobotrya,4056,Apocynaceae,rogers,western
+Stylochiton,NA,NA,7315325,7315325,Stylochiton,6979,Araceae,rogers,western
+Ancistrophyllum,NA,NA,NA,NA,NA,NA,NA,rogers,western
+Elaeis,51952,NA,NA,51952,Elaeis,4710,Arecaceae,rogers,western
+Dioscorea,4672,NA,NA,4672,Dioscorea,4671,Dioscoreaceae,rogers,western
+Gnetum,3380,NA,NA,3380,Gnetum,3379,Gnetaceae,rogers,western
+Marantochloa,4624,NA,NA,4624,Marantochloa,4619,Marantaceae,rogers,western
+Musanga,1317685,NA,NA,1317685,Musanga,3499,Urticaceae,rogers,western
+Desplatsia,1007326,NA,NA,1007326,Desplatsia,3629,Malvaceae,rogers,western
+Duboscia,1563300,NA,7311211,1563300,Duboscia,3629,Malvaceae,rogers,western
+Rhynchospora,46332,NA,NA,46332,Rhynchospora,4609,Cyperaceae,rogers,western
+Hydrocharis,55463,NA,NA,55463,Hydrocharis,26319,Hydrocharitaceae,rogers,western
+Whitfieldra elongata,103768,Whitfieldia elongata,NA,103767,Whitfieldia,4185,Acanthaceae,remis,western
+Annonidium mannii,2109291,Anonidium mannii,NA,306991,Anonidium,22140,Annonaceae,remis,western
+Hexalobus sp,489329,Hexalobus,NA,489329,Hexalobus,22140,Annonaceae,remis,western
+Polyalthia suaveoleons,NA,NA,3156192,3156263,Polyalthia,9291,Annonaceae,remis,western
+Landolphia sp.,141576,Landolphia,NA,141576,Landolphia,4056,Apocynaceae,remis,western
+Orthopichonia barterii,NA,NA,3615439,7316655,Orthopichonia,6701,Apocynaceae,remis,western
+Tabernaemontana sp.,52860,Tabernaemontana,NA,52860,Tabernaemontana,4056,Apocynaceae,remis,western
+Santira trimera,NA,NA,NA,NA,NA,NA,NA,remis,western
+Dialum zenkerei,1608029,Dialium zenkeri,NA,53868,Dialium,3803,Fabaceae,remis,western
+Diospyros bipindensis Gurke,413723,NA,NA,13492,Diospyros,19955,Ebenaceae,remis,western
+Diospyros iturensis,570487,NA,NA,13492,Diospyros,19955,Ebenaceae,remis,western
+Diospyros iturensis bipendensis,NA,NA,NA,NA,NA,NA,NA,remis,western
+Drypetes gilgiana,301017,NA,NA,20145,Drypetes,233879,Putranjivaceae,remis,western
+Drypetes diopa,2763563,NA,NA,20145,Drypetes,233879,Putranjivaceae,remis,western
+Drypetes sp.,20145,Drypetes,NA,20145,Drypetes,233879,Putranjivaceae,remis,western
+Drypetes gossweileri,2708818,NA,NA,20145,Drypetes,233879,Putranjivaceae,remis,western
+Gnetum africanum,44929,NA,NA,3380,Gnetum,3379,Gnetaceae,remis,western
+Irvingia excelsa,2708862,NA,NA,79318,Irvingia,629715,Irvingiaceae,remis,western
+Klainedoxa gabonensis,289639,NA,NA,289638,Klainedoxa,629715,Irvingiaceae,remis,western
+Beilschmiedia obscura,NA,NA,4175928,3034072,Beilschmiedia,6688,Lauraceae,remis,western
+Entrandrophragma cylindricum,NA,NA,NA,NA,NA,NA,NA,remis,western
+Lovoa sp.,201284,Lovoa,NA,201284,Lovoa,43707,Meliaceae,remis,western
+Maranthes glabra chrysobalanceae,NA,NA,NA,NA,NA,NA,NA,remis,western
+Tetraplaura teraptera,148728,Tetrapleura tetraptera,NA,148727,Tetrapleura,3803,Fabaceae,remis,western
+Chlorophora excelsa,NA,NA,5361892,6358584,Milicia,6640,Moraceae,remis,western
+Ficus sp.,NA,Ficus,NA,NA,NA,NA,NA,remis,western
+Treculia africana,709072,NA,NA,709071,Treculia,3487,Moraceae,remis,western
+Strombosia pustulata tetranda,NA,NA,NA,NA,NA,NA,NA,remis,western
+Lonchocarpus sp.,3925,Lonchocarpus,NA,3925,Lonchocarpus,3803,Fabaceae,remis,western
+Pterocarpus soyauxii,1071200,NA,NA,100169,Pterocarpus,3803,Fabaceae,remis,western
+Zhana cf. Gulungensis,NA,NA,NA,NA,NA,NA,NA,remis,western
+Manilkara letouzeyi,1573136,NA,NA,3740,Manilkara,3737,Sapotaceae,remis,western
+Desplatsia deweverei,1007327,Desplatsia dewevrei,NA,1007326,Desplatsia,3629,Malvaceae,remis,western
+Duboscia cf. Viridiflora,NA,NA,4261707,7311211,Duboscia,6685,Malvaceae,remis,western
+Duboscia macrocarpa,NA,NA,4261717,7311211,Duboscia,6685,Malvaceae,remis,western
+Celtis mildbraedii,1237422,NA,NA,13408,Celtis,3481,Cannabaceae,remis,western
+Celtis sp.,13408,Celtis,NA,13408,Celtis,3481,Cannabaceae,remis,western
+Aframomum sp.,188478,Aframomum,NA,188478,Aframomum,4642,Zingiberaceae,remis,western
+Aframomum sulcatum,NA,NA,2758909,2758799,Aframomum,4687,Zingiberaceae,remis,western
+Renalria sp.,NA,NA,NA,NA,NA,NA,NA,remis,western
+Myrianthus holstii,1220084,NA,NA,1220083,Myrianthus,3499,Urticaceae,yamagiwa,grauers
+Ficus oreadryadum,378025,Ficus oreodryadum,NA,3493,Ficus,3487,Moraceae,yamagiwa,grauers
+Ficus thonningii,309310,NA,NA,3493,Ficus,3487,Moraceae,yamagiwa,grauers
+Bridelia bridelifolia,577016,Bridelia brideliifolia,NA,283086,Bridelia,233880,Phyllanthaceae,yamagiwa,grauers
+Allophyllus sp.,NA,Allophyllus,NA,NA,NA,NA,NA,yamagiwa,grauers
+Syzygium guineense,334482,NA,NA,178174,Syzygium,3931,Myrtaceae,yamagiwa,grauers
+Rubus adenocomus,NA,NA,2995029,2988638,Rubus,5015,Rosaceae,yamagiwa,grauers
+Psychotha palustris,NA,NA,NA,NA,NA,NA,NA,yamagiwa,grauers
+Piper capense,247681,NA,NA,13215,Piper,16739,Piperaceae,yamagiwa,grauers
+Maesa lanceolata,992730,NA,NA,59979,Maesa,4335,Primulaceae,yamagiwa,grauers
+Urera hypselodendron,1399752,NA,NA,194274,Urera,3499,Urticaceae,yamagiwa,grauers
+Basella alba,3589,NA,NA,3588,Basella,3587,Basellaceae,yamagiwa,grauers
+Galiniera coffeoides,1571010,Galiniera saxifraga,NA,1570994,Galiniera,24966,Rubiaceae,yamagiwa,grauers
+Jasminium abyssinicum,210360,Jasminum abyssinicum,NA,4147,Jasminum,4144,Oleaceae,yamagiwa,grauers
+Arundinaria alpina,179660,NA,NA,1498829,Oldeania,4479,Poaceae,yamagiwa,grauers
+Taccazea apiculata,184380,Tacazzea apiculata,NA,184379,Tacazzea,4056,Apocynaceae,yamagiwa,grauers
+Helichrysum sp.,59430,Helichrysum,NA,59430,Helichrysum,4210,Asteraceae,yamagiwa,grauers
+Smilax anceps,989897,NA,NA,49656,Smilax,4703,Smilacaceae,yamagiwa,grauers
+Barieria ventricosa,2579230,Barleria ventricosa,NA,4188,Barleria,4185,Acanthaceae,yamagiwa,grauers
+Schefflera goetzenii,327216,NA,NA,2043140,Astropanax,4050,Araliaceae,yamagiwa,grauers
+Ensete ventricosum,4639,NA,NA,4638,Ensete,4637,Musaceae,yamagiwa,grauers
+Asplenium theciferum,164269,NA,NA,32071,Asplenium,41972,Aspleniaceae,yamagiwa,grauers
+Embelia schimperi,2595069,NA,NA,459628,Embelia,4335,Primulaceae,yamagiwa,grauers
+Symphonia globulifera,156483,NA,NA,156482,Symphonia,55961,Clusiaceae,yamagiwa,grauers
+Cyathea manniana,429085,NA,NA,13470,Cyathea,29635,Cyatheaceae,yamagiwa,grauers
+Jabsminium abyssinicum,210360,Jasminum abyssinicum,NA,4147,Jasminum,4144,Oleaceae,yamagiwa,grauers
+Vernonia hochstetteri,NA,NA,3124138,3118098,Ambassa,3065,Asteraceae,yamagiwa,grauers
+Clerodendron welwitschii,NA,NA,NA,NA,NA,NA,NA,yamagiwa,grauers
+Cyperus latifolius,2511944,NA,NA,4610,Cyperus,4609,Cyperaceae,yamagiwa,grauers
+Viscum congolense,1874152,NA,NA,3971,Viscum,1003255,Viscaceae,yamagiwa,grauers
+Hagenia abyssinica,57921,NA,NA,57920,Hagenia,3745,Rosaceae,yamagiwa,grauers
+Periploca linearifolia,1833776,NA,NA,63484,Periploca,4056,Apocynaceae,yamagiwa,grauers
+Mikania cordata,207834,NA,NA,102786,Mikania,4210,Asteraceae,yamagiwa,grauers
+Commelina cecilae,NA,NA,2764190,2763939,Commelina,2763195,Commelinaceae,yamagiwa,grauers
+Gouania longispicata,1813009,NA,NA,106678,Gouania,3608,Rhamnaceae,yamagiwa,grauers
+Ipomea ivolucrata,1393929,Ipomoea involucrata,NA,4119,Ipomoea,4118,Convolvulaceae,yamagiwa,grauers
+Englerina woodfordioides,43235,NA,NA,43234,Englerina,3963,Loranthaceae,yamagiwa,grauers
+Ouratea brunneopupurea,NA,NA,NA,NA,NA,NA,NA,yamagiwa,grauers
+Rubia cordifolia,339321,NA,NA,25473,Rubia,24966,Rubiaceae,yamagiwa,grauers
+Vernonia kirubgae,NA,NA,NA,NA,NA,NA,NA,yamagiwa,grauers
+Mussularia acuminata,58474,Massularia acuminata,NA,58473,Massularia,24966,Rubiaceae,yamagiwa,grauers
+Lobelia mildbraedii,2010893,NA,NA,4382,Lobelia,4381,Campanulaceae,yamagiwa,grauers
+Mimulopsis excellence,NA,NA,NA,NA,NA,NA,NA,yamagiwa,grauers
+Triumfetta cordifolia,2709013,NA,NA,93801,Triumfetta,3629,Malvaceae,yamagiwa,grauers
+Crassocephalum bumbense,462399,Crassocephalum montuosum,NA,189210,Crassocephalum,4210,Asteraceae,yamagiwa,grauers
+Globimetula kivuensis,NA,NA,4002202,7287996,Globimetula,6663,Loranthaceae,yamagiwa,grauers
+Impatians irvingii,659091,Impatiens irvingii,NA,35939,Impatiens,25692,Balsaminaceae,yamagiwa,grauers
+Rumex bequaertii,NA,NA,4035992,2888942,Rumex,2416,Polygonaceae,yamagiwa,grauers
+Usnea sp.,2015053,NA,NA,86620,Usnea,78060,Parmeliaceae,yamagiwa,grauers
+Loeseneriella apocynoides,NA,NA,7265601,7265551,Loeseneriella,6715,Celastraceae,yamagiwa,grauers
+Caper capense,NA,NA,NA,NA,NA,NA,NA,yamagiwa,grauers
+Arisaema mildbraedii,228829,NA,NA,50230,Arisaema,4454,Araceae,yamagiwa,grauers
+Artabotrys palutris,NA,NA,NA,NA,NA,NA,NA,yamagiwa,grauers
+Dombeya goetzenii,2601738,Dombeya torrida,NA,82530,Dombeya,3629,Malvaceae,yamagiwa,grauers
+Baphoglossum sp.,NA,Baphoglossum,NA,NA,NA,NA,NA,yamagiwa,grauers
+Erigeron floribundus,NA,NA,3147018,3146588,Erigeron,3065,Asteraceae,yamagiwa,grauers
+Leplaca cf. mayumbensis,NA,NA,NA,NA,NA,NA,NA,yamagiwa,grauers
+Melothria punctata,378900, Zehneria scabra,NA,378899,Zehneria,3650,Cucurbitaceae,yamagiwa,grauers
+Mystroxylon aethiopicum,353138,NA,NA,353137,Mystroxylon,4305,Celastraceae,yamagiwa,grauers
+Penisetum purpureum,154765,Cenchrus purpureus,NA,4583,Cenchrus,4479,Poaceae,yamagiwa,grauers
+Pycnostachys cricirosenii,NA,NA,NA,NA,NA,NA,NA,yamagiwa,grauers
+Tapinanthus constrictiflorus,529599,NA,NA,50164,Tapinanthus,3963,Loranthaceae,yamagiwa,grauers
+Tricalysia sp.,58438,Tricalysia,NA,58438,Tricalysia,24966,Rubiaceae,yamagiwa,grauers
+Triumfetta annua,1051413,NA,NA,93801,Triumfetta,3629,Malvaceae,yamagiwa,grauers
+Crematogaster sp.,2764175,NA,NA,29040,Crematogaster,36668,Formicidae,yamagiwa,grauers
+Apis sp.,7459,Apis,NA,7459,Apis,7458,Apidae,yamagiwa,grauers
+Urticaceae,3499,NA,NA,NA,NA,3499,Urticaceae,michel,grauers
+Apocynaceae,4056,NA,NA,NA,NA,4056,Apocynaceae,michel,grauers
+Myristicaceae,22274,NA,NA,NA,NA,22274,Myristicaceae,michel,grauers
+Primulaceae,4335,NA,NA,NA,NA,4335,Primulaceae,michel,grauers
+Piperaceae,16739,NA,NA,NA,NA,16739,Piperaceae,michel,grauers
+Moraceae,3487,NA,NA,NA,NA,3487,Moraceae,michel,grauers
+Solanaceae,4070,NA,NA,NA,NA,4070,Solanaceae,michel,grauers
+Vitaceae,3602,NA,NA,NA,NA,3602,Vitaceae,michel,grauers
+Loranthaceae,3963,NA,NA,NA,NA,3963,Loranthaceae,michel,grauers
+Araceae,4454,NA,NA,NA,NA,4454,Araceae,michel,grauers
+Viscaceae,1003255,NA,NA,NA,NA,1003255,Viscaceae,michel,grauers
+Celastraceae,4305,NA,NA,NA,NA,4305,Celastraceae,michel,grauers
+Marantaceae,4619,NA,NA,NA,NA,4619,Marantaceae,michel,grauers
+Phyllanthaceae,233880,NA,NA,NA,NA,233880,Phyllanthaceae,michel,grauers
+Zingiberaceae,4642,NA,NA,NA,NA,4642,Zingiberaceae,michel,grauers
+Rubiaceae,24966,NA,NA,NA,NA,24966,Rubiaceae,michel,grauers
+Arecaceae,4710,NA,NA,NA,NA,4710,Arecaceae,michel,grauers
+Gnetaceae,3379,NA,NA,NA,NA,3379,Gnetaceae,michel,grauers
+Fabaceae,3803,NA,NA,NA,NA,3803,Fabaceae,michel,grauers
+Acanthaceae,4185,NA,NA,NA,NA,4185,Acanthaceae,michel,grauers
+Rhamnaceae,3608,NA,NA,NA,NA,3608,Rhamnaceae,michel,grauers
+Cannabaceae,3481,NA,NA,NA,NA,3481,Cannabaceae,michel,grauers
+Asteraceae,4210,NA,NA,NA,NA,4210,Asteraceae,michel,grauers
+Humiriaceae,4007,NA,NA,NA,NA,4007,Humiriaceae,michel,grauers
+Convolvulaceae,4118,NA,NA,NA,NA,4118,Convolvulaceae,michel,grauers
+Oleaceae,4144,NA,NA,NA,NA,4144,Oleaceae,michel,grauers
+Polypodiaceae,3275,NA,NA,NA,NA,3275,Polypodiaceae,michel,grauers
+Menispermaceae,3455,NA,NA,NA,NA,3455,Menispermaceae,michel,grauers
+Polygonaceae,3615,NA,NA,NA,NA,3615,Polygonaceae,michel,grauers
+Dioscoreaceae,4671,NA,NA,NA,NA,4671,Dioscoreaceae,michel,grauers
+Sapotaceae,3737,NA,NA,NA,NA,3737,Sapotaceae,michel,grauers
+Poaceae,4479,NA,NA,NA,NA,4479,Poaceae,michel,grauers
+Sapindaceae,23672,NA,NA,NA,NA,23672,Sapindaceae,michel,grauers
+Smilacaceae,4703,NA,NA,NA,NA,4703,Smilacaceae,michel,grauers
+Annonaceae,22140,NA,NA,NA,NA,22140,Annonaceae,michel,grauers
+Lauraceae,3433,NA,NA,NA,NA,3433,Lauraceae,michel,grauers
+Meliaceae,43707,NA,NA,NA,NA,43707,Meliaceae,michel,grauers
+Malvaceae,3629,NA,NA,NA,NA,3629,Malvaceae,michel,grauers
+Basellaceae,3587,NA,NA,NA,NA,3587,Basellaceae,michel,grauers
+Musaceae,4637,NA,NA,NA,NA,4637,Musaceae,michel,grauers
+Anacardiaceae,4011,NA,NA,NA,NA,4011,Anacardiaceae,michel,grauers
+Chrysobalanaceae,22973,NA,NA,NA,NA,22973,Chrysobalanaceae,michel,grauers
+Pteridaceae,13819,NA,NA,NA,NA,13819,Pteridaceae,michel,grauers
+Lejeuneaceae,65055,NA,NA,NA,NA,65055,Lejeuneaceae,michel,grauers
+Euphorbiaceae,3977,NA,NA,NA,NA,3977,Euphorbiaceae,michel,grauers
+Rutaceae,23513,NA,NA,NA,NA,23513,Rutaceae,michel,grauers
+Costaceae,4630,NA,NA,NA,NA,4630,Costaceae,michel,grauers
+Acalypha ornata,NA,NA,3056092,3055964,Acalypha,4691,Euphorbiaceae,rothman,mountain
+Achyranthes aspera,240005,NA,NA,169205,Achyranthes,3563,Amaranthaceae,rothman,mountain
+Adenia gummifera,237833,NA,NA,56632,Adenia,3683,Passifloraceae,rothman,mountain
+Alchornea hirtella,1237396,NA,NA,212275,Alchornea,3977,Euphorbiaceae,rothman,mountain
+Allophylus abyssinicus,1971999,NA,NA,201004,Allophylus,23672,Sapindaceae,rothman,mountain
+Allophylus macrobotrys,1194985,NA,NA,201004,Allophylus,23672,Sapindaceae,rothman,mountain
+Allophylus sp.,201004,Allophylus,NA,201004,Allophylus,23672,Sapindaceae,rothman,mountain
+Ancistrorhynchus clandestinus,2174737,NA,NA,338964,Ancistrorhynchus,4747,Orchidaceae,rothman,mountain
+Angraecum infundibulare,1424704,NA,NA,2815276,Eichlerangraecum,4747,Orchidaceae,rothman,mountain
+Arundinaria alpina,179660,NA,NA,1498829,Oldeania,4479,Poaceae,rothman,mountain
+Baissea sp.,69376,Baissea,NA,69376,Baissea,4056,Apocynaceae,rothman,mountain
+Basella alba,3589,NA,NA,3588,Basella,3587,Basellaceae,rothman,mountain
+Carpodinus glabra,NA,NA,NA,NA,NA,NA,NA,rothman,mountain
+Carduus kikuyorua,NA,NA,NA,NA,NA,NA,NA,rothman,mountain
+Cassipourea ruwenzoriensis,2708751,Cassipourea ruwensorensis,NA,61133,Cassipourea,40029,Rhizophoraceae,rothman,mountain
+Chrysophyllum albidum,1220070,NA,2885627,2851910,Gambeya,3737,Sapotaceae,rothman,mountain
+Chrysophyllum gorungosanum,NA,NA,2885905,2885576,Chrysophyllum,8802,Sapotaceae,rothman,mountain
+Clematis sp.,2946198,Clematis,NA,3452,Clematis,3440,Ranunculaceae,rothman,mountain
+Combretum fuscum,NA,NA,3698472,2986357,Combretum,2431,Combretaceae,rothman,mountain
+Crassocephalum sp.,189210,Crassocephalum,NA,189210,Crassocephalum,4210,Asteraceae,rothman,mountain
+Cyathea manniana,429085,NA,NA,13470,Cyathea,29635,Cyatheaceae,rothman,mountain
+Cyperus renschii,1077510,NA,NA,4610,Cyperus,4609,Cyperaceae,rothman,mountain
+Desmodium repandum,2044328,Hylodesmum repandum,NA,554832,Hylodesmum,3803,Fabaceae,rothman,mountain
+Diaphanathe subsimplex,NA,NA,NA,NA,NA,NA,NA,rothman,mountain
+Dicliptera sp.,76361,Dicliptera,NA,76361,Dicliptera,4185,Acanthaceae,rothman,mountain
+Dolichos sericeus,2895291,NA,2975561,3839,Dolichos,3803,Fabaceae,rothman,mountain
+Dombeya goetzenii,2601738,Dombeya torrida,NA,82530,Dombeya,3629,Malvaceae,rothman,mountain
+Droguetia iners,344765,NA,NA,344764,Droguetia,3499,Urticaceae,rothman,mountain
+Drypetes sp.,20145,Drypetes,NA,20145,Drypetes,233879,Putranjivaceae,rothman,mountain
+Englerina woodfordioides,43235,NA,NA,43234,Englerina,3963,Loranthaceae,rothman,mountain
+Ficus asperifolia,182103,NA,NA,3493,Ficus,3487,Moraceae,rothman,mountain
+Ficus densistipulata,378020,NA,NA,3493,Ficus,3487,Moraceae,rothman,mountain
+Ficus exasperata,459060,NA,NA,3493,Ficus,3487,Moraceae,rothman,mountain
+Ficus ingens,309268,NA,NA,3493,Ficus,3487,Moraceae,rothman,mountain
+Ficus natalensis,309307,NA,NA,3493,Ficus,3487,Moraceae,rothman,mountain
+Ficus spp. (Unidentified Ficus),NA,Ficus,NA,NA,NA,NA,NA,rothman,mountain
+Ficus conraui,378017,NA,NA,3493,Ficus,3487,Moraceae,rothman,mountain
+Laportea ovalifolia,2306683,NA,NA,194268,Laportea,3499,Urticaceae,rothman,mountain
+Galiniera coffeoides,1571010,Galiniera saxifraga,NA,1570994,Galiniera,24966,Rubiaceae,rothman,mountain
+Galium thunbergianum,392987,NA,NA,25168,Galium,24966,Rubiaceae,rothman,mountain
+Gandoderma australe,34457,Ganoderma australe,NA,5314,Ganoderma,5317,Polyporaceae,rothman,mountain
+Ganoderma sp.,1869158,NA,NA,5314,Ganoderma,5317,Polyporaceae,rothman,mountain
+Gouania longispicata,1813009,NA,NA,106678,Gouania,3608,Rhamnaceae,rothman,mountain
+Helichrysum nudifolium,630325,NA,NA,59430,Helichrysum,4210,Asteraceae,rothman,mountain
+Helichrysum schimperi,630334,NA,NA,59430,Helichrysum,4210,Asteraceae,rothman,mountain
+Ilex mitis,53207,NA,NA,4295,Ilex,4294,Aquifoliaceae,rothman,mountain
+Ipomoea involcrata,1393929,Ipomoea involucrata,NA,4119,Ipomoea,4118,Convolvulaceae,rothman,mountain
+Isoglossa sp.,141315,Isoglossa,NA,141315,Isoglossa,4185,Acanthaceae,rothman,mountain
+Jasminum abyssinicum,210360,NA,NA,4147,Jasminum,4144,Oleaceae,rothman,mountain
+Jasminum schimperi,NA,NA,3682200,3172260,Jasminum,6652,Oleaceae,rothman,mountain
+Justicia glabra,2038553,Justicia scandens,NA,4190,Justicia,4185,Acanthaceae,rothman,mountain
+Kosteletzkya grantii,1663620,NA,NA,69160,Kosteletzkya,3629,Malvaceae,rothman,mountain
+Landolphia buchananii,NA,NA,3617345,3169739,Landolphia,6701,Apocynaceae,rothman,mountain
+Lasanthus sersecusis,NA,NA,NA,NA,NA,NA,NA,rothman,mountain
+Maesa lanceolata,992730,NA,NA,59979,Maesa,4335,Primulaceae,rothman,mountain
+Mimulopsis arborescens,440902,NA,NA,440901,Mimulopsis,4185,Acanthaceae,rothman,mountain
+Mimulopsis solmsii,440904,NA,NA,440901,Mimulopsis,4185,Acanthaceae,rothman,mountain
+Momordica foetida,386195,NA,NA,3671,Momordica,3650,Cucurbitaceae,rothman,mountain
+Momordica pterocarpa,703383,NA,NA,3671,Momordica,3650,Cucurbitaceae,rothman,mountain
+Myrianthus holstii,1220084,NA,NA,1220083,Myrianthus,3499,Urticaceae,rothman,mountain
+Mystroxylon aethiopicum,353138,NA,NA,353137,Mystroxylon,4305,Celastraceae,rothman,mountain
+Olea capensis,126552,NA,NA,4145,Olea,4144,Oleaceae,rothman,mountain
+Olinia rochetiana,NA,NA,3672670,7323149,Olinia,3231458,Penaeaceae,rothman,mountain
+Oncinotis sp.,351449,Oncinotis,NA,351449,Oncinotis,4056,Apocynaceae,rothman,mountain
+Periploca linearifolia,1833776,NA,NA,63484,Periploca,4056,Apocynaceae,rothman,mountain
+Pilea holstii,344800,NA,NA,24775,Pilea,3499,Urticaceae,rothman,mountain
+Piper capense,247681,NA,NA,13215,Piper,16739,Piperaceae,rothman,mountain
+Pleopeltis macrocarpa,38350,NA,NA,38349,Pleopeltis,3275,Polypodiaceae,rothman,mountain
+Podocarpus milanjianus,85247,NA,NA,3363,Podocarpus,3362,Podocarpaceae,rothman,mountain
+Polystachya adansoniae,687582,NA,NA,38196,Polystachya,4747,Orchidaceae,rothman,mountain
+Polystachya cultriformis,687607,NA,NA,38196,Polystachya,4747,Orchidaceae,rothman,mountain
+Polystachya spatella,687647,NA,NA,38196,Polystachya,4747,Orchidaceae,rothman,mountain
+Pseudodrynaria coronans,187373,NA,NA,187339,Aglaomorpha,3275,Polypodiaceae,rothman,mountain
+Rapanea rhododendroides,459861,Myrsine melanophloeos,NA,59981,Myrsine,4335,Primulaceae,rothman,mountain
+Rawnsonia lucida,1220056,Rawsonia lucida,NA,1220055,Rawsonia,112800,Achariaceae,rothman,mountain
+Rhipsalis baccifera,722799,NA,NA,154429,Rhipsalis,3593,Cactaceae,rothman,mountain
+Rubus sp.,23216,Rubus,NA,23216,Rubus,3745,Rosaceae,rothman,mountain
+Rubus steudneri,NA,NA,2994678,2988638,Rubus,5015,Rosaceae,rothman,mountain
+Rytigynia bugoyensis,164471,NA,NA,58501,Canthium,24966,Rubiaceae,rothman,mountain
+Rytigynia kigeziensis,NA,NA,2904283,2904236,Rytigynia,8798,Rubiaceae,rothman,mountain
+Rytigynia ruwenzoriensis,NA,NA,NA,NA,NA,NA,NA,rothman,mountain
+Salacia elegans,NA,NA,NA,NA,NA,NA,NA,rothman,mountain
+Sarcorhynchus bilobatus,2174805,Rhipidoglossum bilobatum,NA,339015,Rhipidoglossum,4747,Orchidaceae,rothman,mountain
+Schefflera sp.,46414,Schefflera,NA,46414,Schefflera,4050,Araliaceae,rothman,mountain
+Smilax anceps,989897,NA,NA,49656,Smilax,4703,Smilacaceae,rothman,mountain
+Solanum welwitschii,NA,NA,2932119,2928997,Solanum,7717,Solanaceae,rothman,mountain
+Strombosia scheffleri,289392,NA,NA,70869,Strombosia,1003241,Strombosiaceae,rothman,mountain
+Symphonia sp.,NA,Symphonia,NA,NA,NA,NA,NA,rothman,mountain
+Syzygium guineense,334482,NA,NA,178174,Syzygium,3931,Myrtaceae,rothman,mountain
+Tapinanthus sp.,50164,Tapinanthus,NA,50164,Tapinanthus,3963,Loranthaceae,rothman,mountain
+Teclea nobilis,1220089,NA,NA,430986,Vepris,23513,Rutaceae,rothman,mountain
+Triumfetta tomentosa,2709014,NA,NA,93801,Triumfetta,3629,Malvaceae,rothman,mountain
+Urera cameroonensis,1237843,Urera trinervis,NA,194274,Urera,3499,Urticaceae,rothman,mountain
+Urera hypselodendron,1399752,NA,NA,194274,Urera,3499,Urticaceae,rothman,mountain
+Vernonia iodocalyx,83961,Baccharoides lasiopus,NA,434622,Baccharoides,4210,Asteraceae,rothman,mountain
+Vernonia lasiopus,83961,NA,NA,434622,Baccharoides,4210,Asteraceae,rothman,mountain
+Vernonia pteropoda,NA,NA,5396653,9569260,Ananthura,3065,Asteraceae,rothman,mountain
+Vernonia tufnelliae,2676167,Distephanus biafrae,NA,434647,Distephanus,4210,Asteraceae,rothman,mountain
+Vigna parkeri,460243,NA,NA,3913,Vigna,3803,Fabaceae,rothman,mountain
+Xymalos monospora,74966,NA,NA,74965,Xymalos,22063,Monimiaceae,rothman,mountain

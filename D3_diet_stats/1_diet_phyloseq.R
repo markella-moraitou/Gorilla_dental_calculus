@@ -99,7 +99,7 @@ tax_table(euk_data)[,2] <- NA
 
 #euk_genus <- tax_glom(euk_data, taxrank = "genus", NArm = FALSE, bad_empty = NA)
 #saveRDS(euk_genus, file="euk_genus.RDS")
-euk_genus <- readRDS("euk_genus.RDS")
+euk_genus <- readRDS("D3_diet_stats/euk_genus.RDS")
 
 print("How many genera?")
 ntaxa(euk_genus)

@@ -11,8 +11,8 @@
 # analysis step 4: Quality filtering with PrinSeq-Lite
 # for collapsed reads as well as the forward reads that couldn't be merged
 # Filtering outreads with mean base quality <30 and length <30bp
-# Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/prinseq_merged_190604.sh
-# and /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/prinseq_unmerged_190604.sh
+# Adapted from SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/prinseq_merged_190604.sh
+# and SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/prinseq_unmerged_190604.sh
 # Not all of the samples went through barcode trimming, so this script takes input from both 3_adapterRem and 4_barcodeTrim to process the total number of samples
 
 echo "$SLURM_JOB_NAME"

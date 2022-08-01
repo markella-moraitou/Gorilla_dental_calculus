@@ -78,6 +78,9 @@ load(".RData")
 # If you do not want to filter out any sample based on library sizes, you can simply set lib_cut = 0 to disable this function.
 
 #Remove environmental controls from dataset
+euk_genus_diet<-readRDS("D3_diet_stats/euk_genus_diet.rds")
+euk_genus_diet_norm<-readRDS("D3_diet_stats/euk_genus_diet_norm.rds")
+
 euk_genus_diet_norm <- euk_genus_diet
 otu_table(euk_genus_diet_norm) <- otu_table(microbiome::transform(otu_table(euk_genus_diet_norm), transform = "clr"),
                                             taxa_are_rows = TRUE)
@@ -134,9 +137,9 @@ ggsave(plot=ancom_fig,filename = "D3_diet_stats/euk_ancom_fig.png")
 
 
 #### Look into differentially abundant species ####
-ancom_euk <- as.data.frame(euk_ancom_res$out$taxa_id[which(euk_ancom_res$out$detected_0.9==TRUE)])
+ancom_euk<-read.csv("D3_diet_stats/euk_ancom_results.csv",header=T) %>% filter(detected_0.9==TRUE)
 
-colnames(ancom_euk) <- "genus"
+ancom_euk$genus <- ancom_euk$taxa_id
 
 #Add family names
 ancom_euk$family <- tax_table(euk_genus_diet)[match(ancom_euk$genus, taxa_names(euk_genus_diet)),6]
@@ -158,7 +161,7 @@ table(ancom_euk$is.zero)
 
 #### Plot heatmap ####
 #Plot abundances
-ancom_euk_abund <- otu_table(subset_taxa(euk_genus_diet_norm, taxa_names(euk_genus_diet_norm) %in% ancom_euk$genus))
+ancom_euk_abund <- otu_table(subset_taxa(euk_genus_diet_norm, genus %in% ancom_euk$taxa_id))
 
 #Set 0 values (the most negative value of CLR-normalized abundances) to min(clr.pseudocounts)*2 instead of NA (which is what Jaelle did). This is because the heatmap function that I use doesn't recognize NAs
 clr.pseudozeros.dd <- sapply(colnames(ancom_euk_abund), function(x){min(ancom_euk_abund[,x])})

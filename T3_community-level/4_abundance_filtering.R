@@ -40,7 +40,7 @@ abundance_filter_f <- function(count.mat, cutoff) {
 
 
 #Create abundance-filtered phyloseq objects
-species_table_filt <- t(abundance_filter_f(as.data.frame(t(otu_table(spe_data_decontam))), 0.00005)) #filter OTU table of decontaminated phyloseq (the latest processing step)
+species_table_filt <- t(abundance_filter_f(as.data.frame(t(otu_table(spe_data_decontam))), 5e-04)) #filter OTU table of decontaminated phyloseq (the latest processing step)
 species_table_filt <- species_table_filt[rowSums(species_table_filt)>0,] #removal of empty rows                                                           
 
 #Create phyloseq object
@@ -53,6 +53,19 @@ sample_data(spe_data_filt)$richness_after_filt <- sapply(row.names(sample_data(s
 #CLR-normalization and creation of normalized phyloseq objects
 spe_data_filt_norm <- phyloseq(otu_table(microbiome::transform(species_table_filt, transform = "clr"), taxa_are_rows = TRUE), sample_data(spe_data_decontam_norm), tax_table(spe_data_decontam_norm))
 
+#How many are oral?
+#core hominid microbiome
+print("How many of the retained taxa are from the core hominid microbiome?")
+length(taxa_names(spe_data_filt)[which(tax_table(spe_data_filt)[,8] %in% core_micr$Taxon)])
+
+
+#HOMD
+print("How many of the retained taxa are from HOMD?")
+length(taxa_names(spe_data_filt)[which(taxa_names(spe_data_filt) %in% homd$NCBI_taxon_id)])
+
+# contaminants
+print("How many of the retained taxa are contaminants?")
+length(taxa_names(spe_data_filt)[which(taxa_names(spe_data_filt) %in% unambiguous_contam)])
 
 #### Plot ####
 

@@ -95,6 +95,8 @@ euk_genus_decontam2 <- subset_taxa(euk_genus_filt, !(taxa_names(euk_genus_filt) 
 #remove environmental controls
 euk_genus_decontam2 <- subset_samples(euk_genus_decontam2, Sample.type!="control")
 
+saveRDS(euk_genus_decontam2,"D3_diet_stats/euk_genus_decontam2.rds")
+
 #Include metadata column with species richness after decontamination using museum taxa
 sample_data(euk_genus_decontam2)$richness_after_envrem <- sapply(row.names(sample_data(euk_genus_decontam2)), function(x) { #Species per sample after abundance-based decontam
   estimate_richness(euk_genus_decontam2, measures = "Observed")[x,]})

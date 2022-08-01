@@ -12,7 +12,7 @@
 # Microbial assignments using kraken for file to be used as sources in Feast
 # Standard kraken database (RefSeq bacteria+archaea+viral+human)
 # build by UPPMAX $KRAKEN_DB (updated started of each month)
-# Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/kraken2_190618.sh
+# Adapted from SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/kraken2_190618.sh
 
 # Merged data reads that couldn't be merged
 
@@ -21,7 +21,7 @@ echo $(module list)
 echo "$SLURM_JOB_NAME"
 echo $(readlink -f "$KRAKEN2_DEFAULT_DB")
 
-DATADIR=/proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_FIRSTSCREEN_181220/SOURCES_P6_18119
+DATADIR=SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_FIRSTSCREEN_181220/SOURCES_P6_18119
 OUTDIR=T1_kraken2/Sources
 
 # Set up database

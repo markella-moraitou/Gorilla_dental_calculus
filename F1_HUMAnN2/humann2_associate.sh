@@ -19,7 +19,7 @@ head -n 1 $DATADIR/all_GOterms_cpm_renamed.tsv | tr "\t" "\n" > $OUTDIR/all_GOte
 
 cd $OUTDIR
 # process header and add metadata
-Rscript --vanilla addMetadata_adrian.R all_GOterms_header.tsv all_GOterms_header_wfeature.tsv
+Rscript --vanilla addMetadata.R all_GOterms_header.tsv all_GOterms_header_wfeature.tsv
 
 # insert on second line, with appropriate first column
 sed "s/UNMAPPED/ $(<$OUTDIR/all_GOterms_header_wfeature.tsv)\nUNMAPPED/" $DATADIR/all_GOterms_cpm_renamed.tsv > all_GOterms_cpm_renamed_metadata.tsv
@@ -30,7 +30,7 @@ sed "s/UNMAPPED/ $(<$OUTDIR/all_GOterms_header_wfeature.tsv)\nUNMAPPED/" $DATADI
 humann_associate --input all_GOterms_cpm_renamed_metadata.tsv --last-metadatum " plot.label" --focal-metadatum " plot.label" --focal-type categorical --output GO_terms_stats.txt
 
 # take significant results from association test and make plots:
-Rscript --vanilla sortSigOutput_adrian.R GO_terms_stats.txt sig_GO_terms.txt
+Rscript --vanilla sortSigOutput.R GO_terms_stats.txt sig_GO_terms.txt
 
 grep -v "^feature" sig_GO_terms.txt | awk '{print $2}' | head -10 | while read line
 do
