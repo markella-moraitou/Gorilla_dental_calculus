@@ -1,4 +1,4 @@
-#Adapted from /proj/SNIC_PROJECT/nobackup/SAM/Bear_Lineage_Project/scripts/FindDiagnosticSites_edited.py
+#Adapted from SNIC_PROJECT/SAM/Bear_Lineage_Project/scripts/FindDiagnosticSites_edited.py
 
 ###This script will identify positions in an alignment that are fixed for differential alleles between two populations
 ###Takes a fasta alignment as input, and a file assigning sequences to one of two populations

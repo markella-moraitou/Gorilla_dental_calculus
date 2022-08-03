@@ -1,0 +1,7 @@
+MTM012 1314 Streptococcus pyogenes
+Gb2wash 1302 Streptococcus gordonii
+MTM012 1334 Streptococcus dysgalactiae
+ERR2868193 1280 Staphylococcus aureus
+GDC004 544580 Actinomyces oris
+MTM012 1311 Streptococcus agalactiae
+G0026 699041 Corynebacterium sp. NML93-0612

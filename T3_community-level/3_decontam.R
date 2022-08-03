@@ -57,10 +57,10 @@ homd <- homd %>% filter(Body_site=="Oral")
 #Choose thresholds for decontam by taking into account the proportion of the dataset that consists of oral and known contaminants
 
 #Table is already produced, just read from file
-decontam_test <- read.table(file="/crexT3_community-level/decontam_test.txt", sep=",",
-                            header=TRUE)
+# decontam_test <- read.table(file="/crexT3_community-level/decontam_test.txt", sep=",",
+#                             header=TRUE)
 
-decontam_test <- data.frame()
+decontam_test <- NULL
 
 #Run decontam with a random threshold
 id.cont.uppsala <- isContaminant(t(uppsala), method=c("combined"),
@@ -95,8 +95,8 @@ for (u_threshold in c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)) {
 }
 
 #Save table
-write.table(decontam_test, file="/crexT3_community-level/decontam_test.txt", sep=",",
-            quote=FALSE, row.names=FALSE)
+# write.table(decontam_test, file="/crexT3_community-level/decontam_test.txt", sep=",",
+#             quote=FALSE, row.names=FALSE)
 
 #Plot some heatmaps
 library(microbiome)

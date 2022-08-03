@@ -12,7 +12,7 @@
 # Microbial assignments using kraken for merged data
 # Using the NCBI nt database
 # build by UPPMAX $KRAKEN_DB (updated monthly)
-# Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/kraken2_190618.sh
+# Adapted from SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/kraken2_190618.sh
 
 # Merged data reads that couldn't be merged
 

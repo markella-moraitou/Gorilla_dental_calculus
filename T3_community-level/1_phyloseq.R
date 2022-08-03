@@ -38,7 +38,7 @@ species_table=t(species_table) #transpose again to use phyloseq
 species_table_norm=microbiome::transform(species_table, transform = "clr") #CLR normalization
 
 #Import metadata
-metadata <- read_excel("metadata_gorilla_analysis.xlsx", sheet = "Sheet1")
+metadata <- read_excel("extra/data/metadata_gorilla_analysis.xlsx", sheet = "Sheet1")
 
 #Modifications on metadata table
 metadata <- as.data.frame(metadata) #turn from tibble to data frame

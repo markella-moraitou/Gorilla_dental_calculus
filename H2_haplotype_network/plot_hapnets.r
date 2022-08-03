@@ -5,7 +5,7 @@ library(tibble)
 library(stringr)
 library(readxl)
 
-#Based on Zach's script /proj/sllstore3017021/nobackup/ZACH/ORANGS/haplotype_networks/plot_hapnets.r
+#Based on Zach's script SNIC_Project/ZACH/ORANGS/haplotype_networks/plot_hapnets.r
 
 #Set working directory
 setwd(dir="/crex")

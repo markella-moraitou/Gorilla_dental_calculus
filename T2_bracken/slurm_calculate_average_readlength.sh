@@ -8,7 +8,7 @@
 
 #Script for calculating average read length for the sequences used as input for Kraken2
 #For merged reads only
-#Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/calculate_average_readlength_190731.sh
+#Adapted from SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/calculate_average_readlength_190731.sh
 
 ymd=$(date +%y%m%d)
 

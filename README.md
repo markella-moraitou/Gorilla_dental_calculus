@@ -37,10 +37,12 @@ Studying the oral microbiome of three gorilla subspecies using a shotgun metagen
 
 ## Metagenomes-assembled genomes (MAGs)
 
-- M1_mag: assembly, binning, refinement, taxonomic classification, and phylogenies of MAGs
+- M1_metawrap: assembly, binning, refinement, taxonomic classification, and phylogenies of MAGs
 - M2_isolation-sources: Isolation source information from multiple databases, categorization and visualization of isolation sources for each MAG
+- M3_trees: scripts for producing core-gene trees for select oral taxa, using Phylophlan.
+- M4_pangenome: scripts for running pangenomic analyses
 
 ## Other
 
-- plots: script producing most figures presented in the report and the supplement
-- tables_and_stats: script producing most supplementary table
+- plots: scripts for producing most figures presented in the report and the supplement
+- tables_and_stats: script producing most information provided in supplementary tables

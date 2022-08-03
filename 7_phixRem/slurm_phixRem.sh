@@ -9,7 +9,7 @@
 #SBATCH --mail-user=USER_EMAIL
 
 # analysis step 6: Map to PhiX and remove mapped reads
-# Adapted from /proj/SNIC_PROJECT/nobackup/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/rmphix_merged_190606.sh
+# Adapted from SNIC_PROJECT/JAELLE/DENTAL_CALCULUS_SECONDSCREEN_190219/SCRIPTS/rmphix_merged_190606.sh
 
 #load modules
 module load bioinfo-tools samtools bwa BEDTools
@@ -19,7 +19,7 @@ echo $(module list)
 
 #define shortcuts
 
-INDEXDIR=/proj/SNIC_PROJECT/nobackup/JAELLE/REFERENCES/phix
+INDEXDIR=SNIC_PROJECT/JAELLE/REFERENCES/phix
 DATADIR=6_deduplicate
 OUTDIR=7_phixRem
 

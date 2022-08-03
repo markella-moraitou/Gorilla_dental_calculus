@@ -63,7 +63,7 @@ gzip *fa
 rm *fai
 
 #Obtain allele counts at all bases at all sites where coverage > 0
-#Code below adapted from /proj/SNIC_PROJECT/nobackup/SAM/Bear_Lineage_Project/scripts/1run_angsd_on_mt_copy.sh
+#Code below adapted from SNIC_PROJECT/SAM/Bear_Lineage_Project/scripts/1run_angsd_on_mt_copy.sh
 
 cd $DATADIR || exit
 ls *MT_RG.bam | while read i
