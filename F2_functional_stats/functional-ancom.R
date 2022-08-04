@@ -5,7 +5,7 @@ library(ggplot2)
 library(compositions)
 library(phyloseq)
 library(microbiome)
-source("general-scripts/ancom-functions.R")
+source("T3_community-level/ancom-functions.R")
 setwd("~/Lab-Notes/")
 
 # set the palette
