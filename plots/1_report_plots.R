@@ -12,9 +12,9 @@ library(ggtree)
 library(tibble)
 library(MutationalPatterns)
 library(ggh4x)
-load("/home/adrian/Gorilla_dental_calculus_private/T3_community-level/.RData")
+load("/home/adrian/PostDocWork/Gorilla_dental_calculus_zenodo/T3_community-level/.RData")
 
-alt.fix<-read_tsv("T3_community-level/new_altitude.csv") %>% 
+alt.fix<-read_tsv("../Gorilla_dental_calculus_zenodo/T3_community-level/new_altitude.csv") %>% 
   right_join(sample_data(spe_data_final) %>% data.frame() %>% rownames_to_column("Sample_ID")) %>%
   mutate(subspecies_locality=ifelse(Spec.subspecies=="graueri",
                                     ifelse(`Approximate altitude`>1000,"graueri >1000","graueri <1000"),
@@ -23,8 +23,8 @@ alt.fix<-read_tsv("T3_community-level/new_altitude.csv") %>%
 
 sample_data(spe_data_final)$subspecies_locality<-alt.fix
 
-euk_genus_diet<-readRDS("D3_diet_stats/euk_genus_diet.rds")
-euk_genus_diet_norm<-readRDS("D3_diet_stats/euk_genus_diet_norm.rds")
+euk_genus_diet<-readRDS("../Gorilla_dental_calculus_zenodo/D3_diet_stats/euk_genus_diet.rds")
+euk_genus_diet_norm<-readRDS("../Gorilla_dental_calculus_zenodo/D3_diet_stats/euk_genus_diet_norm.rds")
 
 #### Figure 2 - Dataset summary ####
 ggplot2::ggsave(
@@ -282,8 +282,9 @@ ggarrange(as_ggplot(diff_abund_heat_filled),
 
 ggplot2::ggsave(plot = as_ggplot(diff_abund_heat_filled),filename = "T3_community-level/diff_abund_heat.png",dpi=300,height = 18,width = 18)
 ggplot2::ggsave(plot = last_plot(),filename = "T3_community-level/diff_abund_heat_with_box.png",dpi=300,height = 16,width = 22)
+
 #### Figure 6 - Subspecies-associated biological processes ####
-load("F2_functional_stats/.RData")
+load("../Gorilla_dental_calculus_zenodo/F2_functional_stats/.RData")
 go_heatmap <-
   heat(GO_unstr_signif_m, "Sample", "GO term","Copies/million", order.cols = FALSE, order.rows=TRUE) +
   scale_fill_gradient2(low="blue", mid="white", high="red",
@@ -322,7 +323,7 @@ ggplot2::ggsave(tax_func_grid, file="BP_heatmap_with_tax_contributions.png",
 
 #### Plot heatmap ####
 #Plot abundances
-ancom_euk_abund <- otu_table(subset_taxa(euk_genus_diet_norm, genus %in% ancom_euk$taxa_id))
+ancom_euk_abund <- otu_table(subset_taxa(euk_genus_diet_norm, genus %in% ancom_euk$genus))
 
 # rownames(ancom_euk_abund)<-data.frame(tax_table(euk_genus_diet_norm))[data.frame(tax_table(euk_genus_diet_norm))$genus %in% ancom_euk$genus,"genus"]
 
@@ -336,8 +337,8 @@ for (s in colnames(ancom_euk_abund)) {
 ancom_euk_abund <- reshape2::melt(ancom_euk_abund)
 colnames(ancom_euk_abund) <- c("taxa_id", "sample", "CLR-abundance")
 
-#Add host subspecies column
-ancom_euk_abund$host_subspecies <- metadata$Spec.subspecies[match(ancom_euk_abund$sample, rownames(metadata))]
+# just update with the phyloseq metadata
+ancom_euk_abund <- sample_data(spe_data_final) %>% data.frame() %>% rownames_to_column("sample") %>% right_join(ancom_euk_abund)
 
 # add genus column
 ancom_euk_abund$genus <- taxonomy_euk[,"genus"][match(ancom_euk_abund$taxa_id, rownames(taxonomy_euk))]
@@ -349,13 +350,10 @@ ancom_euk_abund$phylum_name <- taxonomy_euk[,"phylum"][match(ancom_euk_abund$gen
 ancom_euk_abund$family_name <- taxonomy_euk[,"family"][match(ancom_euk_abund$genus, taxonomy_euk[,"genus"])]
 
 # add in subspecies
-ancom_euk_abund$host_subspecies <- factor(ancom_euk_abund$host_subspecies, levels = c("gorilla", "graueri", "beringei"))
-
-# just update with the phyloseq metadata
-ancom_euk_abund <- sample_data(spe_data_final) %>% data.frame() %>% rownames_to_column("sample") %>% right_join(ancom_euk_abund)
+ancom_euk_abund$Spec.subspecies <- factor(ancom_euk_abund$Spec.subspecies, levels = c("gorilla", "graueri", "beringei"))
 
 #Order table based on host subspecies, phylum and family
-ancom_euk_abund <- ancom_euk_abund[order(ancom_euk_abund$host_subspecies, ancom_euk_abund$phylum_name, ancom_euk_abund$family_name),]
+ancom_euk_abund <- ancom_euk_abund[order(ancom_euk_abund$Spec.subspecies, ancom_euk_abund$phylum_name, ancom_euk_abund$family_name),]
 
 #Plot
 #Labeller for the facet labels
@@ -634,7 +632,7 @@ ggplot2::ggsave(
 
 #### Functional ordinations ####
 
-load("F2_functional_stats/.RData")
+load(".RData")
 
 sample_data(GO_BP_phyloseq)$Spec.subspecies <- factor(sample_data(GO_BP_phyloseq)$Spec.subspecies, levels=c("gorilla", "graueri", "beringei"))
 

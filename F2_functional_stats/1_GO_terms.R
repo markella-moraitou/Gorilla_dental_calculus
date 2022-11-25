@@ -13,7 +13,7 @@ library(reshape2)
 library(microbiome)
 library(EcolUtils)
 
-load("F2_functional_stats/.RData")
+load(".RData")
 
 #Functional analysis - Script 1
 #Gene ontology terms

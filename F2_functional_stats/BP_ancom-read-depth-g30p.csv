@@ -1,0 +1,232 @@
+taxa_id,W,detected_0.9,detected_0.8,detected_0.7,detected_0.6,structural_zero (Grauer's)...7,structural_zero (Mountain)...8,structural_zero (Western)...9,structural_zero (Grauer's)...10,structural_zero (Mountain)...11,structural_zero (Western)...12
+GO:0000001: [BP] mitochondrion inheritance,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000002: [BP] mitochondrial genome maintenance,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000011: [BP] vacuole inheritance,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000041: [BP] transition metal ion transport,900,TRUE,TRUE,TRUE,TRUE,0,0,0,0,0,0
+GO:0000045: [BP] autophagosome assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000054: [BP] ribosomal subunit export from nucleus,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000070: [BP] mitotic sister chromatid segregation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000079: [BP] regulation of cyclin-dependent protein serine/threonine kinase activity,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000082: [BP] G1/S transition of mitotic cell cycle,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000122: [BP] negative regulation of transcription from RNA polymerase II promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000132: [BP] establishment of mitotic spindle orientation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000147: [BP] actin cortical patch assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0000184: [BP] nuclear-transcribed mRNA catabolic process, nonsense-mediated decay",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000209: [BP] protein polyubiquitination,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000226: [BP] microtubule cytoskeleton organization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000245: [BP] spliceosomal complex assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000282: [BP] cellular bud site selection,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000349: [BP] generation of catalytic spliceosome for first transesterification step,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000372: [BP] Group I intron splicing,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000395: [BP] mRNA 5-splice site recognition,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0000398: [BP] mRNA splicing, via spliceosome",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000422: [BP] mitophagy,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0000462: [BP] maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0000463: [BP] maturation of LSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0000466: [BP] maturation of 5.8S rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000492: [BP] box C/D snoRNP assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0000738: [BP] DNA catabolic process, exonucleolytic",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000742: [BP] karyogamy involved in conjugation with cellular fusion,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000743: [BP] nuclear migration involved in conjugation with cellular fusion,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000747: [BP] conjugation with cellular fusion,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000750: [BP] pheromone-dependent signal transduction involved in conjugation with cellular fusion,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0000754: [BP] adaptation of signaling pathway by response to pheromone involved in conjugation with cellular fusion,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0001113: [BP] transcriptional open complex formation at RNA polymerase II promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0001172: [BP] transcription, RNA-templated",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0001174: [BP] transcriptional start site selection at RNA polymerase II promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0001403: [BP] invasive growth in response to glucose limitation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0001731: [BP] formation of translation preinitiation complex,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0002181: [BP] cytoplasmic translation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0006003: [BP] fructose 2,6-bisphosphate metabolic process",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006031: [BP] chitin biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006046: [BP] N-acetylglucosamine catabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,0,1,0,0,1
+GO:0006078: [BP] (1->6)-beta-D-glucan biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006086: [BP] acetyl-CoA biosynthetic process from pyruvate,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006221: [BP] pyrimidine nucleotide biosynthetic process,923,TRUE,TRUE,TRUE,TRUE,0,0,0,0,0,0
+GO:0006301: [BP] postreplication repair,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006314: [BP] intron homing,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006333: [BP] chromatin assembly or disassembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006338: [BP] chromatin remodeling,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006348: [BP] chromatin silencing at telomere,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006357: [BP] regulation of transcription from RNA polymerase II promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006359: [BP] regulation of transcription from RNA polymerase III promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006360: [BP] transcription from RNA polymerase I promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006366: [BP] transcription from RNA polymerase II promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006370: [BP] 7-methylguanosine mRNA capping,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006379: [BP] mRNA cleavage,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006383: [BP] transcription from RNA polymerase III promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006422: [BP] aspartyl-tRNA aminoacylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006446: [BP] regulation of translational initiation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006468: [BP] protein phosphorylation,888,TRUE,TRUE,TRUE,TRUE,0,0,0,0,0,0
+GO:0006486: [BP] protein glycosylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006487: [BP] protein N-linked glycosylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006506: [BP] GPI anchor biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006568: [BP] tryptophan metabolic process,Inf,TRUE,TRUE,TRUE,TRUE,1,0,0,1,0,0
+GO:0006606: [BP] protein import into nucleus,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006623: [BP] protein targeting to vacuole,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006636: [BP] unsaturated fatty acid biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006740: [BP] NADPH regeneration,Inf,TRUE,TRUE,TRUE,TRUE,1,0,0,1,0,0
+GO:0006812: [BP] cation transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006869: [BP] lipid transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006873: [BP] cellular ion homeostasis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006874: [BP] cellular calcium ion homeostasis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006882: [BP] cellular zinc ion homeostasis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006887: [BP] exocytosis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006888: [BP] ER to Golgi vesicle-mediated transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0006890: [BP] retrograde vesicle-mediated transport, Golgi to ER",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006891: [BP] intra-Golgi vesicle-mediated transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006893: [BP] Golgi to plasma membrane transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006896: [BP] Golgi to vacuole transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006897: [BP] endocytosis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006904: [BP] vesicle docking involved in exocytosis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006906: [BP] vesicle fusion,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006913: [BP] nucleocytoplasmic transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006914: [BP] autophagy,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006915: [BP] apoptotic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006970: [BP] response to osmotic stress,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006986: [BP] response to unfolded protein,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0006995: [BP] cellular response to nitrogen starvation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007005: [BP] mitochondrion organization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007020: [BP] microtubule nucleation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007021: [BP] tubulin complex assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007031: [BP] peroxisome organization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007034: [BP] vacuolar transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007035: [BP] vacuolar acidification,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007064: [BP] mitotic sister chromatid cohesion,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007067: [BP] mitotic nuclear division,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007094: [BP] mitotic spindle assembly checkpoint,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007097: [BP] nuclear migration,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007117: [BP] budding cell bud growth,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007131: [BP] reciprocal meiotic recombination,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007189: [BP] adenylate cyclase-activating G-protein coupled receptor signaling pathway,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0007346: [BP] regulation of mitotic cell cycle,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0008053: [BP] mitochondrial fusion,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0008361: [BP] regulation of cell size,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0008380: [BP] RNA splicing,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0008535: [BP] respiratory chain complex IV assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0008612: [BP] peptidyl-lysine modification to peptidyl-hypusine,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0009240: [BP] isopentenyl diphosphate biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,0,1,0,0,1
+GO:0009394: [BP] 2-deoxyribonucleotide metabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0009697: [BP] salicylic acid biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0010499: [BP] proteasomal ubiquitin-independent protein catabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0010525: [BP] regulation of transposition, RNA-mediated",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0010972: [BP] negative regulation of G2/M transition of mitotic cell cycle,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0012501: [BP] programmed cell death,Inf,TRUE,TRUE,TRUE,TRUE,1,0,0,1,0,0
+GO:0015968: [BP] stringent response,Inf,TRUE,TRUE,TRUE,TRUE,0,0,1,0,0,1
+GO:0016032: [BP] viral process,Inf,TRUE,TRUE,TRUE,TRUE,1,0,0,1,0,0
+GO:0016197: [BP] endosomal transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0016236: [BP] macroautophagy,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0016255: [BP] attachment of GPI anchor to protein,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0016480: [BP] negative regulation of transcription from RNA polymerase III promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0016559: [BP] peroxisome fission,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0016568: [BP] chromatin modification,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0016573: [BP] histone acetylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0016579: [BP] protein deubiquitination,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0016925: [BP] protein sumoylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0017183: [BP] peptidyl-diphthamide biosynthetic process from peptidyl-histidine,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0018105: [BP] peptidyl-serine phosphorylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0018107: [BP] peptidyl-threonine phosphorylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0018117: [BP] protein adenylylation,Inf,TRUE,TRUE,TRUE,TRUE,1,0,1,1,0,1
+GO:0019394: [BP] glucarate catabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,0,1,0,0,1
+GO:0019432: [BP] triglyceride biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0019491: [BP] ectoine biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0019518: [BP] L-threonine catabolic process to glycine,931,TRUE,TRUE,TRUE,TRUE,0,0,0,0,0,0
+GO:0019878: [BP] lysine biosynthetic process via aminoadipic acid,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0019915: [BP] lipid storage,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0030010: [BP] establishment of cell polarity,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0030011: [BP] maintenance of cell polarity,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0030026: [BP] cellular manganese ion homeostasis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0030036: [BP] actin cytoskeleton organization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0030433: [BP] ER-associated ubiquitin-dependent protein catabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0030437: [BP] ascospore formation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0030448: [BP] hyphal growth,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0030466: [BP] chromatin silencing at silent mating-type cassette,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0030702: [BP] chromatin silencing at centromere,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0030950: [BP] establishment or maintenance of actin cytoskeleton polarity,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0031030: [BP] negative regulation of septation initiation signaling,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0031122: [BP] cytoplasmic microtubule organization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0031124: [BP] mRNA 3-end processing,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0031139: [BP] positive regulation of conjugation with cellular fusion,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0031146: [BP] SCF-dependent proteasomal ubiquitin-dependent protein catabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0031204: [BP] posttranslational protein targeting to membrane, translocation",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0031222: [BP] arabinan catabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0031505: [BP] fungal-type cell wall organization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0031532: [BP] actin cytoskeleton reorganization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0031684: [BP] heterotrimeric G-protein complex cycle,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0031954: [BP] positive regulation of protein autophosphorylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0032012: [BP] regulation of ARF protein signal transduction,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0032147: [BP] activation of protein kinase activity,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0032447: [BP] protein urmylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0032543: [BP] mitochondrial translation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0032786: [BP] positive regulation of DNA-templated transcription, elongation",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0032889: [BP] regulation of vacuole fusion, non-autophagic",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0032956: [BP] regulation of actin cytoskeleton organization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0032968: [BP] positive regulation of transcription elongation from RNA polymerase II promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0033962: [BP] cytoplasmic mRNA processing body assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0034314: [BP] Arp2/3 complex-mediated actin nucleation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0034337: [BP] RNA folding,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0034613: [BP] cellular protein localization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0035023: [BP] regulation of Rho protein signal transduction,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0035690: [BP] cellular response to drug,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0042122: [BP] alginic acid catabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,0,1,0,0,1
+"GO:0042144: [BP] vacuole fusion, non-autophagic",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0042147: [BP] retrograde transport, endosome to Golgi",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0042176: [BP] regulation of protein catabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0042273: [BP] ribosomal large subunit biogenesis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0043044: [BP] ATP-dependent chromatin remodeling,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0043087: [BP] regulation of GTPase activity,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0043161: [BP] proteasome-mediated ubiquitin-dependent protein catabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0043162: [BP] ubiquitin-dependent protein catabolic process via the multivesicular body sorting pathway,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0043248: [BP] proteasome assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0043328: [BP] protein targeting to vacuole involved in ubiquitin-dependent protein catabolic process via the multivesicular body sorting pathway,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0043486: [BP] histone exchange,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0043547: [BP] positive regulation of GTPase activity,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0044249: [BP] cellular biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0044260: [BP] cellular macromolecule metabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,0,1,0,0,1
+GO:0044376: [BP] RNA polymerase II complex import to nucleus,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0044550: [BP] secondary metabolite biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0045053: [BP] protein retention in Golgi apparatus,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0045116: [BP] protein neddylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+"GO:0045292: [BP] mRNA cis splicing, via spliceosome",Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0045324: [BP] late endosome to vacuole transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0045333: [BP] cellular respiration,877,TRUE,TRUE,TRUE,TRUE,0,0,0,0,0,0
+GO:0045807: [BP] positive regulation of endocytosis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0045881: [BP] positive regulation of sporulation resulting in formation of a cellular spore,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0045899: [BP] positive regulation of RNA polymerase II transcriptional preinitiation complex assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0045903: [BP] positive regulation of translational fidelity,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0045943: [BP] positive regulation of transcription from RNA polymerase I promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0045944: [BP] positive regulation of transcription from RNA polymerase II promoter,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0046084: [BP] adenine biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0046413: [BP] organomercury catabolic process,Inf,TRUE,TRUE,TRUE,TRUE,1,0,0,1,0,0
+GO:0046470: [BP] phosphatidylcholine metabolic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0046686: [BP] response to cadmium ion,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0046690: [BP] response to tellurium ion,884,TRUE,TRUE,TRUE,TRUE,0,0,0,0,0,0
+GO:0048015: [BP] phosphatidylinositol-mediated signaling,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0048017: [BP] inositol lipid-mediated signaling,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0048315: [BP] conidium formation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0051028: [BP] mRNA transport,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0051473: [BP] glucosylglycerol biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,0,1,0,0,1
+GO:0051569: [BP] regulation of histone H3-K4 methylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0051666: [BP] actin cortical patch localization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0060178: [BP] regulation of exocyst localization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0060237: [BP] regulation of fungal-type cell wall organization,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0070317: [BP] negative regulation of G0 to G1 transition,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0070676: [BP] intralumenal vesicle formation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0070682: [BP] proteasome regulatory particle assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0070816: [BP] phosphorylation of RNA polymerase II C-terminal domain,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0070914: [BP] UV-damage excision repair,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0071441: [BP] negative regulation of histone H3-K14 acetylation,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0071701: [BP] regulation of MAPK export from nucleus,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0071793: [BP] bacillithiol biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0071852: [BP] fungal-type cell wall organization or biogenesis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0071963: [BP] establishment or maintenance of cell polarity regulating cell shape,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0080040: [BP] positive regulation of cellular response to phosphate starvation,Inf,TRUE,TRUE,TRUE,TRUE,1,0,0,1,0,0
+GO:0090037: [BP] positive regulation of protein kinase C signaling,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0090155: [BP] negative regulation of sphingolipid biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0090156: [BP] cellular sphingolipid homeostasis,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0090307: [BP] mitotic spindle assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:0090334: [BP] regulation of cell wall (1->3)-beta-D-glucan biosynthetic process,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:1902209: [BP] negative regulation of bacterial-type flagellum assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:1902626: [BP] assembly of large subunit precursor of preribosome,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:1903475: [BP] mitotic actomyosin contractile ring assembly,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0
+GO:1990456: [BP] mitochondrion-ER tethering,Inf,TRUE,TRUE,TRUE,TRUE,0,1,0,0,1,0

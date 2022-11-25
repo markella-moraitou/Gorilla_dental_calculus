@@ -1,0 +1,964 @@
+0.00 1 1 G 1193712 'Catharanthus roseus' aster yellows phytoplasma
+0.29 131592 2181 G 4739 Commelinales
+0.28 128931 34982 G 4740 Commelinaceae
+0.20 91531 6587 G 168076 Palisota
+0.19 84487 84487 G 1415684 Palisota barteri
+0.00 254 254 G 168077 Palisota ambigua
+0.00 104 104 G 997357 Palisota mannii
+0.00 99 99 G 230705 Palisota bracteosa
+0.00 367 0 G 168074 Murdannia
+0.00 366 366 G 2829224 Murdannia edulis
+0.00 1 1 G 428252 Murdannia keisak
+0.00 285 1 G 168072 Gibasis
+0.00 284 284 G 168073 Gibasis geniculata
+0.00 267 0 G 1441944 Streptolirion
+0.00 267 267 G 1441945 Streptolirion volubile
+0.00 221 3 G 4743 Commelina
+0.00 202 202 G 4744 Commelina communis
+0.00 4 4 G 34173 Commelina benghalensis
+0.00 4 4 G 1045288 Commelina paludosa
+0.00 4 4 G 428228 Commelina erecta
+0.00 3 3 G 147185 Commelina virginica
+0.00 1 1 G 428232 Commelina imberbis
+0.00 182 64 G 4741 Tradescantia
+0.00 50 0 G 2620209 unclassified Tradescantia
+0.00 50 50 G 374147 Tradescantia sp. Qiu 96059
+0.00 42 42 G 59015 Tradescantia pallida
+0.00 24 24 G 77340 Tradescantia ohiensis
+0.00 1 1 G 34175 Tradescantia zebrina
+0.00 1 1 G 59016 Tradescantia virginiana
+0.00 167 0 G 168051 Amischotolype
+0.00 166 166 G 319736 Amischotolype hispida
+0.00 1 1 G 168052 Amischotolype monosperma
+0.00 151 0 G 168090 Pollia
+0.00 151 151 G 428255 Pollia japonica
+0.00 144 30 G 168059 Callisia
+0.00 108 108 G 168061 Callisia repens
+0.00 2 2 G 428218 Callisia graminea
+0.00 2 2 G 1415672 Callisia micrantha
+0.00 1 1 G 1415674 Callisia multiflora
+0.00 1 1 G 1415676 Callisia rosea
+0.00 120 14 G 168577 Cyanotis
+0.00 86 86 G 939150 Cyanotis ciliata
+0.00 19 19 G 1898854 Cyanotis cristata
+0.00 1 1 G 1744885 Cyanotis axillaris
+0.00 103 0 G 168080 Rhopalephora
+0.00 103 103 G 168081 Rhopalephora scaberrima
+0.00 100 0 G 94319 Weldenia
+0.00 100 100 G 94320 Weldenia candida
+0.00 90 0 G 168070 Geogenanthus
+0.00 90 90 G 168071 Geogenanthus poeppigii
+0.00 83 0 G 168066 Dichorisandra
+0.00 81 81 G 168067 Dichorisandra thyrsiflora
+0.00 2 2 G 2029231 Dichorisandra penduliflora
+0.00 70 0 G 168062 Cochliostema
+0.00 70 70 G 168063 Cochliostema odoratissimum
+0.00 51 0 G 168082 Siderasis
+0.00 51 51 G 168083 Siderasis fuscata
+0.00 1 0 G 168580 unclassified Commelinaceae
+0.00 1 1 G 168581 Commelinaceae sp. Encarnacion et al. 93-542
+0.00 56 0 G 4546 Saccharum
+0.00 56 7 G 286192 Saccharum officinarum complex
+0.00 43 3 G 128810 Saccharum hybrid cultivar
+0.00 34 34 G 131158 Saccharum hybrid cultivar R570
+0.00 6 6 G 193079 Saccharum hybrid cultivar SP80-3280
+0.00 5 5 G 62335 Saccharum spontaneum
+0.00 1 1 G 4547 Saccharum officinarum
+0.00 12 0 G 62336 Miscanthus
+0.00 12 11 G 62337 Miscanthus sinensis
+0.00 1 0 G 1068733 Miscanthus sinensis subsp. sinensis
+0.00 1 1 G 213995 Miscanthus sinensis var. sinensis
+0.00 3 0 G 1612336 Tripidium
+0.00 2 2 G 50346 Tripidium arundinaceum
+0.00 1 1 G 2069472 Tripidium kanashiroi
+0.00 3 0 G 4504 Coix
+0.00 3 3 G 4505 Coix lacryma-jobi
+0.00 14 9 G 147271 Paspalum
+0.00 4 4 G 1424547 Paspalum pubiflorum
+0.00 1 1 G 158149 Paspalum vaginatum
+0.00 9 0 G 4510 Eleusine
+0.00 7 7 G 29674 Eleusine indica
+0.00 2 1 G 4511 Eleusine coracana
+0.00 1 1 G 191504 Eleusine coracana subsp. coracana
+0.00 2 0 G 433879 Hilaria
+0.00 2 2 G 433880 Hilaria cenchroides
+0.00 8 0 G 38413 Eragrostis
+0.00 5 5 G 38414 Eragrostis curvula
+0.00 1 1 G 2793230 Eragrostis fractus
+0.00 1 1 G 2528931 Eragrostis tenellula
+0.00 1 1 G 208267 Eragrostis tenella
+0.00 6 0 G 38730 Sporobolus
+0.00 6 6 G 29706 Sporobolus alterniflorus
+0.00 4 0 G 153999 Eriachneae
+0.00 4 3 G 66023 Eriachne
+0.00 1 1 G 221758 Eriachne mucronata
+0.00 3 2 G 38709 Aristida
+0.00 1 1 G 41982 Aristida congesta
+0.00 1 0 G 35711 Leersia
+0.00 1 1 G 77586 Leersia perrieri
+0.00 2 2 G 15949 Zizania
+0.00 11 0 G 15869 Stipa
+0.00 9 9 G 665498 Stipa capillata
+0.00 1 1 G 665539 Stipa roylei
+0.00 1 1 G 481984 Stipa purpurea
+0.00 19 0 G 1155210 Helictochloa
+0.00 19 19 G 320632 Helictochloa hookeri
+0.00 39 0 G 15644 Melica
+0.00 38 38 G 29686 Melica uniflora
+0.00 1 1 G 1497109 Melica subulata
+0.00 42 0 G 15747 Phyllostachys
+0.00 41 41 G 38705 Phyllostachys edulis
+0.00 1 1 G 524874 Phyllostachys propinqua
+0.00 38 0 G 548145 Ferrocalamus
+0.00 38 38 G 591214 Ferrocalamus rimosivaginus
+0.00 10 1 G 111430 Fargesia
+0.00 6 6 G 1676233 Fargesia daminiu
+0.00 2 2 G 360876 Fargesia robusta
+0.00 1 1 G 146655 Fargesia spathacea
+0.00 3 0 G 146639 Ampelocalamus
+0.00 3 3 G 1569451 Ampelocalamus melicoideus
+0.00 1 0 G 191683 Himalayacalamus
+0.00 1 1 G 191684 Himalayacalamus falconeri
+0.00 13 0 G 4581 Bambusa
+0.00 12 12 G 58923 Bambusa oldhamii
+0.00 1 1 G 4582 Bambusa multiplex
+0.00 2 0 G 35709 Chusquea
+0.00 1 1 G 2483769 Chusquea aff. capitata CC-2018
+0.00 1 1 G 49005 Chusquea spectabilis
+0.00 1 0 G 416028 Cryptochloa
+0.00 1 1 G 416029 Cryptochloa strictiflora
+0.00 1 0 G 38683 Anomochloa
+0.00 1 1 G 38684 Anomochloa marantoidea
+0.00 1 0 G 38732 Streptochaeta
+0.00 1 1 G 121787 Streptochaeta spicata
+0.00 75 62 G 13398 Carex
+0.00 7 1 G 2763534 Carex subgen. Vignea
+0.00 4 4 G 432999 Carex neurocarpa
+0.00 1 0 G 234467 Carex echinata
+0.00 1 1 G 912420 Carex echinata subsp. echinata
+0.00 1 1 G 240666 Carex bromoides
+0.00 4 2 G 2759858 Carex subgen. Carex
+0.00 1 1 G 140842 Carex pallescens
+0.00 1 1 G 682238 Carex conica
+0.00 2 0 G 2759862 Carex subgen. Euthyceras
+0.00 1 1 G 140872 Carex capillifolia
+0.00 1 1 G 100286 Carex rupestris
+0.00 34 34 G 46332 Rhynchospora
+0.01 5496 4 G 40551 Arecales
+0.01 5400 2109 G 4710 Arecaceae
+0.00 1015 5 G 169705 Cocoseae
+0.00 799 0 G 13893 Cocos
+0.00 799 799 G 13894 Cocos nucifera
+0.00 21 20 G 115440 Areca
+0.00 1 1 G 184783 Areca catechu
+0.00 62 0 G 93279 Eugeissona
+0.00 62 62 G 93280 Eugeissona tristis
+0.00 13 0 G 93277 Eremospatha
+0.00 13 13 G 115464 Eremospatha macrocarpa
+0.00 11 0 G 4717 Nypa
+0.00 11 11 G 4718 Nypa fruticans
+0.00 44 11 G 4638 Ensete
+0.00 24 24 G 482298 Ensete glaucum
+0.00 7 7 G 4639 Ensete ventricosum
+0.00 2 2 G 94325 Ensete superbum
+0.00 22 0 G 101616 Musella
+0.00 22 22 G 101617 Musella lasiocarpa
+0.00 1660 751 G 4619 Marantaceae
+0.00 376 0 G 4620 Thaumatococcus
+0.00 376 376 G 4621 Thaumatococcus daniellii
+0.00 189 17 G 4624 Marantochloa
+0.00 164 164 G 94368 Marantochloa leucantha
+0.00 5 5 G 94331 Marantochloa conferta
+0.00 3 3 G 94364 Marantochloa congensis
+0.00 67 29 G 210061 Megaphrynium
+0.00 38 38 G 94385 Megaphrynium macrostachyum
+0.00 62 3 G 1756151 Goeppertia
+0.00 56 56 G 1756152 Goeppertia roseopicta
+0.00 3 3 G 1125165 Goeppertia marantifolia
+0.00 41 0 G 16300 Maranta
+0.00 24 24 G 34203 Maranta leuconeura
+0.00 15 15 G 1552221 Maranta depressa
+0.00 2 2 G 210060 Maranta arundinacea
+0.00 40 0 G 96512 Donax
+0.00 40 40 G 96514 Donax canniformis
+0.00 33 14 G 94354 Hypselodelphys
+0.00 9 0 G 2634351 unclassified Hypselodelphys
+0.00 6 6 G 210085 Hypselodelphys sp. Harris 6670
+0.00 3 3 G 543964 Hypselodelphys sp. Ley 125
+0.00 6 6 G 543963 Hypselodelphys scandens
+0.00 2 2 G 543962 Hypselodelphys poggeana
+0.00 1 1 G 94355 Hypselodelphys violacea
+0.00 1 1 G 544788 Hypselodelphys triangularis
+0.00 33 0 G 94356 Ischnosiphon
+0.00 32 32 G 210057 Ischnosiphon heleniae
+0.00 1 1 G 94357 Ischnosiphon leucophaeus
+0.00 26 1 G 94350 Halopegia
+0.00 25 25 G 94351 Halopegia azurea
+0.00 17 1 G 210082 Haumania
+0.00 16 0 G 2620402 unclassified Haumania
+0.00 16 16 G 210083 Haumania sp. Harris 6672
+0.00 45 2 G 188478 Aframomum
+0.00 43 43 G 199615 Aframomum angustifolium
+0.00 24 10 G 94326 Alpinia
+0.00 4 4 G 94327 Alpinia galanga
+0.00 3 3 G 125261 Alpinia oxyphylla
+0.00 3 3 G 105678 Alpinia nigra
+0.00 2 2 G 125263 Alpinia pumila
+0.00 1 1 G 230707 Alpinia purpurata
+0.00 1 1 G 199618 Alpinia calcarata
+0.00 10 1 G 99568 Curcuma
+0.00 4 4 G 136215 Curcuma flaviflora
+0.00 3 3 G 136217 Curcuma longa
+0.00 1 1 G 378007 Curcuma gracillima
+0.00 1 1 G 251764 Curcuma alismatifolia
+0.00 8 0 G 4643 Globba
+0.00 7 7 G 138164 Globba winitii
+0.00 1 1 G 138137 Globba atrosanguinea
+0.00 8 0 G 105703 Renealmia
+0.00 8 8 G 199658 Renealmia alpinia
+0.00 7 0 G 97763 Siphonochilus
+0.00 6 6 G 110734 Siphonochilus kirkii
+0.00 1 1 G 97764 Siphonochilus decorus
+0.00 7 2 G 97748 Kaempferia
+0.00 1 1 G 97750 Kaempferia galanga
+0.00 1 1 G 97751 Kaempferia parviflora
+0.00 1 1 G 97749 Kaempferia elegans
+0.00 1 1 G 97754 Kaempferia rotunda
+0.00 1 0 G 2600485 unclassified Kaempferia
+0.00 1 1 G 1335240 Kaempferia sp. ZSG06
+0.00 4 0 G 2135803 Lanxangia
+0.00 4 4 G 252867 Lanxangia tsaoko
+0.00 3 0 G 188487 Etlingera
+0.00 3 3 G 188493 Etlingera elatior
+0.00 3 0 G 97761 Siamanthus
+0.00 3 3 G 97762 Siamanthus siliquosus
+0.00 3 0 G 4648 Riedelia
+0.00 3 0 G 2637033 unclassified Riedelia
+0.00 3 3 G 1756253 Riedelia sp. Zomlefer et al. 2301
+0.00 3 0 G 97756 Scaphochlamys
+0.00 3 0 G 2077174 unclassified Scaphochlamys
+0.00 3 3 G 1756252 Scaphochlamys sp. Kennedy 4462
+0.00 2 0 G 105180 Elettaria
+0.00 2 2 G 105181 Elettaria cardamomum
+0.00 2 2 G 2135801 Wurfbainia
+0.00 11 5 G 4631 Costus
+0.00 4 4 G 2483986 Costus viridis
+0.00 1 1 G 160685 Costus pulverulentus
+0.00 1 1 G 329245 Costus gabonensis
+0.00 193 25 G 36459 Phalaenopsis
+0.00 115 2 G 212056 Phalaenopsis aphrodite
+0.00 113 113 G 308872 Phalaenopsis aphrodite subsp. formosana
+0.00 41 41 G 78828 Phalaenopsis equestris
+0.00 4 4 G 84098 Phalaenopsis pulcherrima
+0.00 2 2 G 200641 Phalaenopsis mannii
+0.00 2 2 G 212096 Phalaenopsis wilsonii
+0.00 1 0 G 2642935 unclassified Phalaenopsis
+0.00 1 1 G 54872 Phalaenopsis sp. SM9108
+0.00 1 1 G 212085 Phalaenopsis parishii
+0.00 1 1 G 212080 Phalaenopsis maculata
+0.00 1 1 G 212079 Phalaenopsis lobbii
+0.00 17 0 G 78723 Cleisostoma
+0.00 15 0 G 1617336 Cleisostoma simondii
+0.00 15 15 G 1617337 Cleisostoma simondii var. guangdongense
+0.00 1 1 G 2137401 Cleisostoma crochetii
+0.00 1 1 G 1617329 Cleisostoma linearilobatum
+0.00 14 0 G 331186 Cleisomeria
+0.00 14 14 G 2699300 Cleisomeria lanatum
+0.00 153 1 G 48533 Neottia
+0.00 110 110 G 707309 Neottia acuminata
+0.00 20 20 G 1574441 Neottia camtschatea
+0.00 5 5 G 48534 Neottia nidus-avis
+0.00 4 4 G 78795 Neottia smallii
+0.00 3 3 G 669720 Neottia cordata
+0.00 3 3 G 1499532 Neottia pinetorum
+0.00 2 2 G 707310 Neottia listeroides
+0.00 2 2 G 1715883 Neottia japonica
+0.00 1 1 G 2528289 Neottia suzukii
+0.00 1 1 G 1874639 Neottia fugongensis
+0.00 1 1 G 29712 Neottia ovata
+0.00 15 0 G 666369 Aphyllorchis
+0.00 15 15 G 666370 Aphyllorchis montana
+0.00 154 0 G 154674 Erycina
+0.00 154 154 G 154679 Erycina pusilla
+0.00 19 9 G 14366 Cymbidium
+0.00 3 3 G 1324860 Cymbidium mannii
+0.00 2 2 G 160526 Cymbidium dayanum
+0.00 2 2 G 160524 Cymbidium bicolor
+0.00 1 1 G 78740 Cymbidium ensifolium
+0.00 1 1 G 2771939 Cymbidium tracyanum x Cymbidium faberi
+0.00 1 0 G 160528 Cymbidium eburneum
+0.00 1 1 G 2315736 Cymbidium eburneum var. longzhouense
+0.00 11 1 G 38208 Bulbophyllum
+0.00 3 3 G 1679711 Bulbophyllum disciflorum
+0.00 3 3 G 767564 Bulbophyllum steyermarkii
+0.00 1 1 G 767553 Bulbophyllum mentosum
+0.00 1 1 G 2832006 Bulbophyllum menghaiense
+0.00 1 1 G 2559800 Bulbophyllum vanum
+0.00 1 1 G 436809 Bulbophyllum plumosum
+0.00 24 4 G 78793 Liparis
+0.00 18 18 G 419403 Liparis auriculata
+0.00 1 1 G 226209 Liparis loeselii
+0.00 1 1 G 327335 Liparis pauliana
+0.00 41 17 G 48525 Corallorhiza
+0.00 8 4 G 48526 Corallorhiza maculata
+0.00 3 3 G 512271 Corallorhiza maculata var. mexicana
+0.00 1 1 G 459587 Corallorhiza maculata var. occidentalis
+0.00 7 7 G 459588 Corallorhiza mertensiana
+0.00 5 5 G 459594 Corallorhiza wisteriana
+0.00 3 3 G 459585 Corallorhiza bulbosa
+0.00 1 1 G 451881 Corallorhiza trifida
+0.00 16 0 G 493944 Acianthera
+0.00 16 0 G 2004590 Acianthera subgen. Acianthera
+0.00 16 16 G 1164710 Acianthera recurva
+0.00 41 5 G 142980 Hexalectris
+0.00 15 15 G 397655 Hexalectris grandiflora
+0.00 6 6 G 646080 Hexalectris warnockii
+0.00 5 5 G 646076 Hexalectris brevicaulis
+0.00 3 3 G 646075 Hexalectris arizonica
+0.00 3 3 G 646079 Hexalectris parviflora
+0.00 2 2 G 378717 Hexalectris spicata
+0.00 1 1 G 646077 Hexalectris colemanii
+0.00 1 1 G 646078 Hexalectris nitida
+0.00 59 0 G 91200 Gastrodia
+0.00 59 59 G 91201 Gastrodia elata
+0.00 35 0 G 38206 Calanthe
+0.00 34 34 G 337206 Calanthe sylvatica
+0.00 1 1 G 309526 Calanthe aristulifera
+0.00 20 0 G 511757 Pogoniopsis
+0.00 20 20 G 1582014 Pogoniopsis schenkii
+0.00 11 0 G 230606 Wullschlaegelia
+0.00 11 11 G 230607 Wullschlaegelia calcarata
+0.00 69 1 G 462594 Cheirostylis
+0.00 54 54 G 2587347 Cheirostylis thailandica
+0.00 10 10 G 2857373 Cheirostylis montana
+0.00 3 3 G 2857372 Cheirostylis moniliformis
+0.00 1 1 G 1898892 Cheirostylis chinensis
+0.00 15 0 G 985850 Chamaegastrodia
+0.00 11 11 G 2761821 Chamaegastrodia inverta
+0.00 4 4 G 1127247 Chamaegastrodia shikokiana
+0.00 13 5 G 78779 Goodyera
+0.00 2 2 G 164263 Goodyera velutina
+0.00 1 1 G 164261 Goodyera repens
+0.00 1 1 G 164262 Goodyera schlechtendaliana
+0.00 1 1 G 762807 Goodyera rosulacea
+0.00 1 1 G 798536 Goodyera procera
+0.00 1 1 G 798529 Goodyera foliosa
+0.00 1 1 G 1390594 Goodyera fumata
+0.00 18 15 G 51238 Vanilla
+0.00 1 1 G 53061 Vanilla aphylla
+0.00 1 1 G 117957 Vanilla pompona
+0.00 1 1 G 669896 Vanilla madagascariensis
+0.00 12 0 G 78725 Cleistes
+0.00 11 11 G 78727 Cleistes rosea
+0.00 1 1 G 2633383 unclassified Cleistes
+0.00 2 0 G 1269260 Cleistesiopsis
+0.00 2 2 G 78726 Cleistesiopsis divaricata
+0.00 19 9 G 49693 Apostasia
+0.00 5 5 G 280455 Apostasia odorata
+0.00 4 4 G 280454 Apostasia wallichii
+0.00 1 1 G 1088818 Apostasia shenzhenica
+0.00 11 8 G 53064 Paphiopedilum
+0.00 1 1 G 53066 Paphiopedilum adductum
+0.00 1 1 G 53104 Paphiopedilum niveum
+0.00 1 1 G 53109 Paphiopedilum purpuratum
+0.00 44 2 G 167601 Trichopus
+0.00 31 13 G 167602 Trichopus zeylanicus
+0.00 18 18 G 459581 Trichopus zeylanicus subsp. travancoricus
+0.00 11 11 G 167580 Trichopus sempervirens
+0.00 27 0 G 101713 Pentastemona
+0.00 27 27 G 167571 Pentastemona sumatrana
+0.00 40 0 G 78373 Zamioculcas
+0.00 40 40 G 78374 Zamioculcas zamiifolia
+0.00 12 0 G 78375 Peltandra
+0.00 12 12 G 78376 Peltandra virginica
+0.00 1 1 G 74663 Amorphophallus
+0.00 5 0 G 15019 Anchomanes
+0.00 5 5 G 2544931 Anchomanes hookeri
+0.00 12 12 G 15095 Symplocarpus
+0.00 61 0 G 55493 Stratiotes
+0.00 61 61 G 55494 Stratiotes aloides
+0.00 30 0 G 55463 Hydrocharis
+0.00 30 30 G 55464 Hydrocharis morsus-ranae
+0.00 13 2 G 55482 Ottelia
+0.00 5 5 G 241194 Ottelia ovalifolia
+0.00 3 3 G 2654443 Ottelia cylindrica
+0.00 2 0 G 2770015 unclassified Ottelia
+0.00 1 1 G 2865361 Ottelia sp. 35_3
+0.00 1 1 G 2865368 Ottelia sp. s36
+0.00 1 1 G 2865628 Ottelia mesenterium
+0.00 13 0 G 55454 Enhalus
+0.00 13 13 G 55455 Enhalus acoroides
+0.00 8 0 G 26324 Elodea
+0.00 5 5 G 100364 Elodea canadensis
+0.00 2 0 G 2618605 unclassified Elodea
+0.00 2 2 G 386102 Elodea sp. Duvall s.n.
+0.00 1 1 G 55313 Elodea nuttallii
+0.00 68 0 G 109170 Pachyrhizus
+0.00 68 68 G 109171 Pachyrhizus erosus
+0.00 39 0 G 132430 Apios
+0.00 39 39 G 185702 Apios americana
+0.00 2 0 G 40336 Mucuna
+0.00 2 2 G 157652 Mucuna pruriens
+0.00 106 0 G 20685 Indigofera
+0.00 105 105 G 198914 Indigofera tinctoria
+0.00 1 1 G 539102 Indigofera linifolia
+0.00 56 0 G 56064 Pongamia
+0.00 56 56 G 56065 Pongamia pinnata
+0.00 72 0 G 3815 Abrus
+0.00 72 72 G 3816 Abrus precatorius
+0.00 22 14 G 3898 Trifolium
+0.00 2 2 G 3899 Trifolium repens
+0.00 1 1 G 57577 Trifolium pratense
+0.00 1 0 G 74523 Trifolium nigrescens
+0.00 1 1 G 362604 Trifolium nigrescens subsp. meneghinianum
+0.00 1 1 G 97024 Trifolium grandiflorum
+0.00 1 1 G 97036 Trifolium resupinatum
+0.00 1 1 G 97006 Trifolium alexandrinum
+0.00 1 1 G 361940 Trifolium meduseum
+0.00 21 7 G 3887 Pisum
+0.00 12 11 G 3888 Pisum sativum
+0.00 1 1 G 47742 Pisum sativum subsp. elatius
+0.00 2 2 G 51020 Pisum fulvum
+0.00 18 2 G 3904 Vicia
+0.00 13 13 G 3906 Vicia faba
+0.00 2 2 G 153952 Vicia bungei
+0.00 1 1 G 200969 Vicia grandiflora
+0.00 50 0 G 35937 Robinia
+0.00 50 50 G 35938 Robinia pseudoacacia
+0.00 24 24 G 111850 Ammopiptanthus
+0.00 11 0 G 3896 Sophora
+0.00 11 11 G 49840 Sophora flavescens
+0.00 29 2 G 53907 Ormosia
+0.00 26 26 G 2729512 Ormosia boluoensis
+0.00 1 1 G 1993857 Ormosia nuda
+0.00 48 1 G 2231389 Dalbergia clade
+0.00 45 0 G 53862 Dalbergia
+0.00 45 45 G 499988 Dalbergia odorifera
+0.00 4 0 G 48126 Baphia
+0.00 4 4 G 143050 Baphia racemosa
+0.00 96 0 G 24961 Castanospermum
+0.00 96 96 G 24962 Castanospermum australe
+0.00 35 0 G 137301 Styphnolobium
+0.00 35 35 G 3897 Styphnolobium japonicum
+0.00 60 0 G 3865 Leucaena
+0.00 60 60 G 190760 Leucaena trichandra
+0.00 40 3 G 3808 Acacia
+0.00 33 33 G 138025 Acacia ligulata
+0.00 1 1 G 1174712 Acacia andrewsii
+0.00 1 1 G 1708230 Acacia exocarpoides
+0.00 1 1 G 1708234 Acacia longiphyllodinea
+0.00 1 1 G 1174693 Acacia acuaria
+0.00 70 0 G 162790 Haematoxylum
+0.00 70 70 G 191923 Haematoxylum brasiletto
+0.00 45 5 G 53922 Senna
+0.00 26 26 G 362788 Senna tora
+0.00 12 12 G 126820 Senna occidentalis
+0.00 1 1 G 347003 Senna spectabilis
+0.00 1 1 G 346985 Senna obtusifolia
+0.00 73 0 G 54873 Gleditsia
+0.00 73 73 G 66096 Gleditsia sinensis
+0.00 38 0 G 553462 Libidibia
+0.00 38 38 G 321550 Libidibia coriaria
+0.00 564 0 G 58859 Tamarindus
+0.00 564 564 G 58860 Tamarindus indica
+0.00 73 0 G 1917731 Ceratonia clade
+0.00 73 0 G 20339 Ceratonia
+0.00 73 73 G 20340 Ceratonia siliqua
+0.00 16 0 G 49800 Cercis
+0.00 16 16 G 49801 Cercis canadensis
+0.00 2014 180 G 3977 Euphorbiaceae
+0.00 1137 255 G 235631 Crotonoideae
+0.00 19 0 G 235891 Crotoneae
+0.00 18 6 G 100370 Croton
+0.00 9 9 G 497687 Croton tiglium
+0.00 1 1 G 1336182 Croton laevigatus
+0.00 1 0 G 257777 Croton alabamensis
+0.00 1 1 G 289670 Croton alabamensis var. alabamensis
+0.00 1 1 G 316787 Croton lucidus
+0.00 18 4 G 20202 Mallotus
+0.00 11 11 G 463319 Mallotus apelta
+0.00 2 2 G 109864 Mallotus paniculatus
+0.00 1 1 G 29747 Mallotus japonicus
+0.00 16 0 G 109810 Macaranga
+0.00 16 16 G 109849 Macaranga tanarius
+0.00 81 12 G 235879 Alchorneae
+0.00 56 14 G 212275 Alchornea
+0.00 24 24 G 212276 Alchornea trewioides
+0.00 18 18 G 1487781 Alchornea floribunda
+0.00 49 0 G 179679 Cephalomappa
+0.00 49 49 G 1848209 Cephalomappa sinensis
+0.00 13 0 G 316892 Plukenetia
+0.00 12 12 G 316893 Plukenetia volubilis
+0.00 1 1 G 2268127 Plukenetia africana
+0.00 29 12 G 3990 Euphorbia
+0.00 8 5 G 1334278 Euphorbia subgen. Esula
+0.00 3 0 G 1334470 Euphorbia sect. Esula
+0.00 2 2 G 1031529 Euphorbia osyridea
+0.00 1 1 G 3993 Euphorbia esula
+0.00 5 1 G 1334444 Euphorbia subgen. Athymalus
+0.00 3 0 G 1886501 Euphorbia sect. Balsamis
+0.00 3 3 G 1031526 Euphorbia larica
+0.00 1 0 G 1886498 Euphorbia sect. Lyciopsis
+0.00 1 1 G 1138367 Euphorbia smithii
+0.00 3 2 G 1334272 Euphorbia subgen. Euphorbia
+0.00 1 0 G 1334488 Euphorbia sect. Goniostema
+0.00 1 1 G 65559 Euphorbia milii
+0.00 1 0 G 1334443 Euphorbia subgen. Chamaesyce
+0.00 1 1 G 1335575 Euphorbia sect. Frondosae
+0.00 10 4 G 40685 Salix
+0.00 4 4 G 75706 Salix babylonica
+0.00 1 1 G 331064 Salix melanopsis
+0.00 1 1 G 470272 Salix lapponum
+0.00 13 3 G 112816 Casearia
+0.00 10 10 G 1186093 Casearia decandra
+0.00 474 6 G 3683 Passifloraceae
+0.00 320 8 G 3684 Passiflora
+0.00 299 299 G 78168 Passiflora edulis
+0.00 3 3 G 298527 Passiflora tenuiloba
+0.00 2 2 G 1249011 Passiflora contracta
+0.00 2 2 G 197924 Passiflora cincinnata
+0.00 2 2 G 340641 Passiflora deidamioides
+0.00 1 1 G 298520 Passiflora filipes
+0.00 1 1 G 1052166 Passiflora cerradensis
+0.00 1 1 G 231192 Passiflora serratodigitata
+0.00 1 1 G 196689 Passiflora pittieri
+0.00 145 0 G 45183 Turnera
+0.00 139 139 G 218843 Turnera subulata
+0.00 6 6 G 45184 Turnera ulmifolia
+0.00 257 51 G 39983 Bruguiera
+0.00 205 205 G 98584 Bruguiera sexangula
+0.00 1 1 G 106618 Bruguiera parviflora
+0.00 21 1 G 82154 Hirtella
+0.00 20 20 G 715485 Hirtella physophora
+0.00 131 5 G 283119 Flueggea
+0.00 79 79 G 319139 Flueggea gracilis
+0.00 46 46 G 283121 Flueggea virosa
+0.00 1 1 G 1471863 Flueggea acidoton
+0.00 27 0 G 283112 Baccaurea
+0.00 27 27 G 566045 Baccaurea ramiflora
+0.00 21 12 G 58227 Garcinia
+0.00 5 5 G 1220708 Garcinia pedunculata
+0.00 2 2 G 58228 Garcinia mangostana
+0.00 1 1 G 1009475 Garcinia oblongifolia
+0.00 1 1 G 1867932 Garcinia paucinervis
+0.00 14 0 G 85204 Hydnocarpus
+0.00 14 14 G 593753 Hydnocarpus hainanensis
+0.01 2410 92 G 3744 Rosales
+0.00 1006 58 G 3745 Rosaceae
+0.00 37 0 G 3766 Pyrus
+0.00 36 36 G 225117 Pyrus x bretschneideri
+0.00 1 1 G 3767 Pyrus pyrifolia
+0.00 49 49 G 23221 Sorbaria
+0.00 1 0 G 23136 Adenostoma
+0.00 1 1 G 140993 Adenostoma fasciculatum
+0.00 116 3 G 3746 Fragaria
+0.00 95 0 G 57918 Fragaria vesca
+0.00 94 94 G 101020 Fragaria vesca subsp. vesca
+0.00 1 1 G 101019 Fragaria vesca subsp. americana
+0.00 15 15 G 101013 Fragaria orientalis
+0.00 1 1 G 101014 Fragaria pentaphylla
+0.00 1 1 G 3747 Fragaria x ananassa
+0.00 1 1 G 64941 Fragaria nilgerrensis
+0.00 82 1 G 3764 Rosa
+0.00 80 80 G 74649 Rosa chinensis
+0.00 1 1 G 74645 Rosa rugosa
+0.00 4 1 G 23216 Rubus
+0.00 1 1 G 32247 Rubus idaeus
+0.00 1 1 G 75079 Rubus occidentalis
+0.00 1 1 G 564016 Rubus hybrid cultivar
+0.00 14 12 G 13408 Celtis
+0.00 1 1 G 213552 Celtis philippensis
+0.00 1 1 G 2605626 Celtis tessmannii
+0.00 65 54 G 3493 Ficus
+0.00 4 4 G 66383 Ficus erecta
+0.00 2 2 G 309312 Ficus lyrata
+0.00 1 1 G 462830 Ficus hispida
+0.00 1 1 G 3494 Ficus carica
+0.00 1 1 G 66386 Ficus pumila
+0.00 1 0 G 2306858 unclassified Ficus (in: Viridiplantae)
+0.00 1 1 G 2048435 Ficus sp. JH-2017
+0.00 1 1 G 479811 Ficus pantoniana
+0.00 13 0 G 241856 Antiaris
+0.00 13 13 G 241857 Antiaris toxicaria
+0.00 10 0 G 194276 Poikilospermum
+0.00 10 10 G 344860 Poikilospermum lanceolatum
+0.00 7 2 G 24775 Pilea
+0.00 2 2 G 344853 Pilea thymifolia
+0.00 1 1 G 24776 Pilea pumila
+0.00 1 1 G 344832 Pilea plataniflora
+0.00 1 0 G 2649566 unclassified Pilea
+0.00 1 1 G 2789716 Pilea glauca (nom. nud.)
+0.00 113 0 G 3653 Citrullus
+0.00 113 112 G 3654 Citrullus lanatus
+0.00 1 0 G 260674 Citrullus lanatus subsp. vulgaris
+0.00 1 1 G 260673 Citrullus lanatus var. citroides
+0.00 66 0 G 102210 Benincasa
+0.00 66 66 G 102211 Benincasa hispida
+0.00 6 0 G 3667 Lagenaria
+0.00 6 6 G 3668 Lagenaria siceraria
+0.00 61 0 G 3669 Luffa
+0.00 60 60 G 56866 Luffa acutangula
+0.00 1 1 G 3670 Luffa aegyptiaca
+0.00 186 5 G 4306 Euonymus
+0.00 181 181 G 4307 Euonymus alatus
+0.00 3 3 G 3796 Parnassia
+0.00 3 0 G 85180 Celastrus
+0.00 3 3 G 123407 Celastrus scandens
+0.00 1 0 G 123403 Catha
+0.00 1 1 G 123405 Catha edulis
+0.00 1 0 G 572924 Monimopetalum
+0.00 1 1 G 572925 Monimopetalum chinense
+0.00 1 0 G 123430 Maytenus
+0.00 1 1 G 1696185 Maytenus serrata
+0.00 61 0 G 108869 Herrania
+0.00 61 61 G 108875 Herrania umbratica
+0.00 261 58 G 93758 Corchorus
+0.00 134 134 G 210143 Corchorus capsularis
+0.00 69 69 G 93759 Corchorus olitorius
+0.00 194 0 G 45324 Bombax
+0.00 194 194 G 45325 Bombax ceiba
+0.00 71 0 G 178174 Syzygium
+0.00 71 71 G 219896 Syzygium oleosum
+0.00 134 70 G 43860 Spondias
+0.00 54 54 G 80338 Spondias mombin
+0.00 10 10 G 991123 Spondias tuberosa
+0.00 105 1 G 55512 Pistacia
+0.00 104 104 G 55513 Pistacia vera
+0.00 12 4 G 67937 Zanthoxylum
+0.00 3 3 G 1291627 Zanthoxylum gilletii
+0.00 3 3 G 354530 Zanthoxylum schinifolium
+0.00 1 1 G 2292708 Zanthoxylum motuoense
+0.00 1 0 G 354528 Zanthoxylum nitidum
+0.00 1 1 G 2762714 Zanthoxylum nitidum var. tomentosum
+0.00 44 0 G 99657 Xanthoceras
+0.00 44 44 G 99658 Xanthoceras sorbifolium
+0.00 40 0 G 57654 Sapindus
+0.00 40 40 G 57655 Sapindus mukorossi
+0.00 24 0 G 4101 Petunia
+0.00 22 0 G 4103 Petunia integrifolia
+0.00 22 22 G 212142 Petunia integrifolia subsp. inflata
+0.00 2 2 G 4102 Petunia x hybrida
+0.00 22 3 G 4128 Cuscuta
+0.00 10 1 G 1824618 Cuscuta subgen. Grammica
+0.00 4 2 G 1824898 Cuscuta sect. Ceratophorae
+0.00 1 1 G 437255 Cuscuta costaricensis
+0.00 1 1 G 437626 Cuscuta erosa
+0.00 3 0 G 1824904 Cuscuta sect. Oxycarpae
+0.00 3 3 G 35886 Cuscuta gronovii
+0.00 1 0 G 1824901 Cuscuta sect. Cleistogrammica
+0.00 1 1 G 112407 Cuscuta pentagona
+0.00 1 0 G 1824953 Cuscuta sect. Grammica
+0.00 1 1 G 267557 Cuscuta chinensis
+0.00 5 0 G 1824620 Cuscuta subgen. Pachystigma
+0.00 4 4 G 192831 Cuscuta nitida
+0.00 1 1 G 413235 Cuscuta africana
+0.00 3 0 G 1824621 Cuscuta subgen. Cuscuta
+0.00 2 2 G 184478 Cuscuta approximata
+0.00 1 1 G 192827 Cuscuta pedicellata
+0.00 1 1 G 1824619 Cuscuta subgen. Monogynella
+0.00 12 0 G 113200 Evolvulus
+0.00 11 11 G 439689 Evolvulus alsinoides
+0.00 1 1 G 197389 Evolvulus nuttallianus
+0.01 2402 189 G 24966 Rubiaceae
+0.00 475 157 G 13442 Coffea
+0.00 254 254 G 13443 Coffea arabica
+0.00 53 53 G 49369 Coffea eugenioides
+0.00 11 11 G 49390 Coffea canephora
+0.00 2 0 G 43447 Bertiera
+0.00 2 2 G 1008956 Bertiera longithyrsa
+0.00 2 0 G 58461 Pavetta
+0.00 2 2 G 58467 Pavetta abyssinica
+0.00 205 0 G 86993 Scyphiphora
+0.00 205 205 G 86994 Scyphiphora hydrophyllacea
+0.00 60 49 G 43523 Mussaenda
+0.00 11 11 G 2057164 Mussaenda densiflora
+0.00 14 0 G 60079 Sipanea
+0.00 14 0 G 2184389 unclassified Sipanea
+0.00 14 14 G 2057177 Sipanea sp. Rova et al. 1981
+0.00 818 0 G 153761 Neolamarckia
+0.00 817 817 G 153762 Neolamarckia cadamba
+0.00 1 1 G 2703786 Neolamarckia macrophylla
+0.00 366 0 G 58424 Damnacanthus
+0.00 366 364 G 58425 Damnacanthus indicus
+0.00 2 2 G 2862862 Damnacanthus indicus var. indicus
+0.00 6 0 G 1667295 Hedyotis-Oldenlandia complex
+0.00 3 1 G 43535 Oldenlandia
+0.00 2 2 G 43536 Oldenlandia corymbosa
+0.00 2 0 G 358842 Saprosma
+0.00 2 2 G 2661645 Saprosma merrillii
+0.00 2 0 G 58897 Gaertnera
+0.00 2 2 G 509943 Gaertnera phyllostachya
+0.00 6 0 G 58387 Plocama
+0.00 6 6 G 58388 Plocama pendula
+0.00 3 1 G 25168 Galium
+0.00 1 1 G 29787 Galium album
+0.00 1 1 G 254777 Galium mollugo
+0.00 2 2 G 25473 Rubia
+0.00 2 0 G 25384 Pentas
+0.00 2 2 G 25385 Pentas lanceolata
+0.00 4 0 G 58410 Lasianthus
+0.00 4 0 G 2184387 unclassified Lasianthus
+0.00 4 4 G 1406727 Lasianthus sp. Kainulaninen et al. 17
+0.00 3 0 G 59595 Palicourea
+0.00 3 3 G 59596 Palicourea guianensis
+0.00 2 0 G 60148 Leptodermis
+0.00 2 2 G 1043438 Leptodermis scabrida
+0.00 1 0 G 60086 Paederia
+0.00 1 1 G 60087 Paederia foetida
+0.00 2 0 G 58420 Faramea
+0.00 2 2 G 58421 Faramea multiflora
+0.00 2 0 G 25443 Psychotria
+0.00 1 1 G 43559 Psychotria kirkii
+0.00 1 0 G 2184929 unclassified Psychotria
+0.00 1 1 G 1419243 Psychotria sp. 7 LB-2013
+0.00 1 0 G 35918 Theligonum
+0.00 1 1 G 35919 Theligonum cynocrambe
+0.00 1 0 G 353846 Schizocolea
+0.00 1 1 G 353847 Schizocolea linderi
+0.00 1 0 G 43443 Anthospermum
+0.00 1 1 G 1641046 Anthospermum spathulatum
+0.00 7 0 G 169620 Rubiaceae incertae sedis
+0.00 56 0 G 141576 Landolphia
+0.00 56 56 G 2066940 Landolphia dawei
+0.00 18 0 G 403088 Willughbeia
+0.00 18 18 G 1489960 Willughbeia edulis
+0.00 16 0 G 141574 Lacmellea
+0.00 15 15 G 681449 Lacmellea panamensis
+0.00 1 1 G 141575 Lacmellea aculeata
+0.00 231 0 G 141608 Rhazya
+0.00 231 231 G 396313 Rhazya stricta
+0.00 5 0 G 1498435 Catharanthinae
+0.00 5 0 G 4057 Catharanthus
+0.00 5 5 G 4058 Catharanthus roseus
+0.00 6 0 G 52860 Tabernaemontana
+0.00 6 6 G 52861 Tabernaemontana divaricata
+0.00 2 0 G 403086 Ambelania
+0.00 2 2 G 403087 Ambelania acida
+0.00 5 0 G 1498964 Pycnobotrya
+0.00 5 5 G 2066944 Pycnobotrya nitida
+0.00 58 3 G 21199 Asclepias
+0.00 52 52 G 48545 Asclepias syriaca
+0.00 1 1 G 528299 Asclepias speciosa
+0.00 1 1 G 528306 Asclepias viridiflora
+0.00 1 1 G 2175710 Asclepias aff. notha ShS-2018
+0.00 58 56 G 126747 Cynanchum
+0.00 1 1 G 755258 Cynanchum chinense
+0.00 1 1 G 157409 Cynanchum auriculatum
+0.00 4 4 G 63501 Vincetoxicum
+0.00 91 0 G 52831 Hoya
+0.00 87 87 G 2817244 Hoya lithophytica
+0.00 2 2 G 1266024 Hoya ignorata
+0.00 1 1 G 1167156 Hoya megalaster
+0.00 1 1 G 2736669 Hoya insularis
+0.00 2 1 G 63484 Periploca
+0.00 1 1 G 190712 Periploca sepium
+0.00 53 0 G 126359 Chionanthus
+0.00 51 51 G 2057972 Chionanthus rupicola
+0.00 1 1 G 126361 Chionanthus ramiflorus
+0.00 1 1 G 126362 Chionanthus retusus
+0.00 43 1 G 13596 Ligustrum
+0.00 42 42 G 528268 Ligustrum quihoui
+0.00 100 1 G 228416 Rotheca
+0.00 99 99 G 1158923 Rotheca serrata
+0.00 10 5 G 38595 Ajuga
+0.00 4 4 G 199542 Ajuga ciliata
+0.00 1 1 G 38596 Ajuga reptans
+0.00 29 3 G 4139 Scutellaria
+0.00 26 26 G 1862659 Scutellaria tsinyunensis
+0.00 3 0 G 1204777 Echinacanthus
+0.00 2 2 G 2029165 Echinacanthus lofouensis
+0.00 1 1 G 1204778 Echinacanthus attenuatus
+0.00 1 0 G 13659 Ruellia
+0.00 1 0 G 2161741 New World Ruellia
+0.00 1 1 G 440931 Ruellia brittoniana
+0.00 1 1 G 24051 Strobilanthes
+0.00 21 8 G 13422 Chrysanthemum
+0.00 6 6 G 146995 Chrysanthemum indicum
+0.00 4 4 G 1478180 Chrysanthemum makinoi
+0.00 1 1 G 146993 Chrysanthemum chanetii
+0.00 1 1 G 41568 Chrysanthemum x morifolium
+0.00 1 1 G 146996 Chrysanthemum lavandulifolium
+0.00 12 0 G 72924 Diplostephium
+0.00 12 12 G 1716017 Diplostephium hartwegii
+0.00 28 0 G 75954 Cicerbita
+0.00 28 28 G 75960 Cicerbita muralis
+0.00 80 0 G 4264 Cynara
+0.00 80 0 G 4265 Cynara cardunculus
+0.00 80 0 G 309979 Cynara cardunculus subsp. cardunculus
+0.00 80 80 G 59895 Cynara cardunculus var. scolymus
+0.00 1 0 G 41549 Cirsium
+0.00 1 1 G 192477 Cirsium acaule
+0.00 3 0 G 41629 Saussurea
+0.00 3 3 G 324593 Saussurea costus
+0.00 48 3 G 4382 Lobelia
+0.00 21 0 G 2041128 Lobelia heterophylla
+0.00 21 21 G 2041129 Lobelia heterophylla subsp. heterophylla
+0.00 10 10 G 308559 Lobelia inflata
+0.00 2 0 G 2638229 unclassified Lobelia
+0.00 2 2 G 2010899 Lobelia sp. 1 EBK-2017
+0.00 2 2 G 1441989 Lobelia spicata
+0.00 2 2 G 2041132 Lobelia malowensis
+0.00 1 1 G 1053365 Lobelia urens
+0.00 1 1 G 368681 Lobelia anceps
+0.00 1 1 G 360853 Lobelia gibberoa
+0.00 1 1 G 2010892 Lobelia lukwangulensis
+0.00 1 1 G 1715891 Lobelia doniana
+0.00 1 1 G 2041123 Lobelia baumannii
+0.00 1 1 G 673919 Lobelia sonderiana
+0.00 1 1 G 210362 Lobelia holstii
+0.00 42 0 G 94285 Platycodon
+0.00 42 42 G 94286 Platycodon grandiflorus
+0.00 12 0 G 16399 Codonopsis
+0.00 11 11 G 103999 Codonopsis lanceolata
+0.00 1 0 G 1392590 Codonopsis convolvulacea
+0.00 1 1 G 1735384 Codonopsis convolvulacea subsp. vinciflora
+0.00 62 2 G 4053 Panax
+0.00 58 58 G 4054 Panax ginseng
+0.00 1 1 G 44588 Panax quinquefolius
+0.00 1 1 G 44683 Panax trifolius
+0.00 60 0 G 4295 Ilex
+0.00 57 57 G 185543 Ilex pubescens
+0.00 1 1 G 1043419 Ilex chinensis
+0.00 1 1 G 1562320 Ilex cinerea
+0.00 1 1 G 53205 Ilex latifolia
+0.00 87 2 G 4335 Primulaceae
+0.00 47 31 G 49647 Primula
+0.00 4 4 G 1271610 Primula woodwardii
+0.00 3 3 G 931088 Primula ranunculoides
+0.00 2 2 G 690488 Primula calyptrata
+0.00 2 2 G 1637976 Primula kwangtungensis
+0.00 1 0 G 170924 Primula obconica
+0.00 1 1 G 690502 Primula obconica subsp. obconica
+0.00 1 1 G 175104 Primula vulgaris
+0.00 1 1 G 170927 Primula veris
+0.00 1 1 G 690509 Primula rubifolia
+0.00 1 1 G 170926 Primula sinensis
+0.00 19 0 G 59969 Aegiceras
+0.00 19 19 G 59970 Aegiceras corniculatum
+0.00 11 10 G 459628 Embelia
+0.00 1 1 G 1341709 Embelia vestita
+0.00 100 0 G 3616 Fagopyrum
+0.00 99 98 G 3617 Fagopyrum esculentum
+0.00 1 1 G 180217 Fagopyrum esculentum subsp. ancestrale
+0.00 1 1 G 516549 Fagopyrum dibotrys
+0.00 33 21 G 3564 Amaranthus
+0.00 11 11 G 107608 Amaranthus palmeri
+0.00 1 1 G 28502 Amaranthus hypochondriacus
+0.00 1 0 G 46149 Anredera
+0.00 1 1 G 46150 Anredera cordifolia
+0.00 28 0 G 529600 Tolypanthus
+0.00 28 28 G 1026954 Tolypanthus maclurei
+0.00 29 6 G 3971 Viscum
+0.00 21 21 G 3972 Viscum album
+0.00 1 1 G 50172 Viscum articulatum
+0.00 1 1 G 1266557 Viscum minimum
+0.00 11 0 G 1003241 Strombosiaceae
+0.00 11 0 G 70869 Strombosia
+0.00 11 11 G 350586 Strombosia pustulata
+0.00 115 2 G 1463147 Anemoneae
+0.00 108 3 G 22868 Anemone
+0.00 100 100 G 387291 Anemone maxima
+0.00 3 3 G 167997 Anemone canadensis
+0.00 1 0 G 168011 Anemone hepatica
+0.00 1 1 G 231669 Anemone hepatica var. japonica
+0.00 1 1 G 416983 Anemone reflexa
+0.00 31 28 G 3445 Ranunculus
+0.00 2 0 G 2627495 unclassified Ranunculus
+0.00 1 1 G 100670 Ranunculus sp. Qiu 95024
+0.00 1 1 G 883667 Ranunculus sp. SH-2010
+0.00 1 1 G 287003 Ranunculus variabilis
+0.00 12 3 G 49188 Aconitum
+0.00 7 7 G 239685 Aconitum kusnezoffii
+0.00 1 1 G 286045 Aconitum flavum
+0.00 1 1 G 215068 Aconitum tanguticum
+0.00 5 0 G 3450 Aquilegia
+0.00 5 5 G 218851 Aquilegia coerulea
+0.00 11 1 G 147243 Stephania
+0.00 10 10 G 461633 Stephania japonica
+0.00 29 0 G 1898813 Chieniodendron
+0.00 29 29 G 1898814 Chieniodendron hainanense
+0.00 24 15 G 224858 Horsfieldia
+0.00 6 6 G 2782346 Horsfieldia hainanensis
+0.00 3 3 G 2568490 Horsfieldia pandurifolia
+0.00 90 90 G 121072 Cassytha
+0.00 19 14 G 13428 Cinnamomum
+0.00 3 3 G 13429 Cinnamomum camphora
+0.00 1 1 G 119260 Cinnamomum aromaticum
+0.00 1 1 G 1757932 Cinnamomum chago
+0.00 55 5 G 16736 Piperales
+0.00 17 0 G 16739 Piperaceae
+0.00 13 13 G 13215 Piper
+0.00 58 24 G 3380 Gnetum
+0.00 23 23 G 3381 Gnetum montanum
+0.00 6 6 G 3382 Gnetum gnemon
+0.00 3 3 G 44929 Gnetum africanum
+0.00 1 1 G 3383 Gnetum ula
+0.00 1 0 G 29812 Gnetum leyboldii
+0.00 1 1 G 225597 Gnetum leyboldii var. woodsonianum
+0.00 4 2 G 187365 Microsorum
+0.00 2 2 G 187370 Microsorum punctatum
+0.00 1 0 G 13817 Adiantum
+0.00 1 1 G 446140 Adiantum hispidulum
+0.00 344 71 G 65055 Lejeuneaceae
+0.00 103 5 G 203673 Cololejeunea
+0.00 92 92 G 1186967 Cololejeunea lanciloba
+0.00 2 2 G 1527721 Cololejeunea microscopica
+0.00 2 2 G 1186996 Cololejeunea trichomanis
+0.00 1 1 G 389493 Cololejeunea biddlecomiae
+0.00 1 1 G 1186980 Cololejeunea pseudofloccosa
+0.00 18 0 G 65056 Lejeunea
+0.00 18 0 G 2618180 unclassified Lejeunea
+0.00 18 18 G 2846780 Lejeunea sp. 17-8794
+0.00 14 0 G 2846790 Rhaphidolejeunea
+0.00 14 14 G 2846791 Rhaphidolejeunea foliicola
+0.00 21 0 G 203662 Cheilolejeunea
+0.00 21 0 G 2839119 Cheilolejeunea subgen. Cheilolejeunea
+0.00 21 21 G 414193 Cheilolejeunea xanthocarpa
+0.00 1 1 G 1927292 Stigmella sp. RosaKorea
+0.00 22 0 G 117248 Habropoda
+0.00 22 22 G 597456 Habropoda laboriosa
+0.00 14 0 G 28644 Eufriesea
+0.00 14 14 G 516756 Eufriesea mexicana
+0.00 31 0 G 78173 Ceratina
+0.00 30 30 G 156304 Ceratina calcarata
+0.00 1 0 G 236014 unclassified Ceratina
+0.00 1 1 G 710052 Ceratina (n. subgen.) sp. SMR-2010
+0.00 12 0 G 64782 Acromyrmex
+0.00 11 11 G 103372 Acromyrmex echinatior
+0.00 1 1 G 411731 Acromyrmex versicolor
+0.00 61 0 G 55077 Monomorium
+0.00 61 61 G 307658 Monomorium pharaonis
+0.00 36 0 G 144030 Pogonomyrmex
+0.00 35 35 G 144034 Pogonomyrmex barbatus
+0.00 1 1 G 144041 Pogonomyrmex occidentalis
+0.00 35 0 G 369122 Dinoponera
+0.00 35 35 G 609295 Dinoponera quadriceps
+0.00 39 0 G 83484 Linepithema
+0.00 39 39 G 83485 Linepithema humile
+0.00 2 2 G 1192501 Dolichoris sp. ex Ficus subtrinervia
+0.00 1 1 G 419151 Platyneura sp. ex Ficus botryocarpa
+0.00 1 0 G 66593 Crotonioidea
+0.00 39 0 G 9184 Catharus
+0.00 39 39 G 91951 Catharus ustulatus
+0.00 1 0 G 8922 Cathartidae
+0.00 2 0 G 2497646 Apiosphaeria
+0.00 2 2 G 2497647 Apiosphaeria guaranitica
+0.00 10 0 G 106263 Apiosporaceae
+0.00 14 4 G 86620 Usnea
+0.00 6 6 G 143885 Usnea mutabilis
+0.00 2 2 G 142670 Usnea ceratina
+0.00 1 1 G 143891 Usnea subfloridana
+0.00 1 1 G 2250278 Usnea subgracilis
+0.00 4 4 G 172634 Parmotrema
+0.00 3 0 G 88743 Pseudevernia
+0.00 3 3 G 136281 Pseudevernia consocians
+0.00 3 0 G 87258 Hypogymnia
+0.00 3 3 G 315943 Hypogymnia vittata
+0.00 58 0 G 114154 Dichomitus
+0.00 58 0 G 114155 Dichomitus squalens
+0.00 58 58 G 732165 Dichomitus squalens LYAD-421 SS1
+0.00 4 4 G 2562347 Streptomyces phage RosaAsantewaa
+0.00 1 1 G 2294149 Passiflora edulis symptomless virus
+0.00 1 0 G 2846572 Trifolium pratense cytorhabdovirus A
+0.00 1 1 G 2448906 Trifolium pratense virus A
+0.00 7 7 G 1297645 Corchorus yellow vein mosaic virus

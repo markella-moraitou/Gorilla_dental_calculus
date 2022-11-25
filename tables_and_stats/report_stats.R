@@ -245,7 +245,7 @@ write.table(ancom_full, file="ancom_full.csv", sep=",", quote=FALSE)
 
 #### Table S7 - Subspecies associated BP processes ####
 
-load("F2_functional_stats/.RData")
+load(".RData")
 write.table(most_signif_BP, file="most_signif_BPs.csv", sep=",", quote=FALSE)
 
 #### Table S8 - MAG taxonomy ####
