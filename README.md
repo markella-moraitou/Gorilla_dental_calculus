@@ -16,7 +16,7 @@ Script for demultiplexing is not included here.
 
 ## Host mtDNA analysis
 
-- H1_mtgenomes: Obtaining mt genomes from dental calculus by mapping to a the gorilla mitochondrial genome reference. Script for obtaining mitochondrial sequences using a reference genome were adapted from Samantha Lopez Clinton's work.
+- H1_mtgenomes: Obtaining mt genomes from dental calculus by mapping to the gorilla mitochondrial genome reference. Script for obtaining mitochondrial sequences using a reference genome were adapted from Samantha Lopez Clinton's work.
 - H2_haplotype_network: Plot haplotype network using downloaded complete mt genomes and dental calculus genomes > 80% complete. For dental calculus genomes < 80% and > 8% complete, find the most closely related genome from the haplotype network based on ANI values. Haplotype network script plot_hapnets.r was adapted from Zach Nolen's work. (not used in final report)
 - H3_diagnostic_sites: Identifying and using mitochondrial diagnostic sites to verify species and subspecies assignments. Python and R scripts (DistanceToReferences.py, FindDiagnosticSites_edited.py, plot_readCoverage.r) were adapted from Axel Jensen's work.
 
@@ -35,7 +35,7 @@ Script for demultiplexing is not included here.
 ## Functional profiling and analysis
 
 - F1_HUMAnN2: Functional profiling using HUMAnN2
-- F2_functional_stats: Rscripts for the analysis of the functional profiling output (identify subspecies associated biological processes, quantify contributions of different taxa to biological processes, etc.)
+- F2_functional_stats: Rscripts for the analysis of the functional profiling output (identify subspecies-associated biological processes, quantify contributions of different taxa to biological processes, etc.)
 
 ## Metagenomes-assembled genomes (MAGs)
 
@@ -47,8 +47,8 @@ Script for demultiplexing is not included here.
 ## Analyses of dietary components
 
 - D1_reads4Diet: Preprocessing for diet profiling, uses Kraken2 output to extract the reads that have been classified as bacterial, viral or archeal
-- D2_kraken2_full_db: Run of kraken2 on the NCBI full-nt database, with genus and species level assignments retained.
-- D3_diet_stats: Vary analyses with kraken output of dietary components. Constructing of reference database of dietary components. Preprocessing and filtering of abundance table for dietary taxa. ANCOM and PERMANOVAs on the filtered dataset of dietary taxa.
+- D2_kraken2_full_db: Run of Kraken2 on the NCBI full-nt database, with genus and species level assignments retained.
+- D3_diet_stats: Statistical analyses with kraken output of dietary components. Constructing of reference database of dietary components. Preprocessing and filtering of abundance table for dietary taxa. ANCOM and PERMANOVAs on the filtered dataset of dietary taxa.
 - D4_diet_damage: extracts reads used to assign a given dietary taxon, maps these reads to a reference genome, and runs mapDamage to get the misincorporation rates.
 
 ## Misc. Analyses, plots, tables, other stats
