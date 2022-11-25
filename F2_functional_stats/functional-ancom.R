@@ -5,8 +5,7 @@ library(ggplot2)
 library(compositions)
 library(phyloseq)
 library(microbiome)
-source("general-scripts/ancom-functions.R")
-setwd("~/Lab-Notes/")
+source("T3_community-level/ancom-functions.R")
 
 # set the palette
 pal<-c(ggpubr::get_palette(palette = "Set2",k=3)[2],ggpubr::get_palette(palette = "Set2",k=3)[3],ggpubr::get_palette(palette = "Set2",k=3)[1])
@@ -146,3 +145,21 @@ ancom_p<-ft %>%
         legend.spacing.x = unit(0.75, 'cm'),
         text = element_text(family="calibri"))
 ggsave(ancom_p,filename = "F2_functional_stats/ancom_0.9.png",dpi = 300,width = 16,height = 8,units = "in")
+
+
+GO_BP_g30p<-GO_BP_phyloseq %>% psmelt() %>% 
+  mutate(Abundance=as.numeric(Abundance)) %>%
+  group_by(plot.label) %>% 
+  mutate(n=n_distinct(Sample)) %>% 
+  group_by(plot.label,OTU,n) %>% 
+  mutate(nz=n_distinct(Sample[Abundance>0])) %>% 
+  summarise(samp_prop=nz/n) %>% 
+  distinct() %>% 
+  group_by(OTU) %>% 
+  filter(sum(samp_prop)>=0.3) %>% ungroup()
+
+# save results
+ancom_res_g30p<-ancom_res %>% filter(detected_0.9==TRUE & taxa_id %in% GO_BP_g30p$OTU)
+bind_cols(ancom_res_g30p,struc_zero[ancom_res_g30p$taxa_id,]) %>% 
+  write_csv(., "F2_functional_stats/BP_ancom-read-depth-g30p.csv")
+

@@ -1,0 +1,8 @@
+2022-10-13 21:41:31,784	INFO	main: Started with the command: /sw/bioinfo/mapDamage/2.0.9/snowy/bin/mapDamage -i Galium/G0020_Galium-children.bam -r SNIC_PROJECT/ADRIAN/genomes/Galium/GCA_012274505.1_ASM1227450v1_genomic.fna
+2022-10-13 21:41:53,554	INFO	main: Started with the command: /sw/bioinfo/mapDamage/2.0.9/snowy/bin/mapDamage -i Galium/G0020_Galium-children.bam -r SNIC_PROJECT/ADRIAN/genomes/Galium/GCA_012274505.1_ASM1227450v1_genomic.fna --merge-reference-sequences
+2022-10-13 21:41:57,589	DEBUG	main: BAM read in 7.185921 seconds
+2022-10-13 21:42:04,332	INFO	mapdamage.rscript: Performing Bayesian estimates
+2022-10-13 21:42:04,332	DEBUG	mapdamage.rscript: Call: Rscript /sw/bioinfo/mapDamage/2.0.9/snowy/lib/python2.7/site-packages/mapdamage/Rscripts/stats/runGeneral.R --args 30 10000 10 50000 0 0 1 1 0 0 1 12 results_G0020_Galium-children/ /sw/bioinfo/mapDamage/2.0.9/snowy/lib/python2.7/site-packages/mapdamage/Rscripts/stats/ results_G0020_Galium-children/Stats_out 0 0 0 results_G0020_Galium-children/acgt_ratio.csv 0 0
+2022-10-13 21:49:22,748	DEBUG	mapdamage.rscript: Bayesian estimates completed in 438.415844 seconds
+2022-10-13 21:49:22,773	INFO	main: Successful run
+2022-10-13 21:49:22,773	DEBUG	main: Run completed in 452.370837 seconds

@@ -4,6 +4,8 @@ Studying the oral microbiome of three gorilla subspecies using a shotgun metagen
 
 ## Pre-processing of reads
 
+Script for demultiplexing is not included here.
+
 - 2_polyGrem: Removal of PolyG tails
 - 3_adapterRem: Adapter removal and merging of paired-end reads
 - 4_barcodeTrim: Barcode trimming
@@ -42,7 +44,16 @@ Studying the oral microbiome of three gorilla subspecies using a shotgun metagen
 - M3_trees: scripts for producing core-gene trees for select oral taxa, using Phylophlan.
 - M4_pangenome: scripts for running pangenomic analyses
 
-## Other
+## Analyses of dietary components
 
+- D1_reads4Diet: Preprocessing for diet profiling, uses Kraken2 output to extract the reads that have been classified as bacterial, viral or archeal
+- D2_kraken2_full_db: Run of kraken2 on the NCBI full-nt database, with genus and species level assignments retained.
+- D3_diet_stats: Vary analyses with kraken output of dietary components. Constructing of reference database of dietary components. Preprocessing and filtering of abundance table for dietary taxa. ANCOM and PERMANOVAs on the filtered dataset of dietary taxa.
+- D4_diet_damage: extracts reads used to assign a given dietary taxon, maps these reads to a reference genome, and runs mapDamage to get the misincorporation rates.
+
+## Misc. Analyses, plots, tables, other stats
+
+- frag_length_vs_samp_age: script for plotting the relationship between the average fragment length for each sample and the sample age
+- microbial_vs_diet_MRM: script for plotting the relationship between microbial and dietary distances
 - plots: scripts for producing most figures presented in the report and the supplement
 - tables_and_stats: script producing most information provided in supplementary tables

@@ -15,7 +15,7 @@ library(EcolUtils)
 library(ade4)
 library(cowplot)
 
-load("F2_functional_stats/.RData")
+load(".RData")
 
 #Check effect of altitude - Running the full script also requires the output of HUMAnN2
 #Load location info
